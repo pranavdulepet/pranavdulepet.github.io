@@ -1,0 +1,203 @@
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 2em;
+    font-weight: normal;
+    color: gray;
+}
+
+.content {
+    visibility: visible;
+}
+
+.slider-container .slide {
+    display: none;
+}
+
+.slider-container .current-slide {
+    display: block;
+}
+
+
+.header {
+    height: 100vh;
+    /* Set the height of the header section to the full viewport height */
+    display: flex;
+    /* Use flexbox to align the name and menu vertically */
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    /* Center the name and menu horizontally */
+    align-items: center;
+    /* Center the name and menu vertically */
+}
+
+.name {
+    font-size: 3em;
+    /* Increase the font size of the name */
+}
+
+.menu {
+    display: flex;
+    /* Use flexbox to align the menu items horizontally */
+    justify-content: center;
+    /* Center the menu items horizontally */
+    align-items: center;
+    list-style: none;
+    /* Remove the bullet points from the menu items */
+    flex-wrap: nowrap;
+    /* Prevent the menu items from wrapping to a new line */
+}
+
+.menu li {
+    margin: 0 10px;
+    /* Add some margin between the menu items */
+}
+
+#top-btn {
+    position: fixed;
+    /* Position the button fixed on the screen */
+    bottom: 20px;
+    /* Place the button 20px from the bottom of the screen */
+    right: 20px;
+    /* Place the button 20px from the right of the screen */
+    display: none;
+    /* Initially hide the button */
+    background-color: #3498db;
+    /* Set the background color of the button */
+    color: white;
+    /* Set the text color of the button */
+    font-size: 18px;
+    /* Set the font size of the button */
+    border: none;
+    /* Remove the border of the button */
+    cursor: pointer;
+    /* Change the cursor to a pointer when hovering */
+    padding: 15px;
+    /* Add padding to the button */
+    border-radius: 10px;
+    /* Add rounded edges to the button */
+}
+
+#top-btn:hover {
+    background-color: rgb(0, 0, 0);
+    /* Change the background color when hovering */
+}
+
+
+.experience-section,
+.projects-section,
+.classes-section,
+.about-section {
+    width: 75%;
+    /* Reduce the width by 1/4 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    /* Add background color to the section */
+    padding: 2em;
+    /* Add padding to the section */
+    border-radius: 5px;
+    /* Add rounded corners to the section */
+    box-shadow: 0px 0px 10px #ccc;
+    /* Add subtle shadow effect to the section */
+    transition: all 0.3s ease-in;
+    transform: translateY(0);
+}
+
+.experience-section h3,
+.projects-section h3,
+.classes-section h3,
+.about-section h3 {
+    font-size: 1.5em;
+    /* Increase the font size of the heading */
+    font-weight: bold;
+    /* Add bold effect to the heading */
+    margin-bottom: 1em;
+    /* Add space between heading and list */
+}
+
+.experience-section ul,
+.projects-section ul,
+.classes-section ul,
+.about-section ul {
+    list-style: none;
+    /* Remove the default bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+.experience-section li,
+.projects-section li,
+.classes-section li,
+.about -section li {
+    margin-bottom: 10px;
+
+    font-size: 1.2em;
+    font-weight: lighter;
+    line-height: 1.5em;
+}
+
+.contact-section {
+    width: 75%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #ccc;
+    text-align: center;
+}
+
+.contact-section h3 {
+    font-size: 1.5em;
+
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+.contact-section p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    /* Add space between contact information */
+}
+
+.social-links {
+    margin-top: 1em;
+    /* Add space above the social links */
+}
+
+.social-links a {
+    font-size: 1.2em;
+    margin-right: 10px;
+
+    text-decoration: none;
+}
+
+.experience-section:hover,
+.projects-section:hover,
+.classes-section:hover,
+.about-section:hover {
+    background-color: #f1f1f1;
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 10px #ccc;
+}
