@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/personal-website/static/css/main.ba3b3e93.css",
-    "main.js": "/personal-website/static/js/main.5b49c806.js",
-    "static/js/787.5809834d.chunk.js": "/personal-website/static/js/787.5809834d.chunk.js",
-    "static/media/umdnext-logo.png": "/personal-website/static/media/umdnext-logo.170b52d171a7a3cc01a4.png",
-    "static/media/signstoleads-logo.png": "/personal-website/static/media/signstoleads-logo.1837659f6b3a3447a61f.png",
-    "static/media/aura-logo.png": "/personal-website/static/media/aura-logo.e07a81f6b65a376fa023.png",
-    "static/media/evozyne-logo.png": "/personal-website/static/media/evozyne-logo.352bfeb73d0d988ef62c.png",
-    "static/media/pranav-dulepet-resume-24.pdf": "/personal-website/static/media/pranav-dulepet-resume-24.50734eef04902b60fa02.pdf",
-    "static/media/collegero-logo.jpg": "/personal-website/static/media/collegero-logo.bc70bb0036a54761234d.jpg",
-    "static/media/capitalone-logo.png": "/personal-website/static/media/capitalone-logo.9f957785110bec1b35f8.png",
-    "static/media/thingsnearme-logo.jpg": "/personal-website/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
-    "index.html": "/personal-website/index.html",
-    "main.ba3b3e93.css.map": "/personal-website/static/css/main.ba3b3e93.css.map",
-    "main.5b49c806.js.map": "/personal-website/static/js/main.5b49c806.js.map",
-    "787.5809834d.chunk.js.map": "/personal-website/static/js/787.5809834d.chunk.js.map"
+    "main.css": "/static/css/main.ba3b3e93.css",
+    "main.js": "/static/js/main.2f4fb997.js",
+    "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
+    "static/media/umdnext-logo.png": "/static/media/umdnext-logo.170b52d171a7a3cc01a4.png",
+    "static/media/signstoleads-logo.png": "/static/media/signstoleads-logo.1837659f6b3a3447a61f.png",
+    "static/media/aura-logo.png": "/static/media/aura-logo.e07a81f6b65a376fa023.png",
+    "static/media/evozyne-logo.png": "/static/media/evozyne-logo.352bfeb73d0d988ef62c.png",
+    "static/media/pranav-dulepet-resume-24.pdf": "/static/media/pranav-dulepet-resume-24.50734eef04902b60fa02.pdf",
+    "static/media/collegero-logo.jpg": "/static/media/collegero-logo.bc70bb0036a54761234d.jpg",
+    "static/media/capitalone-logo.png": "/static/media/capitalone-logo.9f957785110bec1b35f8.png",
+    "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
+    "index.html": "/index.html",
+    "main.ba3b3e93.css.map": "/static/css/main.ba3b3e93.css.map",
+    "main.2f4fb997.js.map": "/static/js/main.2f4fb997.js.map",
+    "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ba3b3e93.css",
-    "static/js/main.5b49c806.js"
+    "static/js/main.2f4fb997.js"
   ]
 }
