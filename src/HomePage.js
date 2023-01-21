@@ -6,6 +6,10 @@ import github from './images/github-logo.png';
 import signstoleads from './images/signstoleads-logo.png';
 import thingsnearme from './images/thingsnearme-logo.jpg';
 import umdnext from './images/umdnext-logo.png';
+import resume from './images/pranav-dulepet-resume-24.pdf';
+import capitalone from './images/capitalone-logo.png';
+import evozyne from './images/evozyne-logo.png';
+import h4i from './images/h4i-logo.jpeg';
 
 function HomePage() {
 
@@ -51,7 +55,10 @@ function HomePage() {
         <button id="top-btn" onClick={topFunction}>Back to top</button>
         <div id="about-section" className="about-section">
           <h3>About Me</h3>
-          <p>Sophomore computer science student at the University of Maryland - College Park</p>
+          <p>As a <a id="aboutme" href="https://github.com/pranavdulepet" target="_blank">computer science student</a> at <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">the University of Maryland - College Park</a>, I am driven by a passion for using technology to tackle everyday problems. 
+            My experience in a variety of fields within computer science, from app development to machine learning, has given me a unique perspective on how technology can be used to create innovative solutions. 
+            I am particularly interested in the <a id="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can collaborate to drive progress and make a real impact. 
+            I am constantly seeking new opportunities to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.</p>
         </div>
         <div id="projects-section" className="projects-section">
           <h3>Projects</h3>
@@ -110,25 +117,97 @@ function HomePage() {
         </div>
         <div id="experience-section" className="experience-section">
           <h3>Experience</h3>
+                <div class="resume-download">
+              <a id="aboutme" href={resume} download>Download Resume</a>
+          </div>
+          <h2>Industry Experience</h2>
+          <div class="industry-experience">
+              <div class="experience">
+                  <h3>Incoming SWE Intern</h3>
+                  <a href="https://www.capitalone.com/" target="_blank">
+                  <img src={capitalone} alt="Capital One"/>
+                  </a>
+                  <p>01/23 - present</p>
+                  <p>Technology Incubator program, Spring 2023</p>
+                  <p><strong>Skills: </strong>_</p>
+              </div>
+              <div class="experience">
+                  <h3>SWE Intern</h3>
+                  <a href="https://www.evozyne.com/" target="_blank">
+                  <img src={evozyne} alt="Evozyne"/>
+                  </a>
+                  <p>06/22 - 08/22</p>
+                  <p>I researched and applied SMT solvers to model the gene cloning process. 
+                    I used Pandas, Matplotlib, and Seaborn to analzye and vizualize ways to improve the model by comparing the performance of differnt algorithms.
+                    Here is an article I wrote with more information: <a id="aboutme" href="https://medium.com/@pdulepet/smt-in-computational-biology-dccf006eb397" target="_blank">link</a>.
+                  </p>
+                  <p><strong>Skills: </strong>Python, Z3, Satisfiability Modulo Theories, Matplotlib, Seaborn, Pandas</p>
+              </div>
+              <div class="experience">
+                  <h3>SWE/Tech Lead</h3>
+                  <a href="https://hack4impact.org/" target="_blank">
+                  <img src={h4i} alt="Hack4Impact"/>
+                  </a>
+                  <p>09/21 - present</p>
+                  <p>As a Tech Lead for two semesters, I was a liason between the software engineers and the project managers.
+                    I assigned and completed tasks accoring to client requirements and wrote documenation before handing off code to the client. 
+                    Our team worked with the California-based online tutoring non-profit, Step Up Tutoring during my first semester and the Virginia-based immigrant youth and family resource service, Edufuturo during my second semester.
+                  </p>
+                  <p><strong>Skills: </strong>React.js, React Native, Node.js, Firebase</p>
+              </div>
+              </div>
+              <h2>Academic Experience</h2>
+              <div class="academic-experience">
+                  <div class="experience">
+                      <h3>Research Assistant</h3>
+                      <h3>Univerity of Maryland - College Park</h3>
+                      <p>07/21 - 08/22</p>
+                      <p>I worked with Python, OpenWPM, and AWS EC2 to collect, parse, and analyze web privacy data to identify trends and correlations in how third-party web trackers follow users’ movements and collect personal data.
+                        We complied our work to present at the 3rd annual Applications of Contextual Integrity Symposium at the University of Chicago. </p>
+                        <p><strong>Skills: </strong>Python, Amazon Web Services (AWS), SQL</p>
+                  </div>
+                  <div class="experience">
+                      <h3>Student Researcher</h3>
+                      <h3>Univerity of Maryland - College Park (FIRE Program)</h3>
+                      <p>08/21 - 12/22</p>
+                      <p>We focused on learning the skills necessary to conduct research in our desired field as well as applying them.
+                        I was a part of the machine learning track where I further developed my knowledge of python, TensorFlow, Keras, and other common machine learning techniques and tools. 
+                        The third semester was when it culminated in a cumulative research project, where we developed a music recommendation system based on user listening history. 
+                        We implemented triplet loss and k-nearest neighbors to accomplish this task by aggregating song features and outputting recommended songs.
+                        We also had the opportunity to present this project at the FIRE symposium which had an audience of interested students and faculty. 
+                      </p>
+                      <p><strong>Skills: </strong>Python, TensorFlow, Keras</p>
+                  </div>
+              </div>
         </div>
         <div id="classes-section" className="classes-section">
           <h3>Classes</h3>
+          <div class="course-grid">
+            <div class="course">CMSC351<br/>Algorithms </div>
+            <div class="course">CMSC330<br/>Organization of Programming Languages</div>
+            <div class="course">BMGT438A<br/>Applied Quantitative Analysis</div>
+            <div class="course">FIRE120, 198, 298<br/>Machine Learning Research (FIRE program)</div>
+            <div class="course">CMSC216<br/>Introduction to Computer Systems</div>
+            <div class="course">CMSC250<br/>Discrete Structures</div>
+            <div class="course">CMSC132<br/>Object Oriented Programming II</div>
+            <div class="course">MATH240<br/>Linear Algebra</div>
+            <div class="course">STAT400<br/>Applied Statistics & Probability I</div>
+            <div class="course">BMGT190H<br/>Introduction to Design and Quality</div>
+            <div class="course">CMSC131<br/>Object Oriented Programming I</div>
+          </div>
         </div>
         <div id="contact-section" className="contact-section">
-          <h3>Contact Me</h3>
+          <h3>Contact</h3>
           <div class="contact-info">
             <div class="phone-number">
-              <h3>Phone Number</h3>
               <p>925-997-0461</p>
             </div>
             <div class="email">
-              <h3>Email</h3>
-              <a href="mailto:pdulepet@umd.edu" target="_blank">pdulepet@umd.edu</a>
+              <a id="aboutme" href="mailto:pdulepet@umd.edu" target="_blank">pdulepet@umd.edu</a>
             </div>
             <div class="social-links">
-              <h3>Social</h3>
-              <a href="https://www.linkedin.com/in/pranavdulepet" target="_blank">LinkedIn</a>
-              <a href="https://github.com/pranavdulepet" target="_blank">GitHub</a>
+              <a id="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank">linkedin</a>
+              <a id="aboutme" href="https://github.com/pranavdulepet" target="_blank">github</a>
             </div>
           </div>
         </div>

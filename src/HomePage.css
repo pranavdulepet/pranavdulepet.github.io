@@ -31,8 +31,8 @@ html {
 }  
 
 .project img:hover {
-transform: scale(1.1);
-box-shadow: 2px 2px 10px #ccc;
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px #ccc;
 }
   
 .project-container {
@@ -43,9 +43,30 @@ box-shadow: 2px 2px 10px #ccc;
 
 .project {
     width: 100%;
-    background-color: #f1f1f1;
+    background-color: white;
     padding: 20px;
     box-sizing: border-box;
+}
+
+.industry-experience, .academic-experience{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.experience{
+    flex: 1;
+    margin: 10px;
+}
+
+.experience img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}  
+
+.experience img:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px #ccc;
 }
 
 .header {
@@ -69,6 +90,10 @@ box-shadow: 2px 2px 10px #ccc;
     float: left;
 }
 
+.name :hover{
+    color: limegreen
+}
+
 .menu {
     padding-top: 13.5%;
     padding-left: 15%;
@@ -84,7 +109,8 @@ box-shadow: 2px 2px 10px #ccc;
 }
 
 .menu ol:hover {
-    border-bottom: 2px solid black; /* add 2px solid black border at the bottom of the hovered <ol> elements */
+    color: limegreen;
+    border-bottom: 2px solid limegreen; /* add 2px solid black border at the bottom of the hovered <ol> elements */
 }  
   
 .menu li {
@@ -98,7 +124,6 @@ box-shadow: 2px 2px 10px #ccc;
 
 .menu li:hover {
     background-color: #f2f2f2;
-    color: #333;
 }
 
 .menu a {
@@ -109,6 +134,28 @@ box-shadow: 2px 2px 10px #ccc;
 .social-links a {
     margin-left: 10px;
 }
+
+#aboutme {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#aboutme:hover {
+    background-color: limegreen;
+}  
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+  
+.course {
+    padding: 20px;
+    text-align: center;
+} 
   
 #top-btn {
     position: fixed;
@@ -119,7 +166,7 @@ box-shadow: 2px 2px 10px #ccc;
     /* Place the button 20px from the right of the screen */
     display: none;
     /* Initially hide the button */
-    background-color: #3498db;
+    background-color: black;
     /* Set the background color of the button */
     color: white;
     /* Set the text color of the button */
@@ -136,10 +183,10 @@ box-shadow: 2px 2px 10px #ccc;
 }
 
 #top-btn:hover {
-    background-color: rgb(0, 0, 0);
+    background-color: limegreen;
+    color: black
     /* Change the background color when hovering */
 }
-
 
 .experience-section,
 .projects-section,
@@ -151,13 +198,13 @@ box-shadow: 2px 2px 10px #ccc;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f1f1f1;
+    background-color: white;
     /* Add background color to the section */
     padding: 2em;
     /* Add padding to the section */
     border-radius: 5px;
     /* Add rounded corners to the section */
-    box-shadow: 0px 0px 10px #ccc;
+    box-shadow: 0px 0px 10px white;
     /* Add subtle shadow effect to the section */
     transition: all 0.3s ease-in;
     transform: translateY(0);
@@ -203,10 +250,10 @@ box-shadow: 2px 2px 10px #ccc;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f1f1f1;
+    background-color: white;
     padding: 2em;
     border-radius: 5px;
-    box-shadow: 0px 0px 10px #ccc;
+    box-shadow: 0px 0px 10px white;
     text-align: center;
 }
 
@@ -239,7 +286,7 @@ box-shadow: 2px 2px 10px #ccc;
 .projects-section:hover,
 .classes-section:hover,
 .about-section:hover {
-    background-color: #f1f1f1;
+    background-color: white;
     transform: translateY(-5px);
-    box-shadow: 0px 0px 10px #ccc;
+    box-shadow: 0px 0px 10px white;
 }
