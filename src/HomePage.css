@@ -28,6 +28,7 @@ html {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 50px;
 }  
 
 .project img:hover {
@@ -62,6 +63,7 @@ html {
     width: 100%;
     height: 200px;
     object-fit: cover;
+    border-radius: 50px;
 }  
 
 .experience img:hover {
