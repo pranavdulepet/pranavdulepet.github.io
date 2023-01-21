@@ -68,6 +68,7 @@ function HomePage() {
               <img src={collegero} alt="Project 1" />
               </a>
               <h3>CollegeRO</h3>
+              <a id="aboutme" href="https://dbknews.com/2022/03/06/umd-student-creates-app-to-help-students-find-research-opportunities/" target="_blank">(Ft. in The Diamondback, UMD's newspaper)</a>
               <p><strong>Skills: </strong>Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics</p>
             </div>
             <div class="project">
