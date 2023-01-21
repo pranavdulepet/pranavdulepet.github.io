@@ -43,7 +43,7 @@ function HomePage() {
         </div>
         <div class="menu">
           <ul>
-            <ol><a href="#about-section">About Me</a></ol>
+            <ol><a href="#about-section">About</a></ol>
             <ol><a href="#experience-section">Experience</a></ol>
             <ol><a href="#projects-section">Projects</a></ol>
             <ol><a href="#classes-section">Classes</a></ol>
@@ -54,7 +54,7 @@ function HomePage() {
       <div className="main-container">
         <button id="top-btn" onClick={topFunction}>Back to top</button>
         <div id="about-section" className="about-section">
-          <h3>About Me</h3>
+          <h3>About</h3>
           <p>As a <a id="aboutme" href="https://github.com/pranavdulepet" target="_blank">computer science student</a> at <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">the University of Maryland - College Park</a>, I am passionate about using technology to tackle everyday problems. 
             My experience in a variety of fields within computer science, from app development to machine learning, has given me a unique perspective on how technology can be used to create innovative solutions. 
             I am particularly interested in the <a id="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can be used together to drive progress and make a real impact. 
