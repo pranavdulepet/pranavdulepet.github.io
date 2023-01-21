@@ -44,8 +44,8 @@ function HomePage() {
         <div class="menu">
           <ul>
             <ol><a href="#about-section">About</a></ol>
-            <ol><a href="#experience-section">Experience</a></ol>
             <ol><a href="#projects-section">Projects</a></ol>
+            <ol><a href="#experience-section">Experience</a></ol>
             <ol><a href="#classes-section">Classes</a></ol>
             <ol><a href="#contact-section">Contact</a></ol>
           </ul>
@@ -128,6 +128,7 @@ function HomePage() {
                   <a href="https://www.capitalone.com/" target="_blank">
                   <img src={capitalone} alt="Capital One"/>
                   </a>
+                  <h3>Capital One</h3>
                   <p>01/23 - present</p>
                   <p>Technology Incubator program, Spring 2023</p>
                   <p><strong>Skills: </strong>_</p>
@@ -137,6 +138,7 @@ function HomePage() {
                   <a href="https://www.evozyne.com/" target="_blank">
                   <img src={evozyne} alt="Evozyne"/>
                   </a>
+                  <h3>Evozyne</h3>
                   <p>06/22 - 08/22</p>
                   <p>I researched and applied SMT solvers to model the gene cloning process. 
                     I used Pandas, Matplotlib, and Seaborn to analzye and vizualize ways to improve the model by comparing the performance of differnt algorithms.
@@ -149,6 +151,7 @@ function HomePage() {
                   <a href="https://hack4impact.org/" target="_blank">
                   <img src={h4i} alt="Hack4Impact"/>
                   </a>
+                  <h3>Hack4Impact</h3>
                   <p>09/21 - present</p>
                   <p>As a Tech Lead for two semesters, I was a liason between the software engineers and the project managers.
                     I assigned and completed tasks accoring to client requirements and wrote documenation before handing off code to the client. 
