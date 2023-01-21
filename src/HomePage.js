@@ -54,14 +54,14 @@ function HomePage() {
       <div className="main-container">
         <button id="top-btn" onClick={topFunction}>Back to top</button>
         <div id="about-section" className="about-section">
-          <h3>About</h3>
+          <h2>About</h2>
           <p>As a <a id="aboutme" href="https://github.com/pranavdulepet" target="_blank">computer science student</a> at <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">the University of Maryland - College Park</a>, I am passionate about using technology to tackle everyday problems. 
             My experience in a variety of fields within computer science, from app development to machine learning, has given me a unique perspective on how technology can be used to create innovative solutions. 
             I am particularly interested in the <a id="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can be used together to drive progress and make a real impact. 
             I am constantly seeking new opportunities to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.</p>
         </div>
         <div id="projects-section" className="projects-section">
-          <h3>Projects</h3>
+          <h2>Projects</h2>
           <div class="project-container">
             <div class="project">
             <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank">
@@ -116,11 +116,11 @@ function HomePage() {
 
         </div>
         <div id="experience-section" className="experience-section">
-          <h3>Experience</h3>
+          <h2>Experience</h2>
                 <div class="resume-download">
               <a id="aboutme" href={resume} download>Download Resume</a>
           </div>
-          <h2>Industry Experience</h2>
+          <h3>Industry Experience</h3>
           <div class="industry-experience">
               <div class="experience">
                   <h3>Incoming SWE Intern</h3>
@@ -156,13 +156,13 @@ function HomePage() {
                   <p><strong>Skills: </strong>React.js, React Native, Node.js, Firebase</p>
               </div>
               </div>
-              <h2>Academic Experience</h2>
+              <h3>Academic Experience</h3>
               <div class="academic-experience">
                   <div class="experience">
                       <h3>Research Assistant</h3>
                       <h3>Univerity of Maryland - College Park</h3>
                       <p>07/21 - 08/22</p>
-                      <p>I worked with Python, OpenWPM, and AWS EC2 to collect, parse, and analyze web privacy data to identify trends and correlations in how third-party web trackers follow users’ movements and collect personal data.
+                      <p>I was a part of the web privacy research group under Professor Ido Sivan-Sevilla. I worked with Python, OpenWPM, and AWS EC2 to collect, parse, and analyze web privacy data to identify trends and correlations in how third-party web trackers follow users’ movements and collect personal data.
                         We complied our work to present at the 3rd annual Applications of Contextual Integrity Symposium at the University of Chicago. </p>
                         <p><strong>Skills: </strong>Python, Amazon Web Services (AWS), SQL</p>
                   </div>
@@ -181,23 +181,23 @@ function HomePage() {
               </div>
         </div>
         <div id="classes-section" className="classes-section">
-          <h3>Classes</h3>
+          <h2>Classes</h2>
           <div class="course-grid">
-            <div class="course">CMSC351<br/>Algorithms </div>
-            <div class="course">CMSC330<br/>Organization of Programming Languages</div>
-            <div class="course">BMGT438A<br/>Applied Quantitative Analysis</div>
-            <div class="course">FIRE120, 198, 298<br/>Machine Learning Research (FIRE program)</div>
-            <div class="course">CMSC216<br/>Introduction to Computer Systems</div>
-            <div class="course">CMSC250<br/>Discrete Structures</div>
-            <div class="course">CMSC132<br/>Object Oriented Programming II</div>
-            <div class="course">MATH240<br/>Linear Algebra</div>
-            <div class="course">STAT400<br/>Applied Statistics & Probability I</div>
-            <div class="course">BMGT190H<br/>Introduction to Design and Quality</div>
-            <div class="course">CMSC131<br/>Object Oriented Programming I</div>
+            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC351</a><br/>Algorithms </div>
+            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC330</a><br/>Organization of Programming Languages</div>
+            <div class="course"><a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank">BMGT438A</a><br/>Applied Quantitative Analysis</div>
+            <div class="course"><a id="aboutme" href="https://www.fire.umd.edu/" target="_blank">FIRE120, 198, 298</a><br/>Machine Learning Research (FIRE program)</div>
+            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/fall2022/cmsc216/" target="_blank">CMSC216</a><br/>Introduction to Computer Systems</div>
+            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/spring2022/cmsc250-010X/" target="_blank">CMSC250</a><br/>Discrete Structures</div>
+            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/spring2022/cmsc132-010X-040X/" target="_blank">CMSC132</a><br/>Object Oriented Programming II</div>
+            <div class="course"><a id="aboutme" href="https://www-math.umd.edu/offered-courses/372-math-240-introduction-to-linear-algebra.html" target="_blank">MATH240</a><br/>Linear Algebra</div>
+            <div class="course"><a id="aboutme" href="https://www-math.umd.edu/offered-courses/412-stat-400-applied-probability-and-statistics-i.html" target="_blank">STAT400</a><br/>Applied Statistics & Probability I</div>
+            <div class="course"><a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank">BMGT190H</a><br/>Introduction to Design and Quality</div>
+            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/fall2021/cmsc131-01XX-03XX" target="_blank">CMSC131</a><br/>Object Oriented Programming I</div>
           </div>
         </div>
         <div id="contact-section" className="contact-section">
-          <h3>Contact</h3>
+          <h2>Contact</h2>
           <div class="contact-info">
             <div class="phone-number">
               <p>925-997-0461</p>

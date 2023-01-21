@@ -184,7 +184,6 @@ html {
 
 #top-btn:hover {
     background-color: limegreen;
-    color: black
     /* Change the background color when hovering */
 }
 
@@ -215,6 +214,18 @@ html {
 .classes-section h3,
 .about-section h3 {
     font-size: 1.5em;
+    /* Increase the font size of the heading */
+    font-weight: bold;
+    /* Add bold effect to the heading */
+    margin-bottom: 1em;
+    /* Add space between heading and list */
+}
+
+.experience-section h2,
+.projects-section h2,
+.classes-section h2,
+.about-section h2 {
+    font-size: 2em;
     /* Increase the font size of the heading */
     font-weight: bold;
     /* Add bold effect to the heading */
@@ -257,8 +268,8 @@ html {
     text-align: center;
 }
 
-.contact-section h3 {
-    font-size: 1.5em;
+.contact-section h2 {
+    font-size: 2em;
 
     font-weight: bold;
     margin-bottom: 1em;
