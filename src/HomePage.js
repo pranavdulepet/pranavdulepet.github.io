@@ -1,92 +1,13 @@
 import React from 'react';
 import './HomePage.css';
+import collegero from './images/collegero-logo.jpg';
+import aura from './images/aura-logo.png';
+import github from './images/github-logo.png';
+import signstoleads from './images/signstoleads-logo.png';
+import thingsnearme from './images/thingsnearme-logo.jpg';
+import umdnext from './images/umdnext-logo.png';
 
 function HomePage() {
-
-  let slides = document.querySelectorAll('.slide');
-  let currentSlide = 0;
-  let prevBtn = document.querySelector('.prev');
-  let nextBtn = document.querySelector('.next');
-
-  prevBtn.addEventListener('click', function () {
-    goToSlide(currentSlide - 1);
-  });
-
-  nextBtn.addEventListener('click', function () {
-    goToSlide(currentSlide + 1);
-  });
-
-  function goToSlide(n) {
-    // Remove the current-slide class from the current slide
-    slides[currentSlide].classList.remove('current-slide');
-
-    // Update the current slide index
-    currentSlide = (n + slides.length) % slides.length;
-
-    // Add the current-slide class to the new slide
-    slides[currentSlide].classList.add('current-slide');
-  }
-
-  // Show the first slide
-  slides[currentSlide].classList.add('current-slide');
-
-  const experience_content = [
-    { jobTitle: 'Incoming Software Engineer Intern', company: 'Capital One', companyLogo: 'cap-one.png', startDate: '01/2023', endDate: 'Present', description: 'Technology Incubator Program (Spring 2023)' },
-    { jobTitle: 'Software Engineer Intern', company: 'Evozyne', companyLogo: 'evozyne.png', startDate: '06/2022', endDate: '08/2022', description: 'Worked on researching and implementing Satisfiability Modulo Theories (SMT) to the gene cloning process. Visualized the current process to determine ways to improve it using Seaborn and Matplotlib.' },
-    { jobTitle: 'Software Engineer', company: 'Hack4Impact', companyLogo: 'h4i.png', startDate: '09/2021', endDate: 'Present', description: 'Tech Lead at the University of Maryland chapter for two semesters, Software Engineer for the National Engineering Committee from September 2021 to January 2023' },
-    // other experience
-  ];
-
-  const experienceSection = document.getElementById('experience-list-industry');
-  experienceSection.innerHTML = '';
-
-  for (let i = 0; i < experience_content.length; i++) {
-    const company = experience_content[i].company;
-    const jobTitle = experience_content[i].jobTitle;
-    const companyLogo = experience_content[i].companyLogo;
-    const startDate = experience_content[i].startDate;
-    const endDate = experience_content[i].endDate;
-    const description = experience_content[i].description;
-
-    experienceSection.innerHTML += `
-      <div class="experience-item">
-        <img src="${companyLogo}" alt="${company} logo">
-        <div class="experience-info">
-          <h3>${jobTitle} at ${company}</h3>
-          <p>${startDate} - ${endDate}</p>
-          <p>${description}</p>
-        </div>
-      </div>
-    `;
-  }
-
-  const experience_content_academic = [
-    { positionTitle: 'Research Assistant', group: 'the University of Maryland', startDate: '07/2021', endDate: '08/2022', description: 'Conducted web privacy research under Professor Ido Sivan-Sevilla' },
-    { positionTitle: 'Student Researcher', group: 'the University of Maryland', startDate: '11/2021', endDate: '12/2022', description: 'Conducted ML research under Dr. Raymond Tu and the First-Year Innovation and Research Experience (FIRE) program' },
-    // other experience
-  ];
-
-  const experienceSectionAcademic = document.getElementById('experience-list-academic');
-  experienceSectionAcademic.innerHTML = '';
-
-  for (let i = 0; i < experience_content_academic.length; i++) {
-    const group = experience_content_academic[i].group;
-    const positionTitle = experience_content_academic[i].positionTitle;
-    const startDate = experience_content_academic[i].startDate;
-    const endDate = experience_content_academic[i].endDate;
-    const description = experience_content_academic[i].description;
-
-    experienceSectionAcademic.innerHTML += `
-      <div class="experience-item">
-        <div class="experience-info">
-          <h3>${positionTitle} at ${group}</h3>
-          <p>${startDate} - ${endDate}</p>
-          <p>${description}</p>
-        </div>
-      </div>
-    `;
-  }
-
 
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function () { scrollFunction() };
@@ -109,17 +30,20 @@ function HomePage() {
 
   return (
     <div>
+      <head>
+      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+      </head>
       <div class="header">
         <div class="name">
-          <h1>Pranav Dulepet</h1>
+          <h1>Pranav<br/> Dulepet</h1>
         </div>
         <div class="menu">
           <ul>
-            <li><a href="#about-section">About Me</a></li>
-            <li><a href="#experience-section">Experience</a></li>
-            <li><a href="#projects-section">Projects</a></li>
-            <li><a href="#classes-section">Classes</a></li>
-            <li><a href="#contact-section">Contact</a></li>
+            <ol><a href="#about-section">About Me</a></ol>
+            <ol><a href="#experience-section">Experience</a></ol>
+            <ol><a href="#projects-section">Projects</a></ol>
+            <ol><a href="#classes-section">Classes</a></ol>
+            <ol><a href="#contact-section">Contact</a></ol>
           </ul>
         </div>
       </div>
@@ -131,49 +55,81 @@ function HomePage() {
         </div>
         <div id="projects-section" className="projects-section">
           <h3>Projects</h3>
-          <div class="slider-container">
-            <div class="slider-wrapper">
-              <div class="slide">
-                <img src="project1.png" alt="Project 1"></img>
-                <h3>Project 1</h3>
-                <p>A short description of the project.</p>
-                <a href="#">View Project</a>
-                <a href="#">View Code</a>
-              </div>
-              <div class="slide">
-                <img src="project2.png" alt="Project 2"></img>
-                <h3>Project 2</h3>
-                <p>A short description of the project.</p>
-                <a href="#">View Project</a>
-                <a href="#">View Code</a>
-              </div>
-
+          <div class="project-container">
+            <div class="project">
+            <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank">
+              <img src={collegero} alt="Project 1" />
+              </a>
+              <h3>CollegeRO</h3>
+              <p><strong>Skills: </strong>Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics</p>
             </div>
-            <button class="prev">prev</button>
-            <button class="next">next</button>
+            <div class="project">
+            <a href="https://github.com/umd-fire-coml/2022-t1-convolutional" target="_blank">
+              <img src={github} alt="Project 2" />
+              </a>
+              <h3>Music Recommender</h3>
+              <p><strong>Skills: </strong>TensorFlow, Keras, K-Nearest Neighbors, Triplet Loss, Python, Google Colab, GitHub</p>
+            </div>
+            <div class="project">
+            <a href="https://github.com/pranavdulepet/umd-next/blob/main/umd-amzn-design-challenge.pdf" target="_blank">
+              <img src={umdnext} alt="Project 3" />
+              </a>
+              <h3>UMDNext</h3>
+              <p><strong>Skills: </strong>Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX</p>
+            </div>
+            <div class="project">
+            <a href="https://github.com/pranavdulepet/legalai" target="_blank">
+              <img src={github} alt="Project 4" />
+              </a>
+              <h3>LegalAI</h3>
+              <p><strong>Skills: </strong>scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank</p>
+            </div>
+            <div class="project">
+            <a href="https://apps.apple.com/us/app/things-near-me/id1506053357?ls=1" target="_blank">
+              <img src={thingsnearme} alt="Project 5" />
+              </a>
+              <h3>Things Near Me</h3>
+              <p><strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase</p>
+            </div>
+            <div class="project">
+            <a href="https://github.com/pranavdulepet/open_house_sign.git" target="_blank">
+              <img src={signstoleads} alt="Project 6" />
+              </a>
+              <h3>Signs To Leads</h3>
+              <p><strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase</p>
+            </div>
+            <div class="project">
+            <a href="https://devpost.com/software/aura-obgpw7" target="_blank">
+              <img src={aura} alt="Project 7" />
+              </a>
+              <h3>Aura</h3>
+              <p><strong>Skills: </strong>Full-Stack iOS Development, NLP Libraries, Google Cloud, GitHub</p>
+            </div>
           </div>
+
         </div>
         <div id="experience-section" className="experience-section">
           <h3>Experience</h3>
-          <h2>Industry</h2>
-          <div id="experience-list-industry"></div>
-          <h2>Academic</h2>
-          <div id="experience-list-academic"></div>
         </div>
         <div id="classes-section" className="classes-section">
           <h3>Classes</h3>
-          <ul>
-            <li>Advanced React</li>
-            <li>Node.js for Beginners</li>
-          </ul>
         </div>
         <div id="contact-section" className="contact-section">
           <h3>Contact Me</h3>
-          <p>Email: john.doe@example.com</p>
-          <p>Phone: 555-555-5555</p>
-          <div className="social-links">
-            <a href="https://linkedin.com/in/johndoe">LinkedIn</a>
-            <a href="https://github.com/johndoe">GitHub</a>
+          <div class="contact-info">
+            <div class="phone-number">
+              <h3>Phone Number</h3>
+              <p>925-997-0461</p>
+            </div>
+            <div class="email">
+              <h3>Email</h3>
+              <a href="mailto:pdulepet@umd.edu" target="_blank">pdulepet@umd.edu</a>
+            </div>
+            <div class="social-links">
+              <h3>Social</h3>
+              <a href="https://www.linkedin.com/in/pranavdulepet" target="_blank">LinkedIn</a>
+              <a href="https://github.com/pranavdulepet" target="_blank">GitHub</a>
+            </div>
           </div>
         </div>
       </div>
