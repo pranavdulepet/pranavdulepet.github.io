@@ -1,6 +1,6 @@
 {
-  "homepage": "http://pranavdulepet.github.io/personal-website",
-  "name": "personal-website",
+  "homepage": "http://pranavdulepet.github.io",
+  "name": "pranavdulepet.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
