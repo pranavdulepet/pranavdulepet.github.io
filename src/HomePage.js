@@ -10,6 +10,7 @@ import resume from './images/pranav-dulepet-resume-24.pdf';
 import capitalone from './images/capitalone-logo.png';
 import evozyne from './images/evozyne-logo.png';
 import h4i from './images/h4i-logo.jpeg';
+import Articles from "./ArticleComponent";
 
 function HomePage() {
 
@@ -46,6 +47,7 @@ function HomePage() {
             <ol><a href="#about-section">About</a></ol>
             <ol><a href="#projects-section">Projects</a></ol>
             <ol><a href="#experience-section">Experience</a></ol>
+            <ol><a href="#articles-section">Articles</a></ol>
             <ol><a href="#classes-section">Classes</a></ol>
             <ol><a href="#contact-section">Contact</a></ol>
           </ul>
@@ -114,7 +116,6 @@ function HomePage() {
               <p><strong>Skills: </strong>Full-Stack iOS Development, NLP Libraries, Google Cloud, GitHub</p>
             </div>
           </div>
-
         </div>
         <div id="experience-section" className="experience-section">
           <h2>Experience</h2>
@@ -183,6 +184,12 @@ function HomePage() {
                       <p><strong>Skills: </strong>Python, TensorFlow, Keras</p>
                   </div>
               </div>
+        </div>
+        <div id="articles-section" className="articles-section">
+          <h2>Articles</h2>
+            <div>
+              <Articles/>
+            </div>
         </div>
         <div id="classes-section" className="classes-section">
           <h2>Classes</h2>
