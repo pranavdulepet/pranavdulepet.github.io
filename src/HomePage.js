@@ -12,7 +12,28 @@ import evozyne from './images/evozyne-logo.png';
 import h4i from './images/h4i-logo.jpeg';
 import Articles from "./ArticleComponent";
 
-function HomePage() {
+function HomePage() { 
+
+  const dot = document.getElementById("dot");
+
+  document.addEventListener("mousemove", (event) => {
+    dot.style.left = `${event.clientX}px`;
+    dot.style.top = `${event.clientY}px`;
+  });
+
+  document.addEventListener("mouseenter", () => {
+    document.addEventListener("mousemove", moveDot);
+  });
+  
+  document.addEventListener("mouseleave", () => {
+    document.removeEventListener("mousemove", moveDot);
+  });
+  
+  const moveDot = (event) => {
+    dot.style.left = `${event.clientX}px`;
+    dot.style.top = `${event.clientY}px`;
+  }
+  
 
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function () { scrollFunction() };
@@ -35,9 +56,6 @@ function HomePage() {
 
   return (
     <div>
-      <head>
-      <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
-      </head>
       <div class="header">
         <div class="name">
           <h1>Pranav<br/> Dulepet</h1>
