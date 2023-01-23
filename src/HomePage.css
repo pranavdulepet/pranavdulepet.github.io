@@ -90,6 +90,7 @@ html {
     text-align: left;
     white-space: pre-line;
     float: left;
+    padding-left: 20px;
 }
 
 .name :hover{
@@ -111,8 +112,10 @@ html {
 }
 
 .menu ol:hover {
-    color: limegreen;
-    border-bottom: 2px solid limegreen; /* add 2px solid black border at the bottom of the hovered <ol> elements */
+    border-bottom: 2px solid limegreen;
+    border-top: 2px solid limegreen;
+    border-left: 2px solid limegreen;
+    background: limegreen;
 }  
   
 .menu li {
@@ -132,6 +135,10 @@ html {
     text-decoration: none; /* remove underline */
     color: black; /* set text color to black */
 }  
+
+.menu a:hover{
+    color: white;
+}
 
 .social-links a {
     margin-left: 10px;
