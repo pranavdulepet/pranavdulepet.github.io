@@ -169,7 +169,7 @@ html {
     padding: 20px;
     text-align: center;
 } 
-  
+ 
 #top-btn {
     position: fixed;
     /* Position the button fixed on the screen */
@@ -193,6 +193,7 @@ html {
     /* Add padding to the button */
     border-radius: 10px;
     /* Add rounded edges to the button */
+    z-index: 999;
 }
 
 #top-btn:hover {
@@ -205,7 +206,7 @@ html {
 .classes-section,
 .articles-section,
 .about-section {
-    width: 75%;
+    width: 100%;
     /* Reduce the width by 1/4 */
     display: flex;
     flex-direction: column;

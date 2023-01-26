@@ -9,31 +9,11 @@ import umdnext from './images/umdnext-logo.png';
 import resume from './images/pranav-dulepet-resume-24.pdf';
 import capitalone from './images/capitalone-logo.png';
 import evozyne from './images/evozyne-logo.png';
-import h4i from './images/h4i-logo.jpeg';
+import h4i from './images/h4i-logo.png';
 import Articles from "./ArticleComponent";
+import Education from "./EducationComponent";
 
 function HomePage() { 
-
-  const dot = document.getElementById("dot");
-
-  document.addEventListener("mousemove", (event) => {
-    dot.style.left = `${event.clientX}px`;
-    dot.style.top = `${event.clientY}px`;
-  });
-
-  document.addEventListener("mouseenter", () => {
-    document.addEventListener("mousemove", moveDot);
-  });
-  
-  document.addEventListener("mouseleave", () => {
-    document.removeEventListener("mousemove", moveDot);
-  });
-  
-  const moveDot = (event) => {
-    dot.style.left = `${event.clientX}px`;
-    dot.style.top = `${event.clientY}px`;
-  }
-  
 
   // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function () { scrollFunction() };
@@ -66,8 +46,8 @@ function HomePage() {
             <ol><a href="#projects-section">Projects</a></ol>
             <ol><a href="#experience-section">Experience</a></ol>
             <ol><a href="#articles-section">Articles</a></ol>
-            <ol><a href="#classes-section">Classes</a></ol>
-            <ol><a href="#contact-section">Contact</a></ol>
+            <ol><a href="#classes-section">Education</a></ol>
+            <ol><a href="#contact-section">Contact & Resume</a></ol>
           </ul>
         </div>
       </div>
@@ -137,9 +117,6 @@ function HomePage() {
         </div>
         <div id="experience-section" className="experience-section">
           <h2>Experience</h2>
-                <div class="resume-download">
-              <a id="aboutme" href={resume} download>Download Resume</a>
-          </div>
           <h3>Industry Experience</h3>
           <div class="industry-experience">
               <div class="experience">
@@ -210,24 +187,15 @@ function HomePage() {
             </div>
         </div>
         <div id="classes-section" className="classes-section">
-          <h2>Classes</h2>
-          <div class="course-grid">
-            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC351</a><br/>Algorithms </div>
-            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC330</a><br/>Organization of Programming Languages</div>
-            <div class="course"><a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank">BMGT438A</a><br/>Applied Quantitative Analysis</div>
-            <div class="course"><a id="aboutme" href="https://www.fire.umd.edu/" target="_blank">FIRE120, 198, 298</a><br/>Machine Learning Research (FIRE program)</div>
-            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/fall2022/cmsc216/" target="_blank">CMSC216</a><br/>Introduction to Computer Systems</div>
-            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/spring2022/cmsc250-010X/" target="_blank">CMSC250</a><br/>Discrete Structures</div>
-            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/spring2022/cmsc132-010X-040X/" target="_blank">CMSC132</a><br/>Object Oriented Programming II</div>
-            <div class="course"><a id="aboutme" href="https://www-math.umd.edu/offered-courses/372-math-240-introduction-to-linear-algebra.html" target="_blank">MATH240</a><br/>Linear Algebra</div>
-            <div class="course"><a id="aboutme" href="https://www-math.umd.edu/offered-courses/412-stat-400-applied-probability-and-statistics-i.html" target="_blank">STAT400</a><br/>Applied Statistics & Probability I</div>
-            <div class="course"><a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank">BMGT190H</a><br/>Introduction to Design and Quality</div>
-            <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/fall2021/cmsc131-01XX-03XX" target="_blank">CMSC131</a><br/>Object Oriented Programming I</div>
-          </div>
+          <h2>Education</h2>
+          <Education/>
         </div>
         <div id="contact-section" className="contact-section">
-          <h2>Contact</h2>
+          <h2>Contact & Resume</h2>
           <div class="contact-info">
+          <div class="resume-download">
+              <a id="aboutme" href={resume} download>Download Resume</a>
+          </div>
             <div class="phone-number">
               <p>925-997-0461</p>
             </div>

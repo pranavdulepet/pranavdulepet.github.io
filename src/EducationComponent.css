@@ -1,0 +1,35 @@
+.school-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.school-button {
+    opacity: 0.3;
+    scale: 0.6;
+    width: 200%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+.school-button:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 10px #ccc;
+    border-radius: 50px;
+}
+
+.school-button.selected {
+    opacity: 1;
+}
+
+#aboutme {
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#aboutme:hover {
+    background-color: limegreen;
+}  
