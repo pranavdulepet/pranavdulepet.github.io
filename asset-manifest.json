@@ -1,23 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.22750fec.css",
-    "main.js": "/static/js/main.d9475ece.js",
+    "main.css": "/static/css/main.dd58ef9a.css",
+    "main.js": "/static/js/main.e1d7e984.js",
     "static/js/787.f16709d3.chunk.js": "/static/js/787.f16709d3.chunk.js",
+    "static/media/umd-logo.jpeg": "/static/media/umd-logo.9998a2bbf1619cd9d1df.jpeg",
     "static/media/umdnext-logo.png": "/static/media/umdnext-logo.170b52d171a7a3cc01a4.png",
     "static/media/signstoleads-logo.png": "/static/media/signstoleads-logo.1837659f6b3a3447a61f.png",
+    "static/media/ucb-logo.png": "/static/media/ucb-logo.2d6eff04ced868c01b31.png",
+    "static/media/pranav-dulepet-resume-24.pdf": "/static/media/pranav-dulepet-resume-24.760fe8ffc811b2e38cce.pdf",
     "static/media/aura-logo.png": "/static/media/aura-logo.e07a81f6b65a376fa023.png",
     "static/media/evozyne-logo.png": "/static/media/evozyne-logo.352bfeb73d0d988ef62c.png",
-    "static/media/pranav-dulepet-resume-24.pdf": "/static/media/pranav-dulepet-resume-24.50734eef04902b60fa02.pdf",
+    "static/media/quest-logo.png": "/static/media/quest-logo.bf3fe10ed63201b25977.png",
     "static/media/collegero-logo.jpg": "/static/media/collegero-logo.bc70bb0036a54761234d.jpg",
+    "static/media/umd-cs-logo.png": "/static/media/umd-cs-logo.d036c4692aac0372b674.png",
+    "static/media/foothill-logo.jpeg": "/static/media/foothill-logo.c75f3fa6a008c4b01c24.jpeg",
     "static/media/capitalone-logo.png": "/static/media/capitalone-logo.9f957785110bec1b35f8.png",
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
-    "main.22750fec.css.map": "/static/css/main.22750fec.css.map",
-    "main.d9475ece.js.map": "/static/js/main.d9475ece.js.map",
+    "main.dd58ef9a.css.map": "/static/css/main.dd58ef9a.css.map",
+    "main.e1d7e984.js.map": "/static/js/main.e1d7e984.js.map",
     "787.f16709d3.chunk.js.map": "/static/js/787.f16709d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22750fec.css",
-    "static/js/main.d9475ece.js"
+    "static/css/main.dd58ef9a.css",
+    "static/js/main.e1d7e984.js"
   ]
 }
