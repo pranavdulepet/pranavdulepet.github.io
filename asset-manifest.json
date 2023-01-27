@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.dd58ef9a.css",
+    "main.css": "/static/css/main.bbfbb9b0.css",
     "main.js": "/static/js/main.e1d7e984.js",
     "static/js/787.f16709d3.chunk.js": "/static/js/787.f16709d3.chunk.js",
     "static/media/umd-logo.jpeg": "/static/media/umd-logo.9998a2bbf1619cd9d1df.jpeg",
@@ -17,12 +17,12 @@
     "static/media/capitalone-logo.png": "/static/media/capitalone-logo.9f957785110bec1b35f8.png",
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
-    "main.dd58ef9a.css.map": "/static/css/main.dd58ef9a.css.map",
+    "main.bbfbb9b0.css.map": "/static/css/main.bbfbb9b0.css.map",
     "main.e1d7e984.js.map": "/static/js/main.e1d7e984.js.map",
     "787.f16709d3.chunk.js.map": "/static/js/787.f16709d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd58ef9a.css",
+    "static/css/main.bbfbb9b0.css",
     "static/js/main.e1d7e984.js"
   ]
 }
