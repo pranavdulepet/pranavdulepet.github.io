@@ -6,7 +6,7 @@ import github from './images/github-logo.png';
 import signstoleads from './images/signstoleads-logo.png';
 import thingsnearme from './images/thingsnearme-logo.jpg';
 import umdnext from './images/umdnext-logo.png';
-import resume from './images/pranav-dulepet-resume-24.pdf';
+import resume from './images/pranav_dulepet_resume.pdf';
 import capitalone from './images/capitalone-logo.png';
 import evozyne from './images/evozyne-logo.png';
 import h4i from './images/h4i-logo.png';
@@ -120,14 +120,14 @@ function HomePage() {
           <h3>Industry Experience</h3>
           <div class="industry-experience">
               <div class="experience">
-                  <h3>Incoming SWE Intern</h3>
+                  <h3>SWE Intern</h3>
                   <a href="https://www.capitalone.com/" target="_blank">
                   <img src={capitalone} alt="Capital One"/>
                   </a>
                   <h3>Capital One</h3>
                   <p>01/23 - present</p>
-                  <p>Technology Incubator program, Spring 2023</p>
-                  <p><strong>Skills: </strong>_</p>
+                  <p>Enterprise Graph Services</p>
+                  <p><strong>Skills: </strong>Python, PySpark, Node2Vec, Graph Machine Learning</p>
               </div>
               <div class="experience">
                   <h3>SWE Intern</h3>
