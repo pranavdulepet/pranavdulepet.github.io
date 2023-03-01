@@ -72,6 +72,20 @@ function HomePage() {
               <p><strong>Skills: </strong>Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics</p>
             </div>
             <div class="project">
+            <a href="https://github.com/pranavdulepet/aerial-object-detection" target="_blank">
+              <img src={github} alt="Project 1" />
+              </a>
+              <h3>Aerial Object Detection</h3>
+              <p><strong>Skills: </strong>Python, YOLOv5, PyTorch, Google Colab, Matplotlib</p>
+            </div>
+            <div class="project">
+            <a href="https://github.com/pranavdulepet/legalai" target="_blank">
+              <img src={github} alt="Project 4" />
+              </a>
+              <h3>LegalAI</h3>
+              <p><strong>Skills: </strong>scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank</p>
+            </div>
+            <div class="project">
             <a href="https://github.com/umd-fire-coml/2022-t1-convolutional" target="_blank">
               <img src={github} alt="Project 2" />
               </a>
@@ -84,13 +98,6 @@ function HomePage() {
               </a>
               <h3>UMDNext</h3>
               <p><strong>Skills: </strong>Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX</p>
-            </div>
-            <div class="project">
-            <a href="https://github.com/pranavdulepet/legalai" target="_blank">
-              <img src={github} alt="Project 4" />
-              </a>
-              <h3>LegalAI</h3>
-              <p><strong>Skills: </strong>scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank</p>
             </div>
             <div class="project">
             <a href="https://apps.apple.com/us/app/things-near-me/id1506053357?ls=1" target="_blank">
@@ -159,8 +166,15 @@ function HomePage() {
               <h3>Academic Experience</h3>
               <div class="academic-experience">
                   <div class="experience">
-                      <h3>Research Assistant</h3>
-                      <h3>Univerity of Maryland - College Park</h3>
+                      <h3>Undergraduate Researcher</h3>
+                      <h3>Univerity of Maryland - College Park (PIRL)</h3>
+                      <p>02/23 - present</p>
+                      <p>LiDAR research in the <a id="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a id="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
+                        <p><strong>Skills: </strong>Swift, ARKit 6</p>
+                  </div>
+                  <div class="experience">
+                      <h3>Undergraduate Researcher</h3>
+                      <h3>Univerity of Maryland - College Park (iSchool)</h3>
                       <p>07/21 - 08/22</p>
                       <p>I was a part of the web privacy research group under Professor Ido Sivan-Sevilla. I worked with Python, OpenWPM, and AWS EC2 to collect, parse, and analyze web privacy data to identify trends and correlations in how third-party web trackers follow users’ movements and collect personal data.
                         We complied our work to present at the 3rd annual Applications of Contextual Integrity Symposium at the University of Chicago. </p>
