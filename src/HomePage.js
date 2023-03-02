@@ -45,8 +45,8 @@ function HomePage() {
             <ol><a href="#about-section">About</a></ol>
             <ol><a href="#projects-section">Projects</a></ol>
             <ol><a href="#experience-section">Experience</a></ol>
-            <ol><a href="#articles-section">Articles</a></ol>
             <ol><a href="#classes-section">Education</a></ol>
+            <ol><a href="#articles-section">Articles</a></ol>
             <ol><a href="#contact-section">Contact & Resume</a></ol>
           </ul>
         </div>
@@ -194,15 +194,15 @@ function HomePage() {
                   </div>
               </div>
         </div>
+        <div id="classes-section" className="classes-section">
+          <h2>Education</h2>
+          <Education/>
+        </div>
         <div id="articles-section" className="articles-section">
           <h2>Articles</h2>
             <div>
               <Articles/>
             </div>
-        </div>
-        <div id="classes-section" className="classes-section">
-          <h2>Education</h2>
-          <Education/>
         </div>
         <div id="contact-section" className="contact-section">
           <h2>Contact & Resume</h2>
