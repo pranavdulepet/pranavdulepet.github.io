@@ -3,11 +3,15 @@ import './HomePage.css';
 import collegero from './images/collegero-logo.jpg';
 import aura from './images/aura-logo.png';
 import github from './images/github-logo.png';
+import aerial from './images/aerial-image.png';
+import legalai from './images/legalai-image.png';
+import musicrec from './images/music-image.png';
 import signstoleads from './images/signstoleads-logo.png';
 import thingsnearme from './images/thingsnearme-logo.jpg';
 import umdnext from './images/umdnext-logo.png';
 import resume from './images/pranav_dulepet_resume.pdf';
 import capitalone from './images/capitalone-logo.png';
+import fidelity from './images/fidelity-logo.png';
 import evozyne from './images/evozyne-logo.png';
 import h4i from './images/h4i-logo.png';
 import Articles from "./ArticleComponent";
@@ -57,7 +61,8 @@ function HomePage() {
           <h2>About</h2>
           <p>As a <a id="aboutme" href="https://github.com/pranavdulepet" target="_blank">computer science student</a> at <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">the University of Maryland - College Park</a>, I am passionate about using technology to tackle everyday problems. 
             My experience in a variety of fields within computer science, from app development to machine learning, has given me a unique perspective on how technology can be used to create innovative solutions. 
-            I am particularly interested in the <a id="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can be used together to drive progress and make a real impact. 
+            I am particularly interested in a wide range of applications of <a id="aboutme" href="https://cfar.umd.edu/" target="_blank">computer vision</a> and <a id="aboutme" href="https://github.com/pranavdulepet/legalai" target="_blank">natural language processing</a> including Generative AI and Autonomous Robots.
+            I have also developed an interest in the <a id="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can be used together to drive progress and make a real impact. 
             I am constantly seeking new opportunities to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.</p>
         </div>
         <div id="projects-section" className="projects-section">
@@ -73,31 +78,33 @@ function HomePage() {
             </div>
             <div class="project">
             <a href="https://github.com/pranavdulepet/aerial-object-detection" target="_blank">
-              <img src={github} alt="Project 1" />
+              <img src={aerial} alt="Project 1" />
               </a>
               <h3>Aerial Object Detection</h3>
+              <a id="aboutme" href="https://www.marksz.org/hackweek/" target="_blank">(1st Place in the Northrop Grumman Innovation Challenge)</a>
               <p><strong>Skills: </strong>Python, YOLOv5, PyTorch, Google Colab, Matplotlib</p>
             </div>
             <div class="project">
             <a href="https://github.com/pranavdulepet/legalai" target="_blank">
-              <img src={github} alt="Project 4" />
+              <img src={legalai} alt="Project 4" />
               </a>
               <h3>LegalAI</h3>
               <p><strong>Skills: </strong>scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank</p>
-            </div>
-            <div class="project">
-            <a href="https://github.com/umd-fire-coml/2022-t1-convolutional" target="_blank">
-              <img src={github} alt="Project 2" />
-              </a>
-              <h3>Music Recommender</h3>
-              <p><strong>Skills: </strong>TensorFlow, Keras, K-Nearest Neighbors, Triplet Loss, Python, Google Colab, GitHub</p>
             </div>
             <div class="project">
             <a href="https://github.com/pranavdulepet/umd-next/blob/main/umd-amzn-design-challenge.pdf" target="_blank">
               <img src={umdnext} alt="Project 3" />
               </a>
               <h3>UMDNext</h3>
+              <a id="aboutme" href="https://sites.google.com/umd.edu/amazondesignchallenge/home" target="_blank">(2nd Place in the Amazon-UMD Product Design Challenge)</a>
               <p><strong>Skills: </strong>Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX</p>
+            </div>
+            <div class="project">
+            <a href="https://github.com/umd-fire-coml/2022-t1-convolutional" target="_blank">
+              <img src={musicrec} alt="Project 2" />
+              </a>
+              <h3>Music Recommender</h3>
+              <p><strong>Skills: </strong>TensorFlow, Keras, K-Nearest Neighbors, Triplet Loss, Python, Google Colab, GitHub</p>
             </div>
             <div class="project">
             <a href="https://apps.apple.com/us/app/things-near-me/id1506053357?ls=1" target="_blank">
@@ -127,6 +134,16 @@ function HomePage() {
           <h3>Industry Experience</h3>
           <div class="industry-experience">
               <div class="experience">
+                  <h3>Incoming SWE Intern</h3>
+                  <a href="https://www.fidelity.com/" target="_blank">
+                  <img src={fidelity} alt="Fidelity"/>
+                  </a>
+                  <h3>Fidelity Investments</h3>
+                  <p>06/23 - present</p>
+                  <p>Mobile Engineering Team</p>
+                  <p><strong>Skills: </strong>_</p>
+              </div>
+              <div class="experience">
                   <h3>SWE Intern</h3>
                   <a href="https://www.capitalone.com/" target="_blank">
                   <img src={capitalone} alt="Capital One"/>
@@ -149,6 +166,7 @@ function HomePage() {
                   </p>
                   <p><strong>Skills: </strong>Python, Z3, Satisfiability Modulo Theories, Matplotlib, Seaborn, Pandas</p>
               </div>
+              <br></br>
               <div class="experience">
                   <h3>SWE/Tech Lead</h3>
                   <a href="https://hack4impact.org/" target="_blank">

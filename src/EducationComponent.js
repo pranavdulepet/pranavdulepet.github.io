@@ -49,7 +49,7 @@ class Education extends React.Component {
             <div className="class-list">
               {this.state.selectedButton === 'school1' && (
                 <ul>
-                    <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">B.S. in Comptuer Science, August 2021 - present</a>
+                    <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">B.S. in Comptuer Science - Machine Learning, August 2021 - present</a>
                   <div class="course-grid">
                     <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC351</a><br/>Algorithms </div>
                     <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC330</a><br/>Organization of Programming Languages</div>
@@ -77,7 +77,7 @@ class Education extends React.Component {
                     <a id="aboutme" href="https://www.berkeley.edu/" target="_blank">High School Dual-Enrollment, 2020</a>
                   <div class="course-grid">
                     <div class="course"><a id="aboutme" href="https://inst.eecs.berkeley.edu/~cs61a/su20/" target="_blank">COMPSCI61A</a><br/>Structures and Interpretation of Computer Programs</div>
-                    <div class="course"><a id="aboutme" href="https://classes.berkeley.edu/content/2020-summer-stat-c8-001-lec-001" target="_blank">STATC8</a><br/>Foudations of Data Science</div>
+                    <div class="course"><a id="aboutme" href="https://classes.berkeley.edu/content/2020-summer-stat-c8-001-lec-001" target="_blank">STATC8</a><br/>Foundations of Data Science</div>
                   </div>
                 </ul>
               )}
