@@ -13,6 +13,7 @@ import resume from './images/pranav_dulepet_resume.pdf';
 import capitalone from './images/capitalone-logo.png';
 import fidelity from './images/fidelity-logo.png';
 import evozyne from './images/evozyne-logo.png';
+import arnoldai from './images/arnoldai-logo.png';
 import h4i from './images/h4i-logo.png';
 import Articles from "./ArticleComponent";
 import Education from "./EducationComponent";
@@ -67,6 +68,13 @@ function HomePage() {
         </div>
         <div id="projects-section" className="projects-section">
           <h2>Projects</h2>
+          <div class="project">
+            <a href="http://arnoldaiapp.com/" target="_blank">
+              <img src={arnoldai} alt="Project 1" />
+              </a>
+              <h3>ArnoldAI</h3>
+              <p><strong>Skills: </strong>Python, Large Language Models, React, Express</p>
+            </div>
           <div class="project-container">
             <div class="project">
             <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank">
@@ -149,9 +157,11 @@ function HomePage() {
                   <img src={capitalone} alt="Capital One"/>
                   </a>
                   <h3>Capital One</h3>
-                  <p>01/23 - present</p>
-                  <p>Enterprise Graph Services</p>
-                  <p><strong>Skills: </strong>Python, PySpark, Node2Vec, Graph Machine Learning</p>
+                  <p>01/23 - 05/23</p>
+                  <p>I implemented a similarity search framework to use on financial graph embeddings as part of the Enterprise Graph Services team.
+                    I used compared and benchmarked NMSLIB and ANNOY on samples of up to 5 million in size with high-dimensionality.
+                  </p>
+                  <p><strong>Skills: </strong>Python, NMSLIB, ANNOY, scikit-learn, GloVe, Graph Machine Learning</p>
               </div>
               <div class="experience">
                   <h3>SWE Intern</h3>
@@ -187,8 +197,10 @@ function HomePage() {
                       <h3>Undergraduate Researcher</h3>
                       <h3>Univerity of Maryland - College Park (PIRL)</h3>
                       <p>02/23 - present</p>
-                      <p>LiDAR research in the <a id="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a id="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
-                        <p><strong>Skills: </strong>Swift, ARKit 6</p>
+                      <p>Developed iOS app using LiDAR scanner to create 3D representations of rooms and extract features.
+                        Used to capture Room Impulse Responses to then use differentiable acoustics to learn acoustic coefficients.
+                        Working on building upon NeRF with the scanner and modifying deep learning models.<a id="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a id="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
+                        <p><strong>Skills: </strong>Swift, ARKit 6, Python, PyTorch</p>
                   </div>
                   <div class="experience">
                       <h3>Undergraduate Researcher</h3>
