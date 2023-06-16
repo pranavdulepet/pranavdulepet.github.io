@@ -44,6 +44,7 @@ function HomePage() {
       <div class="header">
         <div class="name">
           <h1>Pranav<br/> Dulepet</h1>
+          <p className="bio">CS @ UMD • SWE Intern @ Fidelity • Undergraduate Researcher @ PIRL</p>
         </div>
         <div class="menu">
           <ul>
@@ -60,14 +61,15 @@ function HomePage() {
         <button id="top-btn" onClick={topFunction}>Back to top</button>
         <div id="about-section" className="about-section">
           <h2>About</h2>
-          <p>As a <a id="aboutme" href="https://github.com/pranavdulepet" target="_blank">computer science student</a> at <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">the University of Maryland - College Park</a>, I am passionate about using technology to tackle everyday problems. 
+          <p>As a <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank">computer science student</a> at <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank">the University of Maryland - College Park</a>, I am passionate about using technology to tackle everyday problems. 
             My experience in a variety of fields within computer science, from app development to machine learning, has given me a unique perspective on how technology can be used to create innovative solutions. 
-            I am particularly interested in a wide range of applications of <a id="aboutme" href="https://cfar.umd.edu/" target="_blank">computer vision</a> and <a id="aboutme" href="https://github.com/pranavdulepet/legalai" target="_blank">natural language processing</a> including Generative AI and Autonomous Robots.
-            I have also developed an interest in the <a id="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can be used together to drive progress and make a real impact. 
+            I am particularly interested in a wide range of applications of <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">computer vision</a> and <a className="aboutme" href="https://github.com/pranavdulepet/legalai" target="_blank">natural language processing</a> including Generative AI and Autonomous Robots.
+            I have also developed an interest in the <a className="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can be used together to drive progress and make a real impact. 
             I am constantly seeking new opportunities to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.</p>
         </div>
         <div id="projects-section" className="projects-section">
           <h2>Projects</h2>
+          <div class="project-container">
           <div class="project">
             <a href="http://arnoldaiapp.com/" target="_blank">
               <img src={arnoldai} alt="Project 1" />
@@ -75,13 +77,12 @@ function HomePage() {
               <h3>ArnoldAI</h3>
               <p><strong>Skills: </strong>Python, Large Language Models, React, Express</p>
             </div>
-          <div class="project-container">
             <div class="project">
             <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank">
               <img src={collegero} alt="Project 1" />
               </a>
               <h3>CollegeRO</h3>
-              <a id="aboutme" href="https://dbknews.com/2022/03/06/umd-student-creates-app-to-help-students-find-research-opportunities/" target="_blank">(Ft. in The Diamondback, UMD's newspaper)</a>
+              <a className="aboutme" href="https://dbknews.com/2022/03/06/umd-student-creates-app-to-help-students-find-research-opportunities/" target="_blank">(Ft. in The Diamondback, UMD's newspaper)</a>
               <p><strong>Skills: </strong>Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics</p>
             </div>
             <div class="project">
@@ -89,7 +90,7 @@ function HomePage() {
               <img src={aerial} alt="Project 1" />
               </a>
               <h3>Aerial Object Detection</h3>
-              <a id="aboutme" href="https://www.marksz.org/hackweek/" target="_blank">(1st Place in the Northrop Grumman Innovation Challenge)</a>
+              <a className="aboutme" href="https://www.marksz.org/hackweek/" target="_blank">(1st Place in the Northrop Grumman Innovation Challenge)</a>
               <p><strong>Skills: </strong>Python, YOLOv5, PyTorch, Google Colab, Matplotlib</p>
             </div>
             <div class="project">
@@ -104,7 +105,7 @@ function HomePage() {
               <img src={umdnext} alt="Project 3" />
               </a>
               <h3>UMDNext</h3>
-              <a id="aboutme" href="https://sites.google.com/umd.edu/amazondesignchallenge/home" target="_blank">(2nd Place in the Amazon-UMD Product Design Challenge)</a>
+              <a className="aboutme" href="https://sites.google.com/umd.edu/amazondesignchallenge/home" target="_blank">(2nd Place in the Amazon-UMD Product Design Challenge)</a>
               <p><strong>Skills: </strong>Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX</p>
             </div>
             <div class="project">
@@ -148,8 +149,8 @@ function HomePage() {
                   </a>
                   <h3>Fidelity Investments</h3>
                   <p>06/23 - present</p>
-                  <p>Mobile Engineering Team</p>
-                  <p><strong>Skills: </strong>_</p>
+                  <p>Building recommendation engine for internal social network and personalization features</p>
+                  <p><strong>Skills: </strong>Python, TensorFlow, Transformer architecture, Swift</p>
               </div>
               <div class="experience">
                   <h3>SWE Intern</h3>
@@ -172,7 +173,7 @@ function HomePage() {
                   <p>06/22 - 08/22</p>
                   <p>I researched and applied SMT solvers to model the gene cloning process. 
                     I used Pandas, Matplotlib, and Seaborn to analzye and vizualize ways to improve the model by comparing the performance of differnt algorithms.
-                    Here is an article I wrote with more information: <a id="aboutme" href="https://medium.com/@pdulepet/smt-in-computational-biology-dccf006eb397" target="_blank">link</a>.
+                    Here is an article I wrote with more information: <a className="aboutme" href="https://medium.com/@pdulepet/smt-in-computational-biology-dccf006eb397" target="_blank">link</a>.
                   </p>
                   <p><strong>Skills: </strong>Python, Z3, Satisfiability Modulo Theories, Matplotlib, Seaborn, Pandas</p>
               </div>
@@ -199,7 +200,7 @@ function HomePage() {
                       <p>02/23 - present</p>
                       <p>Developed iOS app using LiDAR scanner to create 3D representations of rooms and extract features.
                         Used to capture Room Impulse Responses to then use differentiable acoustics to learn acoustic coefficients.
-                        Working on building upon NeRF with the scanner and modifying deep learning models.<a id="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a id="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
+                        Working on building upon NeRF with the scanner and modifying deep learning models.<a className="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
                         <p><strong>Skills: </strong>Swift, ARKit 6, Python, PyTorch</p>
                   </div>
                   <div class="experience">
@@ -238,17 +239,17 @@ function HomePage() {
           <h2>Contact & Resume</h2>
           <div class="contact-info">
           <div class="resume-download">
-              <a id="aboutme" href={resume} download>Download Resume</a>
+              <a className="aboutme" href={resume} download>Download Resume</a>
           </div>
             <div class="phone-number">
               <p>925-997-0461</p>
             </div>
             <div class="email">
-              <a id="aboutme" href="mailto:pdulepet@umd.edu" target="_blank">pdulepet@umd.edu</a>
+              <a className="aboutme" href="mailto:pdulepet@umd.edu" target="_blank">pdulepet@umd.edu</a>
             </div>
             <div class="social-links">
-              <a id="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank">linkedin</a>
-              <a id="aboutme" href="https://github.com/pranavdulepet" target="_blank">github</a>
+              <a className="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank">linkedin</a>
+              <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank">github</a>
             </div>
           </div>
         </div>

@@ -49,7 +49,7 @@ class Education extends React.Component {
             <div className="class-list">
               {this.state.selectedButton === 'school1' && (
                 <ul>
-                    <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">B.S. in Comptuer Science - Machine Learning, August 2021 - present</a>
+                    <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">B.S. (Honors) in Comptuer Science - Machine Learning, August 2021 - present</a>
                   <div class="course-grid">
                     <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC351</a><br/>Algorithms </div>
                     <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC330</a><br/>Organization of Programming Languages</div>
