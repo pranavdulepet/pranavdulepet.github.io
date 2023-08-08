@@ -44,7 +44,7 @@ function HomePage() {
       <div class="header">
         <div class="name">
           <h1>Pranav<br/> Dulepet</h1>
-          <p className="bio">CS @ UMD • SWE Intern @ Fidelity • Undergraduate Researcher @ PIRL</p>
+          <p className="bio">CS @ UMD • AI Research @ UMIACS • Applied Quantitative Analysis TA </p>
         </div>
         <div class="menu">
           <ul>
@@ -75,7 +75,7 @@ function HomePage() {
               <img src={arnoldai} alt="Project 1" />
               </a>
               <h3>ArnoldAI</h3>
-              <p><strong>Skills: </strong>Python, Large Language Models, React, Express</p>
+              <p><strong>Skills: </strong>Python, Large Language Models, React, Express, Swift</p>
             </div>
             <div class="project">
             <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank">
@@ -143,14 +143,15 @@ function HomePage() {
           <h3>Industry Experience</h3>
           <div class="industry-experience">
               <div class="experience">
-                  <h3>Incoming SWE Intern</h3>
+                  <h3>SWE Intern</h3>
                   <a href="https://www.fidelity.com/" target="_blank">
                   <img src={fidelity} alt="Fidelity"/>
                   </a>
                   <h3>Fidelity Investments</h3>
                   <p>06/23 - present</p>
-                  <p>Building recommendation engine for internal social network and personalization features</p>
-                  <p><strong>Skills: </strong>Python, TensorFlow, Transformer architecture, Swift</p>
+                  <p>I built a LinkedIn-like MyNetwork recommendation engine for internal Fidelity employees. 
+                    I used a graph neural network approach to create a hybrid recomendation model with reinforcement learning.</p>
+                  <p><strong>Skills: </strong>Python, PyTorch, DGL, Graph Neural Networks, Swift, NetworkX, Neo4j</p>
               </div>
               <div class="experience">
                   <h3>SWE Intern</h3>
@@ -161,6 +162,7 @@ function HomePage() {
                   <p>01/23 - 05/23</p>
                   <p>I implemented a similarity search framework to use on financial graph embeddings as part of the Enterprise Graph Services team.
                     I used compared and benchmarked NMSLIB and ANNOY on samples of up to 5 million in size with high-dimensionality.
+                    Here is an article I wrote with more information: <a className="aboutme" href="https://medium.com/@pdulepet/machine-learning-in-finance-similarity-search-2affaa2b5d56" target="_blank">link</a>.
                   </p>
                   <p><strong>Skills: </strong>Python, NMSLIB, ANNOY, scikit-learn, GloVe, Graph Machine Learning</p>
               </div>
@@ -194,13 +196,20 @@ function HomePage() {
               </div>
               <h3>Academic Experience</h3>
               <div class="academic-experience">
+                <div class="experience">
+                      <h3>Undergraduate Researcher</h3>
+                      <h3>Univerity of Maryland - College Park (CLIP)</h3>
+                      <p>08/23 - present</p>
+                      <p>Working on understanding effects of sentence embeddings. <a className="aboutme" href="http://www.umiacs.umd.edu/labs/clip/" target="_blank">Computational Linguistics and Information Processing Lab</a> in <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
+                        <p><strong>Skills: </strong>Python</p>
+                  </div>
                   <div class="experience">
                       <h3>Undergraduate Researcher</h3>
                       <h3>Univerity of Maryland - College Park (PIRL)</h3>
                       <p>02/23 - present</p>
                       <p>Developed iOS app using LiDAR scanner to create 3D representations of rooms and extract features.
                         Used to capture Room Impulse Responses to then use differentiable acoustics to learn acoustic coefficients.
-                        Working on building upon NeRF with the scanner and modifying deep learning models.<a className="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
+                        Working on building upon NeRF with the scanner and modifying deep learning models. <a className="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
                         <p><strong>Skills: </strong>Swift, ARKit 6, Python, PyTorch</p>
                   </div>
                   <div class="experience">

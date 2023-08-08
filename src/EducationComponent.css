@@ -25,11 +25,11 @@
 
 #aboutme {
     text-decoration: none;
-    color: white;
-    background-color: black;
+    color: black;
+    background-color: coral;
     font-family: 'Open Sans', sans-serif;
 }
 
 #aboutme:hover {
-    background-color: limegreen;
+    background-color: lightcoral;
 }  

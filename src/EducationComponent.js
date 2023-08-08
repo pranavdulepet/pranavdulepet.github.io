@@ -51,6 +51,10 @@ class Education extends React.Component {
                 <ul>
                     <a id="aboutme" href="https://www.cs.umd.edu/" target="_blank">B.S. (Honors) in Comptuer Science - Machine Learning, August 2021 - present</a>
                   <div class="course-grid">
+                    <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC396H</a><br/>Undergraduate Honors Seminar</div>
+                    <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC426</a><br/>Computer Vision</div>
+                    <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC320</a><br/>Data Science</div>
+                    <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC420</a><br/>Advanced Data Structures </div>
                     <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC351</a><br/>Algorithms </div>
                     <div class="course"><a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank">CMSC330</a><br/>Organization of Programming Languages</div>
                     <div class="course"><a id="aboutme" href="https://www.fire.umd.edu/" target="_blank">FIRE120, 198, 298</a><br/>Machine Learning Research (FIRE program)</div>
@@ -67,6 +71,7 @@ class Education extends React.Component {
                 <ul>
                     <a id="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">Honors Program at UMD, August 2022 - present</a>
                   <div class="course-grid">
+                    <div class="course"><a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank">BMGT390H</a><br/>Designing Innovative Systems</div>
                     <div class="course"><a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank">BMGT438A</a><br/>Applied Quantitative Analysis</div>
                     <div class="course"><a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank">BMGT190H</a><br/>Introduction to Design and Quality</div>
                   </div>
