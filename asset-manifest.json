@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.b7e47045.css",
-    "main.js": "/static/js/main.45396978.js",
+    "main.css": "/static/css/main.61059dd9.css",
+    "main.js": "/static/js/main.33d799ca.js",
     "static/js/787.f16709d3.chunk.js": "/static/js/787.f16709d3.chunk.js",
     "static/media/aerial-image.png": "/static/media/aerial-image.24874ee838173add6e8f.png",
     "static/media/umd-logo.jpeg": "/static/media/umd-logo.9998a2bbf1619cd9d1df.jpeg",
@@ -10,7 +10,7 @@
     "static/media/signstoleads-logo.png": "/static/media/signstoleads-logo.1837659f6b3a3447a61f.png",
     "static/media/legalai-image.png": "/static/media/legalai-image.efadd71aeaa8ca51865e.png",
     "static/media/ucb-logo.png": "/static/media/ucb-logo.2d6eff04ced868c01b31.png",
-    "static/media/pranav_dulepet_resume.pdf": "/static/media/pranav_dulepet_resume.41e1647d03e98e24bc60.pdf",
+    "static/media/pranav_dulepet_resume.pdf": "/static/media/pranav_dulepet_resume.48195baed347e7f9cbc7.pdf",
     "static/media/aura-logo.png": "/static/media/aura-logo.e07a81f6b65a376fa023.png",
     "static/media/evozyne-logo.png": "/static/media/evozyne-logo.352bfeb73d0d988ef62c.png",
     "static/media/quest-logo.png": "/static/media/quest-logo.bf3fe10ed63201b25977.png",
@@ -22,12 +22,12 @@
     "static/media/arnoldai-logo.png": "/static/media/arnoldai-logo.125c627315c558a4e0cb.png",
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
-    "main.b7e47045.css.map": "/static/css/main.b7e47045.css.map",
-    "main.45396978.js.map": "/static/js/main.45396978.js.map",
+    "main.61059dd9.css.map": "/static/css/main.61059dd9.css.map",
+    "main.33d799ca.js.map": "/static/js/main.33d799ca.js.map",
     "787.f16709d3.chunk.js.map": "/static/js/787.f16709d3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7e47045.css",
-    "static/js/main.45396978.js"
+    "static/css/main.61059dd9.css",
+    "static/js/main.33d799ca.js"
   ]
 }
