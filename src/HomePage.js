@@ -75,7 +75,7 @@ function HomePage() {
               <img src={agora} alt="Project 1" />
               </a>
               <h3>agora</h3>
-              <p><strong>Skills: </strong>Python, Large Language Models, React, Express, Swift</p>
+              <p><strong>Skills: </strong>Python, Large Language Models, React, Express, Swift, MongoDB</p>
             </div>
             <div class="project">
             <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank">
