@@ -13,7 +13,7 @@ import resume from './images/pranav_dulepet_resume.pdf';
 import capitalone from './images/capitalone-logo.png';
 import fidelity from './images/fidelity-logo.png';
 import evozyne from './images/evozyne-logo.png';
-import arnoldai from './images/arnoldai-logo.png';
+import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
 import Articles from "./ArticleComponent";
 import Education from "./EducationComponent";
@@ -71,10 +71,10 @@ function HomePage() {
           <h2>Projects</h2>
           <div class="project-container">
           <div class="project">
-            <a href="http://arnoldaiapp.com/" target="_blank">
-              <img src={arnoldai} alt="Project 1" />
+            <a href="http://agoraai.app/" target="_blank">
+              <img src={agora} alt="Project 1" />
               </a>
-              <h3>ArnoldAI</h3>
+              <h3>agora</h3>
               <p><strong>Skills: </strong>Python, Large Language Models, React, Express, Swift</p>
             </div>
             <div class="project">
