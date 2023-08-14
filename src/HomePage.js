@@ -71,7 +71,7 @@ function HomePage() {
           <h2>Projects</h2>
           <div class="project-container">
           <div class="project">
-            <a href="http://agoraai.app/" target="_blank">
+            <a href="http://www.agoraai.app/" target="_blank">
               <img src={agora} alt="Project 1" />
               </a>
               <h3>agora</h3>
