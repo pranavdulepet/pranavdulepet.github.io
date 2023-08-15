@@ -43,7 +43,7 @@ function HomePage() {
     <div>
       <div class="header">
         <div class="name">
-          <h1>Pranav<br/> Dulepet</h1>
+          <a href="https://www.linkedin.com/in/pranavdulepet" target="_blank"><h1>Pranav<br/> Dulepet</h1></a>
           <p className="bio">CS @ UMD • AI Research @ UMIACS • Applied Quantitative Analysis TA </p>
         </div>
         <div class="menu">
@@ -63,7 +63,7 @@ function HomePage() {
           <h2>About</h2>
           <p>As a <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank">computer science student</a> at <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank">the University of Maryland - College Park</a>, I am passionate about using technology to tackle everyday problems. 
             My experience in a variety of fields within computer science, from app development to machine learning, has given me a unique perspective on how technology can be used to create innovative solutions. 
-            I am particularly interested in a wide range of applications of <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">computer vision</a> and <a className="aboutme" href="https://github.com/pranavdulepet/legalai" target="_blank">natural language processing</a> including Generative AI and Autonomous Robots.
+            I am particularly interested in a wide range of applications of <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">computer vision</a> and <a className="aboutme" href="https://wiki.umiacs.umd.edu/clip/index.php/Main_Page" target="_blank">natural language processing</a> including Generative AI and Autonomous Robots.
             I have also developed an interest in the <a className="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank">intersection of technology and business</a>, and how they can be used together to drive progress and make a real impact. 
             I am constantly seeking new opportunities to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.</p>
         </div>
