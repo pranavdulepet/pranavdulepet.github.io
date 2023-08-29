@@ -148,9 +148,10 @@ function HomePage() {
                   <img src={fidelity} alt="Fidelity"/>
                   </a>
                   <h3>Fidelity Investments</h3>
-                  <p>06/23 - present</p>
+                  <p>06/23 - 08/23</p>
                   <p>I built a LinkedIn-like MyNetwork recommendation engine for internal Fidelity employees. 
-                    I used a graph neural network approach to create a hybrid recomendation model with reinforcement learning.</p>
+                    I used a graph neural network approach to create a hybrid recomendation model with reinforcement learning.
+                    Here is an article I wrote with more information: <a className="aboutme" href="https://medium.com/@pdulepet/enterprise-mynetwork-platform-c138f7e98537" target="_blank">link</a>.</p>
                   <p><strong>Skills: </strong>Python, PyTorch, DGL, Graph Neural Networks, Swift, NetworkX, Neo4j</p>
               </div>
               <div class="experience">
