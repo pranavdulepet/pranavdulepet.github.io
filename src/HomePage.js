@@ -41,12 +41,12 @@ function HomePage() {
 
   return (
     <div>
-      <div class="header">
-        <div class="name">
+      <div className="header">
+        <div className="name">
           <a href="https://www.linkedin.com/in/pranavdulepet" target="_blank"><h1>Pranav<br/> Dulepet</h1></a>
           <p className="bio">CS @ UMD • AI Research @ UMIACS • Applied Quantitative Analysis TA </p>
         </div>
-        <div class="menu">
+        <div className="menu">
           <ul>
             <ol><a href="#about-section">About</a></ol>
             <ol><a href="#projects-section">Projects</a></ol>
@@ -69,15 +69,15 @@ function HomePage() {
         </div>
         <div id="projects-section" className="projects-section">
           <h2>Projects</h2>
-          <div class="project-container">
-          <div class="project">
+          <div className="project-container">
+          <div className="project">
             <a href="http://www.agoraai.app/" target="_blank">
               <img src={agora} alt="Project 1" />
               </a>
               <h3>agora</h3>
               <p><strong>Skills: </strong>Python, Large Language Models, React, Express, Swift, MongoDB</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank">
               <img src={collegero} alt="Project 1" />
               </a>
@@ -85,7 +85,7 @@ function HomePage() {
               <a className="aboutme" href="https://dbknews.com/2022/03/06/umd-student-creates-app-to-help-students-find-research-opportunities/" target="_blank">(Ft. in The Diamondback, UMD's newspaper)</a>
               <p><strong>Skills: </strong>Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://github.com/pranavdulepet/aerial-object-detection" target="_blank">
               <img src={aerial} alt="Project 1" />
               </a>
@@ -93,14 +93,14 @@ function HomePage() {
               <a className="aboutme" href="https://www.marksz.org/hackweek/" target="_blank">(1st Place in the Northrop Grumman Innovation Challenge)</a>
               <p><strong>Skills: </strong>Python, YOLOv5, PyTorch, Google Colab, Matplotlib</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://github.com/pranavdulepet/legalai" target="_blank">
               <img src={legalai} alt="Project 4" />
               </a>
               <h3>LegalAI</h3>
               <p><strong>Skills: </strong>scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://github.com/pranavdulepet/umd-next/blob/main/umd-amzn-design-challenge.pdf" target="_blank">
               <img src={umdnext} alt="Project 3" />
               </a>
@@ -108,28 +108,28 @@ function HomePage() {
               <a className="aboutme" href="https://sites.google.com/umd.edu/amazondesignchallenge/home" target="_blank">(2nd Place in the Amazon-UMD Product Design Challenge)</a>
               <p><strong>Skills: </strong>Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://github.com/umd-fire-coml/2022-t1-convolutional" target="_blank">
               <img src={musicrec} alt="Project 2" />
               </a>
               <h3>Music Recommender</h3>
               <p><strong>Skills: </strong>TensorFlow, Keras, K-Nearest Neighbors, Triplet Loss, Python, Google Colab, GitHub</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://apps.apple.com/us/app/things-near-me/id1506053357?ls=1" target="_blank">
               <img src={thingsnearme} alt="Project 5" />
               </a>
               <h3>Things Near Me</h3>
               <p><strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://github.com/pranavdulepet/open_house_sign.git" target="_blank">
               <img src={signstoleads} alt="Project 6" />
               </a>
               <h3>Signs To Leads</h3>
               <p><strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase</p>
             </div>
-            <div class="project">
+            <div className="project">
             <a href="https://devpost.com/software/aura-obgpw7" target="_blank">
               <img src={aura} alt="Project 7" />
               </a>
@@ -141,8 +141,8 @@ function HomePage() {
         <div id="experience-section" className="experience-section">
           <h2>Experience</h2>
           <h3>Industry Experience</h3>
-          <div class="industry-experience">
-              <div class="experience">
+          <div className="industry-experience">
+              <div className="experience">
                   <h3>SWE Intern</h3>
                   <a href="https://www.fidelity.com/" target="_blank">
                   <img src={fidelity} alt="Fidelity"/>
@@ -154,7 +154,7 @@ function HomePage() {
                     Here is an article I wrote with more information: <a className="aboutme" href="https://medium.com/@pdulepet/enterprise-mynetwork-platform-c138f7e98537" target="_blank">link</a>.</p>
                   <p><strong>Skills: </strong>Python, PyTorch, DGL, Graph Neural Networks, Swift, NetworkX, Neo4j</p>
               </div>
-              <div class="experience">
+              <div className="experience">
                   <h3>SWE Intern</h3>
                   <a href="https://www.capitalone.com/" target="_blank">
                   <img src={capitalone} alt="Capital One"/>
@@ -163,11 +163,11 @@ function HomePage() {
                   <p>01/23 - 05/23</p>
                   <p>I implemented a similarity search framework to use on financial graph embeddings as part of the Enterprise Graph Services team.
                     I used compared and benchmarked NMSLIB and ANNOY on samples of up to 5 million in size with high-dimensionality.
-                    Here is an article I wrote with more information: <a className="aboutme" href="https://medium.com/@pdulepet/machine-learning-in-finance-similarity-search-2affaa2b5d56" target="_blank">link</a>.
+                    Here is an article I wrote with more information: <a className="aboutme" href="https://www.capitalone.com/tech/machine-learning/similarity-search-graph-embeddings/" target="_blank">link</a>.
                   </p>
                   <p><strong>Skills: </strong>Python, NMSLIB, ANNOY, scikit-learn, GloVe, Graph Machine Learning</p>
               </div>
-              <div class="experience">
+              <div className="experience">
                   <h3>SWE Intern</h3>
                   <a href="https://www.evozyne.com/" target="_blank">
                   <img src={evozyne} alt="Evozyne"/>
@@ -181,7 +181,7 @@ function HomePage() {
                   <p><strong>Skills: </strong>Python, Z3, Satisfiability Modulo Theories, Matplotlib, Seaborn, Pandas</p>
               </div>
               <br></br>
-              <div class="experience">
+              <div className="experience">
                   <h3>SWE/Tech Lead</h3>
                   <a href="https://hack4impact.org/" target="_blank">
                   <img src={h4i} alt="Hack4Impact"/>
@@ -196,15 +196,15 @@ function HomePage() {
               </div>
               </div>
               <h3>Academic Experience</h3>
-              <div class="academic-experience">
-                <div class="experience">
+              <div className="academic-experience">
+                <div className="experience">
                       <h3>Undergraduate Researcher</h3>
                       <h3>Univerity of Maryland - College Park (CLIP)</h3>
                       <p>08/23 - present</p>
-                      <p>Working on understanding effects of sentence embeddings. <a className="aboutme" href="http://www.umiacs.umd.edu/labs/clip/" target="_blank">Computational Linguistics and Information Processing Lab</a> in <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
+                      <p>Contributing to prompt survey paper. Focused on multimodal, evaluation, and Chain-of-Thought prompting techniques <a className="aboutme" href="http://www.umiacs.umd.edu/labs/clip/" target="_blank">Computational Linguistics and Information Processing Lab</a> in <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
                         <p><strong>Skills: </strong>Python</p>
                   </div>
-                  <div class="experience">
+                  <div className="experience">
                       <h3>Undergraduate Researcher</h3>
                       <h3>Univerity of Maryland - College Park (PIRL)</h3>
                       <p>02/23 - present</p>
@@ -213,7 +213,7 @@ function HomePage() {
                         Working on building upon NeRF with the scanner and modifying deep learning models. <a className="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank">Perceptual Interfaces and Reality Lab</a> in <a className="aboutme" href="https://cfar.umd.edu/" target="_blank">the CfAR</a>. </p>
                         <p><strong>Skills: </strong>Swift, ARKit 6, Python, PyTorch</p>
                   </div>
-                  <div class="experience">
+                  <div className="experience">
                       <h3>Undergraduate Researcher</h3>
                       <h3>Univerity of Maryland - College Park (iSchool)</h3>
                       <p>07/21 - 08/22</p>
@@ -221,7 +221,7 @@ function HomePage() {
                         We complied our work to present at the 3rd annual Applications of Contextual Integrity Symposium at the University of Chicago. </p>
                         <p><strong>Skills: </strong>Python, Amazon Web Services (AWS), SQL</p>
                   </div>
-                  <div class="experience">
+                  <div className="experience">
                       <h3>Student Researcher</h3>
                       <h3>Univerity of Maryland - College Park (FIRE Program)</h3>
                       <p>08/21 - 12/22</p>
@@ -239,25 +239,25 @@ function HomePage() {
           <h2>Education</h2>
           <Education/>
         </div>
-        <div id="articles-section" className="articles-section">
+        {/* <div id="articles-section" className="articles-section">
           <h2>Articles</h2>
             <div>
               <Articles/>
             </div>
-        </div>
+        </div> */}
         <div id="contact-section" className="contact-section">
           <h2>Contact & Resume</h2>
-          <div class="contact-info">
-          <div class="resume-download">
+          <div className="contact-info">
+          <div className="resume-download">
               <a className="aboutme" href={resume} download>Download Resume</a>
           </div>
-            <div class="phone-number">
+            <div className="phone-number">
               <p>925-997-0461</p>
             </div>
-            <div class="email">
+            <div className="email">
               <a className="aboutme" href="mailto:pdulepet@umd.edu" target="_blank">pdulepet@umd.edu</a>
             </div>
-            <div class="social-links">
+            <div className="social-links">
               <a className="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank">linkedin</a>
               <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank">github</a>
             </div>
