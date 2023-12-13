@@ -15,7 +15,7 @@ import fidelity from './images/fidelity-logo.png';
 import evozyne from './images/evozyne-logo.png';
 import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
-import Articles from "./ArticleComponent";
+// import Articles from "./ArticleComponent";
 import Education from "./EducationComponent";
 
 function HomePage() { 
@@ -52,7 +52,7 @@ function HomePage() {
             <ol><a href="#projects-section">Projects</a></ol>
             <ol><a href="#experience-section">Experience</a></ol>
             <ol><a href="#classes-section">Education</a></ol>
-            <ol><a href="#articles-section">Articles</a></ol>
+            {/* <ol><a href="#articles-section">Articles</a></ol> */}
             <ol><a href="#contact-section">Contact & Resume</a></ol>
           </ul>
         </div>
