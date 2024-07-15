@@ -79,6 +79,7 @@ const Footer = styled.footer`
   color: #aaa;
 `;
 
+
 const Home = () => {
   return (
     <Container>
