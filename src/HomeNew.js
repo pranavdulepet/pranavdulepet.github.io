@@ -86,7 +86,7 @@ const Home = () => {
         <ProfileImage src={pranav} alt="Profile" />
         <ProfileDetails>
           <Title>Pranav Dulepet</Title>
-          <Subtitle>Computer Science at UMD | Software (ML) at Amazon</Subtitle>
+          <Subtitle>Computer Science at UMD | Software Developer Intern (ML) at Amazon</Subtitle>
         </ProfileDetails>
       </Header>
       <Content>
