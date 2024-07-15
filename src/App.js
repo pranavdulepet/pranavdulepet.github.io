@@ -3,7 +3,7 @@ import Home from './HomeNew.js';
 
 function App() {
   return (
-    <div className="main-container">
+    <div className="App">
       <Home />
     </div>
   );
