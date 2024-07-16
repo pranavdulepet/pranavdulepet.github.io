@@ -20,7 +20,7 @@ import fidelity from './images/fidelity-logo.png';
 import evozyne from './images/evozyne-logo.png';
 import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
-import amazon from './images/amzn.jpeg';
+import amazon from './images/amazon.png';
 
 import pranav from './images/pranav-pfp.jpeg';
 
@@ -81,11 +81,11 @@ const Footer = styled.footer`
 const Home = () => {
   return (
     <Container>
-      <Header>
+      <Header className="header">
         <ProfileImage src={pranav} alt="Profile" />
         <ProfileDetails>
           <Title>Pranav Dulepet</Title>
-          <Subtitle>Computer Science @ UMD | Software Intern (ML) @ Amazon</Subtitle>
+          <Subtitle>Computer Science @ UMD | Software (ML) @ Amazon</Subtitle>
         </ProfileDetails>
       </Header>
       <Content>
@@ -94,10 +94,10 @@ const Home = () => {
             <Tab>About</Tab>
             <Tab>Projects</Tab>
             <Tab>Experience</Tab>
+            <Tab>Publications</Tab>
             <Tab>Education</Tab>
             {/* <Tab>Contact & Resume</Tab> */}
           </TabList>
-
           <TabPanel>
             <h3>About</h3>
             <p>
@@ -112,7 +112,7 @@ const Home = () => {
               , I am passionate about using technology to tackle everyday problems. My experience in a variety of fields within
               computer science, from app development to machine learning, has given me a unique perspective on how technology can be
               used to create innovative solutions. I am particularly interested in a wide range of applications, specifically involving{' '}
-              <a className="aboutme" href="http://www.umiacs.umd.edu/labs/pirl/" target="_blank" rel="noopener noreferrer">
+              <a className="aboutme" href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
                 deep learning
               </a>
               . I have also developed an interest in the{' '}
@@ -122,36 +122,7 @@ const Home = () => {
               , and how they can be used together to drive progress and make a real impact. I am constantly seeking new opportunities
               to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.
             </p>
-            <hr />
-            <div className="contact-info">
-              <div className="contact-item">
-                <p>Phone: 925-997-0461</p>
-              </div>
-              <div className="contact-item">
-                <p>
-                  Email:
-                  <a className="aboutme" href="mailto:pdulepet@umd.edu" target="_blank" rel="noopener noreferrer">
-                    pdulepet@umd.edu
-                  </a>
-                </p>
-              </div>
-              <div className="social-links">
-                <a className="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-                <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </div>
-            </div>
-            <div className="resume-download">
-              <a className="aboutme" href={resume} download>
-                Download Resume
-              </a>
-            </div>
           </TabPanel>
-
-
           <TabPanel>
             <h3>Projects</h3>
             <div className="project-container">
@@ -160,6 +131,14 @@ const Home = () => {
                   <img src={agora} alt="Project 1" />
                 </a>
                 <h3>agora</h3>
+                <a
+                  className="aboutme"
+                  href="https://www.agoraai.app/media"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  (Ft. by University of Maryland)
+                </a>
                 <p className="project">
                   <strong>Skills: </strong>Python, Large Language Models, React, Express, Swift, MongoDB
                 </p>
@@ -272,9 +251,9 @@ const Home = () => {
                       <img src={amazon} alt="Amazon" />
                     </a>
                     <h3>Amazon</h3>
-                    <p>06/24 - 08/24</p>
-                    <p>Alexa AI</p>
-                    <p><strong>Skills: </strong></p>
+                    <p>06/24 - present</p>
+                    <p>Alexa AI, generating personalized Routine recommendations</p>
+                    <p><strong>Skills: Python, Spark, AWS Bedrock, AWS SageMaker, Open Source LLMs</strong></p>
                   </div>
                   <div className="experience">
                     <h3>SWE Intern</h3>
@@ -302,7 +281,7 @@ const Home = () => {
                     </p>
                   </div>
                   <div className="experience">
-                    <h3>SWE Intern</h3>
+                    <h3>ML Intern</h3>
                     <a href="https://www.capitalone.com/" target="_blank" rel="noopener noreferrer">
                       <img src={capitalone} alt="Capital One" />
                     </a>
@@ -357,7 +336,7 @@ const Home = () => {
                       <img src={h4i} alt="Hack4Impact" />
                     </a>
                     <h3>Hack4Impact</h3>
-                    <p>09/21 - present</p>
+                    <p>09/21 - 05/23</p>
                     <p>
                       As a Tech Lead for two semesters, I was a liaison between the software engineers and the project managers. I
                       assigned and completed tasks according to client requirements and wrote documentation before handing off code to
@@ -393,6 +372,9 @@ const Home = () => {
                     <h3>University of Maryland - College Park (PIRL)</h3>
                     <p>02/23 - present</p>
                     <p>
+                      Contributing to a new method called FAST (Factorizable Attention for Speeding up Transformers) that improves
+                      transformer efficiency by reducing computational and memory complexity from quadratic to linear.
+                      <p> </p>
                       Developed iOS app using LiDAR scanner to create 3D representations of rooms and extract features. Used to capture
                       Room Impulse Responses to then use differentiable acoustics to learn acoustic coefficients. Working on building
                       upon NeRF with the scanner and modifying deep learning models.{' '}
@@ -476,39 +458,58 @@ const Home = () => {
             </Tabs>
           </TabPanel>
           <TabPanel>
+            <h3>Publications</h3>
+            <ul>
+              <li>
+                <a href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
+                  FAST: Factorizable Attention for Speeding up Transformers
+                </a>
+              </li>
+              <li>
+                <a href="https://arxiv.org/abs/2406.06608/" target="_blank" rel="noopener noreferrer">
+                  The Prompt Report: A Systematic Survey of Prompting Techniques
+                </a>
+              </li>
+              <li>
+                <a href="https://medium.com/@pdulepet" target="_blank" rel="noopener noreferrer">
+                  <strong>Medium Articles</strong>
+                </a>
+              </li>
+            </ul>
+          </TabPanel>
+          <TabPanel>
             <h3>Education</h3>
             <Education />
           </TabPanel>
-          {/* <TabPanel>
-            <h3>Contact & Resume</h3>
-            <div className="contact-info">
-              <div className="resume-download">
-                <a className="aboutme" href={resume} download>
-                  Download Resume
-                </a>
-              </div>
-              <div className="phone-number">
-                <p>925-997-0461</p>
-              </div>
-              <div className="email">
-                <a className="aboutme" href="mailto:pdulepet@umd.edu" target="_blank" rel="noopener noreferrer">
-                  pdulepet@umd.edu
-                </a>
-              </div>
-              <div className="social-links">
-                <a className="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-                <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-              </div>
-            </div>
-          </TabPanel> */}
         </Tabs>
       </Content>
+      <div className="contact-info">
+        <div className="contact-item">
+          <p>
+            <a className="aboutme" href="mailto:pdulepet@umd.edu" target="_blank" rel="noopener noreferrer">
+              pdulepet@umd.edu
+            </a>
+          </p>
+        </div>
+        <div className="contact-item">
+          <p>925-997-0461</p>
+        </div>
+        <div className="social-links">
+          <a className="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank" rel="noopener noreferrer">
+            LinkedIn
+          </a>
+          <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+        </div>
+      </div>
+      <div className="resume-download">
+        <a className="aboutme" href={resume} download>
+          Download Resume
+        </a>
+      </div>
       <Footer>© 2024 Pranav Dulepet</Footer>
-    </Container>
+    </Container >
   );
 };
 

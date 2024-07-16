@@ -9,7 +9,7 @@ class Education extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedButton: '',
+      selectedButton: 'school1',
     };
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
@@ -61,6 +61,27 @@ class Education extends React.Component {
                 B.S. (Honors) in Computer Science - Machine Learning, August 2021 - present
               </a>
               <div className="course-grid">
+                <div className="course">
+                  <a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank" rel="noopener noreferrer">
+                    CMSC472
+                  </a>
+                  <br />
+                  Intro to Deep Learning
+                </div>
+                <div className="course">
+                  <a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank" rel="noopener noreferrer">
+                    CMSC422
+                  </a>
+                  <br />
+                  Intro to Machine Learning
+                </div>
+                <div className="course">
+                  <a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank" rel="noopener noreferrer">
+                    CMSC499A
+                  </a>
+                  <br />
+                  Undergradute Research
+                </div>
                 <div className="course">
                   <a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank" rel="noopener noreferrer">
                     CMSC396H
@@ -161,6 +182,13 @@ class Education extends React.Component {
                 Honors Program at UMD, August 2022 - present
               </a>
               <div className="course-grid">
+                <div className="course">
+                  <a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank" rel="noopener noreferrer">
+                    BMGT490H
+                  </a>
+                  <br />
+                  Capstone Professional Practicum
+                </div>
                 <div className="course">
                   <a id="aboutme" href="https://www.rhsmith.umd.edu/quest/curriculum" target="_blank" rel="noopener noreferrer">
                     BMGT390H
