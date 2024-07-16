@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.9216da47.css",
-    "main.js": "/static/js/main.67c1ecd6.js",
+    "main.css": "/static/css/main.9fe3339c.css",
+    "main.js": "/static/js/main.7f333d30.js",
     "static/js/787.3a0c473b.chunk.js": "/static/js/787.3a0c473b.chunk.js",
     "static/media/IMG_8858.jpg": "/static/media/IMG_8858.2e272787e78d6b9c97e2.jpg",
     "static/media/aerial-image.png": "/static/media/aerial-image.24874ee838173add6e8f.png",
@@ -20,16 +20,16 @@
     "static/media/fidelity-logo.png": "/static/media/fidelity-logo.a9f7586a7010575cecd9.png",
     "static/media/umd-cs-logo.png": "/static/media/umd-cs-logo.d036c4692aac0372b674.png",
     "static/media/foothill-logo.jpeg": "/static/media/foothill-logo.c75f3fa6a008c4b01c24.jpeg",
+    "static/media/amazon.png": "/static/media/amazon.d6cbe98e30f3d8d413be.png",
     "static/media/capitalone-logo.png": "/static/media/capitalone-logo.9f957785110bec1b35f8.png",
-    "static/media/amzn.jpeg": "/static/media/amzn.9bc388ae4faf6bd9359d.jpeg",
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
-    "main.9216da47.css.map": "/static/css/main.9216da47.css.map",
-    "main.67c1ecd6.js.map": "/static/js/main.67c1ecd6.js.map",
+    "main.9fe3339c.css.map": "/static/css/main.9fe3339c.css.map",
+    "main.7f333d30.js.map": "/static/js/main.7f333d30.js.map",
     "787.3a0c473b.chunk.js.map": "/static/js/787.3a0c473b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9216da47.css",
-    "static/js/main.67c1ecd6.js"
+    "static/css/main.9fe3339c.css",
+    "static/js/main.7f333d30.js"
   ]
 }
