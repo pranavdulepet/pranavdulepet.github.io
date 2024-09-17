@@ -85,7 +85,7 @@ const Home = () => {
         <ProfileImage src={pranav} alt="Profile" />
         <ProfileDetails>
           <Title>Pranav Dulepet</Title>
-          <Subtitle>Computer Science @ UMD | Software (ML) @ Amazon</Subtitle>
+          <Subtitle>Computer Science @ UMD | LLM Research</Subtitle>
         </ProfileDetails>
       </Header>
       <Content>
@@ -121,6 +121,10 @@ const Home = () => {
               </a>
               , and how they can be used together to drive progress and make a real impact. I am constantly seeking new opportunities
               to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.
+            </p>
+            <h3>Current Interests</h3>
+            <p>
+              LLM explainability & applications
             </p>
           </TabPanel>
           <TabPanel>
@@ -251,9 +255,16 @@ const Home = () => {
                       <img src={amazon} alt="Amazon" />
                     </a>
                     <h3>Amazon</h3>
-                    <p>06/24 - present</p>
-                    <p>Alexa AI, generating personalized Routine recommendations</p>
-                    <p><strong>Skills: Python, Spark, AWS Bedrock, AWS SageMaker, Open Source LLMs</strong></p>
+                    <p>06/24 - 08/24</p>
+                    <p>Developed an end-to-end agentic LLM pipeline for generating personalized <a
+                      className="aboutme"
+                      href="https://www.amazon.com/alexa-routines/b?ie=UTF8&node=21442922011"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Alexa Routine
+                    </a> recommendations. Article outlining tools and experiments coming soon!</p>
+                    <p><strong>Skills: Python, Spark, AWS Bedrock, AWS SageMaker, Closed & Open Source LLMs</strong></p>
                   </div>
                   <div className="experience">
                     <h3>SWE Intern</h3>
@@ -429,7 +440,7 @@ const Home = () => {
                     <p>
                       I was a part of the web privacy research group under Professor Ido Sivan-Sevilla. I worked with Python, OpenWPM,
                       and AWS EC2 to collect, parse, and analyze web privacy data to identify trends and correlations in how third-party
-                      web trackers follow users’ movements and collect personal data. We compiled our work to present at the 3rd annual
+                      web trackers follow users' movements and collect personal data. We compiled our work to present at the 3rd annual
                       Applications of Contextual Integrity Symposium at the University of Chicago.
                     </p>
                     <p>
@@ -504,8 +515,8 @@ const Home = () => {
         </div>
       </div>
       <div className="resume-download">
-        <a className="aboutme" href={resume} download>
-          Download Resume
+        <a className="aboutme" href={resume} target="_blank" rel="noopener noreferrer">
+          View Resume
         </a>
       </div>
       <Footer>© 2024 Pranav Dulepet</Footer>
