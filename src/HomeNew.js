@@ -78,6 +78,21 @@ const Footer = styled.footer`
   color: #aaa;
 `;
 
+/* New Styled Components for Rounded Translucent Backgrounds */
+const AboutSection = styled.div`
+  background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+`;
+
+const CurrentInterestsSection = styled.div`
+  background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  border-radius: 15px;
+  padding: 20px;
+  margin-top: 10px;
+`;
+
 const Home = () => {
   return (
     <Container>
@@ -100,32 +115,38 @@ const Home = () => {
           </TabList>
           <TabPanel>
             <h3>About</h3>
-            <p>
-              As a{' '}
-              <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
-                computer science student
-              </a>{' '}
-              at{' '}
-              <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank" rel="noopener noreferrer">
-                the University of Maryland - College Park
-              </a>
-              , I am passionate about using technology to tackle everyday problems. My experience in a variety of fields within
-              computer science, from app development to machine learning, has given me a unique perspective on how technology can be
-              used to create innovative solutions. I am particularly interested in a wide range of applications, specifically involving{' '}
-              <a className="aboutme" href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
-                deep learning
-              </a>
-              . I have also developed an interest in the{' '}
-              <a className="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank" rel="noopener noreferrer">
-                intersection of technology and business
-              </a>
-              , and how they can be used together to drive progress and make a real impact. I am constantly seeking new opportunities
-              to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.
-            </p>
+            <AboutSection>
+              <p>
+                As a{' '}
+                <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
+                  computer science student
+                </a>{' '}
+                at{' '}
+                <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank" rel="noopener noreferrer">
+                  the University of Maryland - College Park
+                </a>
+                , I am passionate about using technology to tackle everyday problems. My experience in a variety of fields within
+                computer science, from app development to machine learning, has given me a unique perspective on how technology can be
+                used to create innovative solutions. I am particularly interested in a wide range of applications, specifically involving{' '}
+                <a className="aboutme" href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
+                  deep learning
+                </a>
+                . I have also developed an interest in the{' '}
+                <a className="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank" rel="noopener noreferrer">
+                  intersection of technology and business
+                </a>
+                , and how they can be used together to drive progress and make a real impact. I am constantly seeking new opportunities
+                to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.
+              </p>
+            </AboutSection>
             <h3>Current Interests</h3>
-            <p>
-              LLM explainability & applications
-            </p>
+            <CurrentInterestsSection>
+              <p>
+                • LLM explainability & applications
+                <br />
+                • AI Safety & Policy
+              </p>
+            </CurrentInterestsSection>
           </TabPanel>
           <TabPanel>
             <h3>Projects</h3>
@@ -134,7 +155,7 @@ const Home = () => {
                 <a href="http://www.agoraai.app/" target="_blank" rel="noopener noreferrer">
                   <img src={agora} alt="Project 1" />
                 </a>
-                <h3>agora</h3>
+                <h3>agora.</h3>
                 <a
                   className="aboutme"
                   href="https://www.agoraai.app/media"
