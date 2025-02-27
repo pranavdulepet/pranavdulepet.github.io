@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.9fe3339c.css",
-    "main.js": "/static/js/main.a23eec3c.js",
+    "main.js": "/static/js/main.730d9e9c.js",
     "static/js/787.3a0c473b.chunk.js": "/static/js/787.3a0c473b.chunk.js",
     "static/media/IMG_8858.jpg": "/static/media/IMG_8858.2e272787e78d6b9c97e2.jpg",
     "static/media/aerial-image.png": "/static/media/aerial-image.24874ee838173add6e8f.png",
     "static/media/umdnext-logo.png": "/static/media/umdnext-logo.170b52d171a7a3cc01a4.png",
-    "static/media/pranav_dulepet_cv_grad_apps.pdf": "/static/media/pranav_dulepet_cv_grad_apps.fbe1e249ad9b58c14b32.pdf",
     "static/media/music-image.png": "/static/media/music-image.037604fd161b9f76313c.png",
-    "static/media/pranav_dulepet_resume.pdf": "/static/media/pranav_dulepet_resume.0260958c992e45657b5c.pdf",
     "static/media/signstoleads-logo.png": "/static/media/signstoleads-logo.1837659f6b3a3447a61f.png",
+    "static/media/pranav_dulepet_cv_grad_apps.pdf": "/static/media/pranav_dulepet_cv_grad_apps.ca49ff5e13934535fe37.pdf",
+    "static/media/pranav_dulepet_resume.pdf": "/static/media/pranav_dulepet_resume.c553bd92f66b86f16195.pdf",
     "static/media/legalai-image.png": "/static/media/legalai-image.efadd71aeaa8ca51865e.png",
     "static/media/ucb-logo.png": "/static/media/ucb-logo.2d6eff04ced868c01b31.png",
     "static/media/agora-logo.png": "/static/media/agora-logo.05c6492366d6168d0b75.png",
@@ -26,11 +26,11 @@
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
     "main.9fe3339c.css.map": "/static/css/main.9fe3339c.css.map",
-    "main.a23eec3c.js.map": "/static/js/main.a23eec3c.js.map",
+    "main.730d9e9c.js.map": "/static/js/main.730d9e9c.js.map",
     "787.3a0c473b.chunk.js.map": "/static/js/787.3a0c473b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9fe3339c.css",
-    "static/js/main.a23eec3c.js"
+    "static/js/main.730d9e9c.js"
   ]
 }
