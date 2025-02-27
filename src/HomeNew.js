@@ -23,6 +23,7 @@ import h4i from './images/h4i-logo.png';
 import amazon from './images/amazon.png';
 
 import pranav from './images/pranav-pfp.jpeg';
+import cv from './images/pranav_dulepet_cv_grad_apps.pdf'; // Import the CV file
 
 const Container = styled.div`
   display: flex;
@@ -142,7 +143,7 @@ const Home = () => {
             <h3>Current Interests</h3>
             <CurrentInterestsSection>
               <p>
-                • LLM explainability & applications
+                • ML Systems, long-context LLMs
                 <br />
                 • AI Safety & Policy
               </p>
@@ -385,6 +386,27 @@ const Home = () => {
                 <h3>Research Experience</h3>
                 <div className="academic-experience">
                   <div className="experience">
+                    <h3>Technology Policy Fellow</h3>
+                    <h3>Paragon Policy Fellowship</h3>
+                    <p>09/24 - present</p>
+                    <p>
+                      I helped design a streamlined AI model approval process for the Santa Clara County Government, reducing redundant labor by
+                      consolidating three separate interviews into a centralized questionnaire. To support this process,
+                      I worked with two other fellows to implement an AI Usage Guidelines document that assists clients
+                      in accurately and comprehensively submitting GenAI applications.
+
+                      My team and I are currently working on creating a comprehensive AI dictionary and guidelines for Santa Clara County
+                      that we can use as a knowledge base for future downstream tasks such as a chatbot.
+
+                      <a className="aboutme" href="https://www.paragonfellowship.org" target="_blank" rel="noopener noreferrer">
+                        Paragon Policy Fellowship Website.
+                      </a>
+                    </p>
+                    <p>
+                      <strong>Skills: </strong>Literature Review, Policy Analysis
+                    </p>
+                  </div>
+                  <div className="experience">
                     <h3>Undergraduate Researcher</h3>
                     <h3>University of Maryland - College Park (GAMMA)</h3>
                     <p>01/24 - present</p>
@@ -518,8 +540,8 @@ const Home = () => {
       <div className="contact-info">
         <div className="contact-item">
           <p>
-            <a className="aboutme" href="mailto:pdulepet@umd.edu" target="_blank" rel="noopener noreferrer">
-              pdulepet@umd.edu
+            <a className="aboutme" href="mailto:ps.dulepet@gmail.com" target="_blank" rel="noopener noreferrer">
+              ps.dulepet@gmail.com
             </a>
           </p>
         </div>
@@ -538,6 +560,9 @@ const Home = () => {
       <div className="resume-download">
         <a className="aboutme" href={resume} target="_blank" rel="noopener noreferrer">
           View Resume
+        </a>
+        <a className="aboutme" href={cv} target="_blank" rel="noopener noreferrer">
+          View CV
         </a>
       </div>
       <Footer>© 2024 Pranav Dulepet</Footer>

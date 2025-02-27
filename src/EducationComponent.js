@@ -62,6 +62,20 @@ class Education extends React.Component {
               </a>
               <div className="course-grid">
                 <div className="course">
+                  <a id="aboutme" href="https://www.cs.umd.edu/class/spring2025/cmsc828g/" target="_blank" rel="noopener noreferrer">
+                    CMSC828G (Graduate level)
+                  </a>
+                  <br />
+                  Systems for ML
+                </div>
+                <div className="course">
+                  <a id="aboutme" href="https://www.cs.umd.edu/~miyyer/cmsc848o/index.html" target="_blank" rel="noopener noreferrer">
+                    CMSC848O (Graduate level)
+                  </a>
+                  <br />
+                  Long-Context LLMs
+                </div>
+                <div className="course">
                   <a id="aboutme" href="https://surrealyz.github.io/classes/llmsec-fall24/llmsec.html" target="_blank" rel="noopener noreferrer">
                     CMSC818I (Graduate level)
                   </a>
@@ -95,6 +109,13 @@ class Education extends React.Component {
                   </a>
                   <br />
                   Networks & Security
+                </div>
+                <div className="course">
+                  <a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank" rel="noopener noreferrer">
+                    CMSC434
+                  </a>
+                  <br />
+                  Human-Computer Interaction
                 </div>
                 <div className="course">
                   <a id="aboutme" href="https://www.cs.umd.edu/class/" target="_blank" rel="noopener noreferrer">
