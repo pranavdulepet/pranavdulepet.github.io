@@ -22,16 +22,19 @@ import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
 import amazon from './images/amazon.png';
 
-import pranav from './images/pranav-pfp.jpeg';
-import cv from './images/pranav_dulepet_cv_grad_apps.pdf'; // Import the CV file
+import pranav from './images/pranav-pfp.jpg';
+import cv from './images/pranav_dulepet_cv_grad_apps.pdf';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  max-width: 1000px;
+  padding: 40px;
+  max-width: 1200px;
   margin: auto;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 `;
 
 const Header = styled.header`
@@ -68,9 +71,10 @@ const Subtitle = styled.h2`
 
 const Content = styled.main`
   font-size: 1.1rem;
-  line-height: 1.6;
-  text-align: justify;
   width: 100%;
+  min-height: 600px;
+  position: relative;
+  overflow: hidden;
 `;
 
 const Footer = styled.footer`
@@ -81,10 +85,18 @@ const Footer = styled.footer`
 
 /* New Styled Components for Rounded Translucent Backgrounds */
 const AboutSection = styled.div`
-  background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
-  border-radius: 15px;
-  padding: 20px;
-  margin-bottom: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
 `;
 
 const CurrentInterestsSection = styled.div`
@@ -101,7 +113,7 @@ const Home = () => {
         <ProfileImage src={pranav} alt="Profile" />
         <ProfileDetails>
           <Title>Pranav Dulepet</Title>
-          <Subtitle>Computer Science @ UMD | LLM Research</Subtitle>
+          <Subtitle>Computer Science @ UMD | AI Research</Subtitle>
         </ProfileDetails>
       </Header>
       <Content>
@@ -117,7 +129,7 @@ const Home = () => {
           <TabPanel>
             <h3>About</h3>
             <AboutSection>
-              <p>
+              {/* <p>
                 As a{' '}
                 <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
                   computer science student
@@ -138,12 +150,28 @@ const Home = () => {
                 </a>
                 , and how they can be used together to drive progress and make a real impact. I am constantly seeking new opportunities
                 to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.
+              </p> */}
+              <p>
+                As a{' '}
+                <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
+                  computer science student
+                </a>{' '}
+                at{' '}
+                <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank" rel="noopener noreferrer">
+                  the University of Maryland - College Park
+                </a>
+                , I am passionate about using technology to tackle everyday problems. My experience in a variety of fields within
+                computer science, from app development to machine learning, has given me a unique perspective on how technology can be
+                used to create innovative solutions. I am particularly interested in a wide range of applications, specifically involving{' '}
+                <a className="aboutme" href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
+                  deep learning and AI</a> in the contexts of <a className="aboutme" href="https://www.paragonfellowship.org" target="_blank" rel="noopener noreferrer">policy</a>,
+                healthcare, and education. I am constantly seeking new opportunities to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.
               </p>
             </AboutSection>
             <h3>Current Interests</h3>
             <CurrentInterestsSection>
               <p>
-                • ML Systems, long-context LLMs
+                • ML Systems, Long-Context LLMs
                 <br />
                 • AI Safety & Policy
               </p>
@@ -409,9 +437,11 @@ const Home = () => {
                   <div className="experience">
                     <h3>Undergraduate Researcher</h3>
                     <h3>University of Maryland - College Park (GAMMA)</h3>
-                    <p>01/24 - present</p>
+                    <p>01/24 - 12/24</p>
                     <p>
-                      Researching consistent view video and image generation{' '}
+                      Researched consistent view video and image generation.{' '}
+                      Developed a pipeline for camera-controlled view synthesis using Stable Diffusion and Zero123++,
+                      extending the Hawkl framework for text-controlled aerial view synthesis.
                       <a className="aboutme" href="https://gamma.umd.edu" target="_blank" rel="noopener noreferrer">
                         Geometric Algorithms for Modeling, Motion and Animation Lab
                       </a>
@@ -513,23 +543,42 @@ const Home = () => {
           </TabPanel>
           <TabPanel>
             <h3>Publications</h3>
-            <ul>
-              <li>
-                <a href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
-                  FAST: Factorizable Attention for Speeding up Transformers
-                </a>
-              </li>
-              <li>
-                <a href="https://arxiv.org/abs/2406.06608/" target="_blank" rel="noopener noreferrer">
-                  The Prompt Report: A Systematic Survey of Prompting Techniques
-                </a>
-              </li>
-              <li>
-                <a href="https://medium.com/@pdulepet" target="_blank" rel="noopener noreferrer">
-                  <strong>Medium Articles</strong>
-                </a>
-              </li>
-            </ul>
+            <div className="publications">
+              <div className="publication">
+                <h4>Research Papers</h4>
+                <ul>
+                  <li>
+                    <a className="aboutme" href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
+                      FAST: Factorizable Attention for Speeding up Transformers
+                    </a>
+                    <p className="publication-details">
+                    </p>
+                  </li>
+                  <li>
+                    <a className="aboutme" href="https://arxiv.org/abs/2406.06608/" target="_blank" rel="noopener noreferrer">
+                      The Prompt Report: A Systematic Survey of Prompt Engineering Techniques
+                    </a>
+                    <p className="publication-details">
+                      Under Review for Nature Springer, Morgan & Claypool
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="publication">
+                <h4>Technical Writing</h4>
+                <ul>
+                  <li>
+                    <a className="aboutme" href="https://medium.com/@pdulepet" target="_blank" rel="noopener noreferrer">
+                      Medium Blog
+                    </a>
+                    <p className="publication-details">
+                      Articles on ML, Software Engineering, and Technology
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </TabPanel>
           <TabPanel>
             <h3>Education</h3>
@@ -565,7 +614,7 @@ const Home = () => {
           View CV
         </a>
       </div>
-      <Footer>© 2024 Pranav Dulepet</Footer>
+      <Footer>Last updated 2.28.2025</Footer>
     </Container >
   );
 };

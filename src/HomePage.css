@@ -17,8 +17,10 @@ body {
     font-family: 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
-    background: url('./images/IMG_8858.jpg') no-repeat center center fixed;
+    /* background: url('./images/IMG_8858.jpg') no-repeat center center fixed; */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.95)), url('./images/IMG_8858.jpg') no-repeat center center fixed;
     background-size: cover;
+    backdrop-filter: blur(10px);
 }
 
 /* .header {
@@ -35,29 +37,38 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgba(255, 255, 255, 0.784);
-    backdrop-filter: blur(0px);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 15px;
+}
+
+.react-tabs {
+    width: 100%;
+    min-height: 600px;
+    position: relative;
 }
 
 .react-tabs__tab-list {
-    background: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
 }
 
 .react-tabs__tab {
-    background: transparent;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+    padding: 12px 24px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    color: #000000;
+    opacity: 0.7;
 }
 
 .react-tabs__tab--selected {
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.1);
+    color: #000000;
+    opacity: 1;
+    border: none;
 }
 
 .react-tabs__tab-panel {
@@ -65,6 +76,18 @@ body {
     padding: 20px;
     margin-top: 10px;
     box-sizing: border-box;
+    min-height: 500px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: absolute;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
+    height: 100%;
+    opacity: 1;
+    position: relative;
 }
 
 html {
@@ -203,15 +226,19 @@ html {
 
 .aboutme {
     text-decoration: none;
-    color: black;
-    background-color: rgb(31, 223, 146);
-    font-family: 'Open Sans', sans-serif;
-    padding: 5px;
-    border-radius: 5px;
+    color: #ffffff;
+    /* color: #000000; */
+    background: linear-gradient(90deg, #60594D 0%, #60594D 100%);
+    /* background: linear-gradient(90deg, #19e327 0%, #19e327 100%); */
+    padding: 1px 2px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .aboutme:hover {
-    background-color: rgb(24, 176, 115);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
 }
 
 .course-grid {

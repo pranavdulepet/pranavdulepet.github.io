@@ -2,50 +2,71 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .school-button {
-    opacity: 0.3;
+    opacity: 0.7;
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.2s, opacity 0.2s;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
 }
 
 .school-button:hover {
-    transform: scale(1.1);
-    box-shadow: 2px 2px 10px #ccc;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    opacity: 1;
 }
 
 .school-button.selected {
     opacity: 1;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 #aboutme {
     text-decoration: none;
-    color: black;
-    background-color: rgb(31, 223, 146);
-    font-family: 'Open Sans', sans-serif;
-    padding: 5px;
-    border-radius: 5px;
+    color: #ffffff;
+    background: linear-gradient(90deg, #60594D 0%, #60594D 100%);
+    padding: 8px 16px;
+    border-radius: 12px;
     display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 10px 0;
 }
 
 #aboutme:hover {
-    background-color: rgb(31, 223, 146);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
 }
 
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
 }
 
 .course {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 10px #ccc;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    color: #000000;
+}
+
+.course:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.08);
 }
