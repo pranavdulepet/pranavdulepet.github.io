@@ -32,21 +32,19 @@
 
 #aboutme {
     text-decoration: none;
-    color: #ffffff;
-    background: linear-gradient(90deg, #60594D 0%, #60594D 100%);
-    padding: 8px 16px;
-    border-radius: 12px;
-    display: inline-block;
-    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: rgba(96, 89, 77, 0.1);
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
     font-weight: 500;
-    transition: all 0.3s ease;
-    margin: 10px 0;
 }
 
 #aboutme:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.3);
+    background: rgba(96, 89, 77, 0.2);
+    transform: translateY(-1px);
 }
+
 
 .course-grid {
     display: grid;
