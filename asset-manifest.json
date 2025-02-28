@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c292ca66.css",
-    "main.js": "/static/js/main.e48bfe34.js",
+    "main.css": "/static/css/main.ad6e9f94.css",
+    "main.js": "/static/js/main.44a2f2a1.js",
     "static/js/787.3a0c473b.chunk.js": "/static/js/787.3a0c473b.chunk.js",
     "static/media/pranav-pfp.jpg": "/static/media/pranav-pfp.1ccb1a5de0b62ea1a9a4.jpg",
     "static/media/IMG_8858.jpg": "/static/media/IMG_8858.2e272787e78d6b9c97e2.jpg",
@@ -25,12 +25,12 @@
     "static/media/capitalone-logo.png": "/static/media/capitalone-logo.9f957785110bec1b35f8.png",
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
-    "main.c292ca66.css.map": "/static/css/main.c292ca66.css.map",
-    "main.e48bfe34.js.map": "/static/js/main.e48bfe34.js.map",
+    "main.ad6e9f94.css.map": "/static/css/main.ad6e9f94.css.map",
+    "main.44a2f2a1.js.map": "/static/js/main.44a2f2a1.js.map",
     "787.3a0c473b.chunk.js.map": "/static/js/787.3a0c473b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c292ca66.css",
-    "static/js/main.e48bfe34.js"
+    "static/css/main.ad6e9f94.css",
+    "static/js/main.44a2f2a1.js"
   ]
 }
