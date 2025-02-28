@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.9fe3339c.css",
-    "main.js": "/static/js/main.730d9e9c.js",
+    "main.css": "/static/css/main.c292ca66.css",
+    "main.js": "/static/js/main.e48bfe34.js",
     "static/js/787.3a0c473b.chunk.js": "/static/js/787.3a0c473b.chunk.js",
+    "static/media/pranav-pfp.jpg": "/static/media/pranav-pfp.1ccb1a5de0b62ea1a9a4.jpg",
     "static/media/IMG_8858.jpg": "/static/media/IMG_8858.2e272787e78d6b9c97e2.jpg",
     "static/media/aerial-image.png": "/static/media/aerial-image.24874ee838173add6e8f.png",
     "static/media/umdnext-logo.png": "/static/media/umdnext-logo.170b52d171a7a3cc01a4.png",
@@ -15,7 +16,6 @@
     "static/media/agora-logo.png": "/static/media/agora-logo.05c6492366d6168d0b75.png",
     "static/media/aura-logo.png": "/static/media/aura-logo.e07a81f6b65a376fa023.png",
     "static/media/evozyne-logo.png": "/static/media/evozyne-logo.352bfeb73d0d988ef62c.png",
-    "static/media/pranav-pfp.jpeg": "/static/media/pranav-pfp.09c87b97b71b7f0aa5a4.jpeg",
     "static/media/quest-logo.png": "/static/media/quest-logo.bf3fe10ed63201b25977.png",
     "static/media/collegero-logo.jpg": "/static/media/collegero-logo.bc70bb0036a54761234d.jpg",
     "static/media/fidelity-logo.png": "/static/media/fidelity-logo.a9f7586a7010575cecd9.png",
@@ -25,12 +25,12 @@
     "static/media/capitalone-logo.png": "/static/media/capitalone-logo.9f957785110bec1b35f8.png",
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
-    "main.9fe3339c.css.map": "/static/css/main.9fe3339c.css.map",
-    "main.730d9e9c.js.map": "/static/js/main.730d9e9c.js.map",
+    "main.c292ca66.css.map": "/static/css/main.c292ca66.css.map",
+    "main.e48bfe34.js.map": "/static/js/main.e48bfe34.js.map",
     "787.3a0c473b.chunk.js.map": "/static/js/787.3a0c473b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9fe3339c.css",
-    "static/js/main.730d9e9c.js"
+    "static/css/main.c292ca66.css",
+    "static/js/main.e48bfe34.js"
   ]
 }
