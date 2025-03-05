@@ -1,9 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect } from 'react';
+import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import './HomePage.css';
 import Education from './EducationComponent';
+import { ThemeContext } from './ThemeContext';
 
 import collegero from './images/collegero-logo.jpg';
 import aura from './images/aura-logo.png';
@@ -22,26 +23,247 @@ import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
 import amazon from './images/amazon.png';
 
+import { Mail, Linkedin, Github, Phone, FileText } from 'lucide-react';
+
 import pranav from './images/pranav-pfp.jpg';
 import cv from './images/pranav_dulepet_cv_grad_apps.pdf';
 
+// Define light and dark themes
+const lightTheme = {
+  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.85))',
+  containerBg: 'rgba(255, 255, 255, 0.7)',
+  text: '#1a1a1a',
+  subtitleText: '#555',
+  footerText: '#777',
+  cardBg: 'white',
+  cardBorder: 'rgba(0, 0, 0, 0.1)',
+  aboutSectionBg: 'rgba(255, 255, 255, 0.8)',
+  currentInterestsBg: 'rgba(255, 255, 255, 0.9)',
+  tabListBg: 'rgba(240, 240, 240, 0.8)',
+  tabBg: 'white',
+  tabText: '#555',
+  tabSelectedText: '#1a1a1a',
+  contactInfoBg: 'rgba(255, 255, 255, 0.8)',
+  resumeButtonBg: '#1a1a1a',
+  resumeButtonText: 'white',
+  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2)',
+  cardBoxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
+  cardHoverBoxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
+  linkBg: 'rgba(96, 89, 77, 0.1)',
+  linkHoverBg: 'rgba(96, 89, 77, 0.2)',
+  borderColor: 'rgba(0, 0, 0, 0.1)',
+  publicationBorder: 'rgba(0, 0, 0, 0.1)',
+};
+
+const darkTheme = {
+  background: 'linear-gradient(135deg, rgba(25, 25, 35, 0.95), rgba(15, 15, 25, 0.85))',
+  containerBg: 'rgba(30, 30, 40, 0.7)',
+  text: '#f0f0f0',
+  subtitleText: '#ccc',
+  footerText: '#999',
+  cardBg: '#2a2a3a',
+  cardBorder: 'rgba(255, 255, 255, 0.1)',
+  aboutSectionBg: 'rgba(40, 40, 50, 0.8)',
+  currentInterestsBg: 'rgba(40, 40, 50, 0.9)',
+  tabListBg: 'rgba(40, 40, 50, 0.8)',
+  tabBg: '#2a2a3a',
+  tabText: '#ccc',
+  tabSelectedText: '#f0f0f0',
+  contactInfoBg: 'rgba(40, 40, 50, 0.8)',
+  resumeButtonBg: '#4a4a5a',
+  resumeButtonText: '#f0f0f0',
+  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.5)',
+  cardBoxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
+  cardHoverBoxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)',
+  linkBg: 'rgba(120, 120, 140, 0.2)',
+  linkHoverBg: 'rgba(120, 120, 140, 0.3)',
+  borderColor: 'rgba(255, 255, 255, 0.1)',
+  publicationBorder: 'rgba(255, 255, 255, 0.1)',
+};
+
+// Global styles for theme
+const GlobalStyle = createGlobalStyle`
+  body {
+    font-family: 'Inter', 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: ${props => props.theme.background},
+      url('./images/IMG_8858.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: ${props => props.theme.text};
+    transition: all 0.3s ease;
+  }
+
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: ${props => props.theme.containerBg};
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 24px;
+  }
+
+  .aboutme {
+    text-decoration: none;
+    color: ${props => props.theme.text};
+    background: ${props => props.theme.linkBg};
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+
+  .aboutme:hover {
+    background: ${props => props.theme.linkHoverBg};
+    transform: translateY(-1px);
+  }
+
+  .react-tabs__tab-list {
+    border-bottom: none;
+    margin-bottom: 40px;
+    display: flex;
+    gap: 15px;
+    padding: 12px;
+    background: ${props => props.theme.tabListBg};
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+    border: 1px solid ${props => props.theme.borderColor};
+  }
+
+  .react-tabs__tab {
+    padding: 12px 24px;
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    color: ${props => props.theme.tabText};
+    font-weight: 600;
+    opacity: 0.8;
+    border: none;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .react-tabs__tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: ${props => props.theme.text};
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  .react-tabs__tab--selected::after {
+    width: 70%;
+    opacity: 1;
+  }
+
+  .react-tabs__tab--selected {
+    background: ${props => props.theme.tabBg};
+    color: ${props => props.theme.tabSelectedText};
+    opacity: 1;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .react-tabs__tab:hover {
+    background: ${props => props.theme.tabBg === 'white' ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.1)'};
+  }
+
+  .react-tabs__tab-panel {
+    background: transparent;
+    padding: 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    min-height: 500px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    border-radius: 16px;
+    transform: translateY(10px);
+    pointer-events: none;
+  }
+
+  .react-tabs__tab-panel--selected {
+    display: block;
+    height: 100%;
+    opacity: 1;
+    position: relative;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .project, .experience {
+    background-color: ${props => props.theme.cardBg};
+    box-shadow: ${props => props.theme.cardBoxShadow};
+    border: 1px solid ${props => props.theme.cardBorder};
+  }
+
+  .project:hover, .experience:hover {
+    box-shadow: ${props => props.theme.cardHoverBoxShadow};
+  }
+  
+  .contact-info {
+    background: ${props => props.theme.contactInfoBg};
+    border: 1px solid ${props => props.theme.borderColor};
+  }
+  
+  .resume-download a {
+    background: ${props => props.theme.resumeButtonBg};
+    color: ${props => props.theme.resumeButtonText};
+  }
+  
+  .publication h4 {
+    border-bottom: 1px solid ${props => props.theme.publicationBorder};
+  }
+
+  /* Ensure nested tabs have the same transition */
+  .react-tabs .react-tabs__tab-panel {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  /* Ensure consistent tab panel heights */
+  .react-tabs__tab-list + div {
+    position: relative;
+    min-height: 600px;
+  }
+
+  /* Ensure nested tabs maintain proper spacing */
+  .react-tabs .react-tabs {
+    margin-top: 20px;
+  }
+
+  .react-tabs .react-tabs__tab-list {
+    margin-bottom: 30px;
+  }
+`;
+
+// Styled components with theme support
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px;
   max-width: 1200px;
-  margin: auto;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 30px;
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+  
+  @media (max-width: 768px) {
+    padding: 15px;
+  }
 `;
 
 const Header = styled.header`
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
-  width: 100%;
+  margin-bottom: 30px;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 15px;
+  }
 `;
 
 const ProfileDetails = styled.div`
@@ -51,43 +273,59 @@ const ProfileDetails = styled.div`
 `;
 
 const ProfileImage = styled.img`
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin-bottom: 20px;
   object-fit: cover;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    width: 80px;
+    height: 80px;
+  }
 `;
 
 const Title = styled.h1`
   font-size: 2.5rem;
   margin: 0;
+  color: ${props => props.theme.text};
 `;
 
 const Subtitle = styled.h2`
   font-size: 1.5rem;
-  color: #666;
+  color: ${props => props.theme.subtitleText};
   margin: 10px 0 0 0;
 `;
 
 const Content = styled.main`
-  font-size: 1.1rem;
-  width: 100%;
-  min-height: 600px;
-  position: relative;
-  overflow: hidden;
+  background: ${props => props.theme.containerBg};
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: ${props => props.theme.boxShadow};
+  
+  @media (max-width: 768px) {
+    padding: 15px;
+    border-radius: 15px;
+  }
 `;
 
 const Footer = styled.footer`
   margin-top: 40px;
   font-size: 0.9rem;
-  color: #aaa;
+  color: ${props => props.theme.footerText};
 `;
 
 /* New Styled Components for Rounded Translucent Backgrounds */
 const AboutSection = styled.div`
-  background: rgba(255, 255, 255, 0.05);
+  background: ${props => props.theme.aboutSectionBg};
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid ${props => props.theme.borderColor};
   border-radius: 20px;
   padding: 30px;
   margin-bottom: 30px;
@@ -100,13 +338,98 @@ const AboutSection = styled.div`
 `;
 
 const CurrentInterestsSection = styled.div`
-  background: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+  background: ${props => props.theme.currentInterestsBg};
   border-radius: 15px;
   padding: 20px;
   margin-top: 10px;
+  border: 1px solid ${props => props.theme.borderColor};
+`;
+
+// Theme toggle button
+const ThemeToggle = styled.button`
+  background: ${props => props.isDark ? '#f0f0f0' : '#2a2a3a'};
+  color: ${props => props.isDark ? '#2a2a3a' : '#f0f0f0'};
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+  
+  &:focus {
+    outline: none;
+  }
+`;
+
+const ContactIcons = styled.div`
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: ${props => props.theme.text};
+    background: ${props => props.theme.linkBg};
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    
+    &:hover {
+      background: ${props => props.theme.linkHoverBg};
+      transform: translateY(-3px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    gap: 12px;
+  }
 `;
 
 const Home = () => {
+  // State for theme
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Check for user's preferred color scheme on initial load
+  useEffect(() => {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkMode(prefersDark);
+  }, []);
+
+  // Toggle theme function
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+    // Add or remove dark-mode class from body
+    if (!isDarkMode) {
+      document.body.classList.add('dark-mode');
+      document.body.classList.remove('light-mode');
+    } else {
+      document.body.classList.add('light-mode');
+      document.body.classList.remove('dark-mode');
+    }
+  };
+
+  // Set initial body class on component mount
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+      document.body.classList.remove('light-mode');
+    } else {
+      document.body.classList.add('light-mode');
+      document.body.classList.remove('dark-mode');
+    }
+  }, [isDarkMode]);
+
   /* Tab Content Components */
   const AboutContent = () => (
     <>
@@ -132,7 +455,9 @@ const Home = () => {
       <h3>Current Interests</h3>
       <CurrentInterestsSection>
         <p>
-          • ML Systems, Long-Context LLMs
+          • ML Systems
+          <br />
+          • Long-Context LLMs
           <br />
           • AI Safety & Policy
         </p>
@@ -273,7 +598,7 @@ const Home = () => {
         >
           Alexa Routine
         </a> recommendations. Article outlining tools and experiments coming soon!</p>
-        <p><strong>Skills: Python, Spark, AWS Bedrock, AWS SageMaker, Closed & Open Source LLMs</strong></p>
+        <p><strong>Skills:</strong> Python, Spark, AWS Bedrock, AWS SageMaker, Closed & Open Source LLMs</p>
       </div>
       <div className="experience">
         <h3>SWE Intern</h3>
@@ -539,50 +864,79 @@ const Home = () => {
   );
 
   return (
-    <Container>
-      <Header className="header">
-        <ProfileImage src={pranav} alt="Profile" />
-        <ProfileDetails>
-          <Title>Pranav Dulepet</Title>
-          <Subtitle>Computer Science @ UMD | AI Research</Subtitle>
-        </ProfileDetails>
-      </Header>
+    <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
+      <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+        <GlobalStyle />
+        <Container>
+          <Header className="header">
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <ProfileImage src={pranav} alt="Profile" />
+              <ProfileDetails>
+                <Title>Pranav Dulepet</Title>
+                <Subtitle>Computer Science @ UMD | AI Research</Subtitle>
 
-      <Content>
-        <Tabs>
-          <TabList>
-            <Tab>About</Tab>
-            <Tab>Projects</Tab>
-            <Tab>Experience</Tab>
-            <Tab>Publications</Tab>
-            <Tab>Education</Tab>
-          </TabList>
+                <ContactIcons>
+                  <a href="mailto:ps.dulepet@gmail.com" title="Email" aria-label="Email">
+                    <Mail size={22} />
+                  </a>
+                  <a href="https://www.linkedin.com/in/pranavdulepet" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
+                    <Linkedin size={22} />
+                  </a>
+                  <a href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
+                    <Github size={22} />
+                  </a>
+                  {/* <a href="tel:9259970461" title="Phone" aria-label="Phone">
+                    <Phone size={22} />
+                  </a> */}
+                  <a href={resume} target="_blank" rel="noopener noreferrer" title="Resume" aria-label="Resume">
+                    <FileText size={22} />
+                  </a>
+                </ContactIcons>
 
-          <TabPanel><AboutContent /></TabPanel>
-          <TabPanel><ProjectsContent /></TabPanel>
-          <TabPanel>
+              </ProfileDetails>
+            </div>
+            <ThemeToggle isDark={isDarkMode} onClick={toggleTheme}>
+              {isDarkMode ? '☀️' : '🌙'}
+            </ThemeToggle>
+          </Header>
+
+          <Content>
             <Tabs>
               <TabList>
-                <Tab>Industry</Tab>
-                <Tab>Research</Tab>
+                <Tab>About</Tab>
+                <Tab>Projects</Tab>
+                <Tab>Experience</Tab>
+                <Tab>Publications</Tab>
+                <Tab>Education</Tab>
               </TabList>
-              <TabPanel><IndustryContent /></TabPanel>
-              <TabPanel><ResearchContent /></TabPanel>
-            </Tabs>
-          </TabPanel>
-          <TabPanel><PublicationsContent /></TabPanel>
-          <TabPanel><Education /></TabPanel>
-        </Tabs>
-      </Content>
 
-      <ContactSection />
-      <ResumeSection />
-      <Footer>Last updated 2.28.2025</Footer>
-    </Container>
+              <TabPanel><AboutContent /></TabPanel>
+              <TabPanel><ProjectsContent /></TabPanel>
+              <TabPanel>
+                <Tabs>
+                  <TabList>
+                    <Tab>Industry</Tab>
+                    <Tab>Research</Tab>
+                  </TabList>
+                  <TabPanel><IndustryContent /></TabPanel>
+                  <TabPanel><ResearchContent /></TabPanel>
+                </Tabs>
+              </TabPanel>
+              <TabPanel><PublicationsContent /></TabPanel>
+              <TabPanel><Education /></TabPanel>
+            </Tabs>
+          </Content>
+
+          <ContactSection />
+          <ResumeSection />
+          <Footer>Last updated 03.05.2025</Footer>
+        </Container>
+      </ThemeProvider>
+    </ThemeContext.Provider>
   );
 };
 
-/* Helper Components */
+/* Helper Components with theme support */
 const ContactSection = () => (
   <div className="contact-info">
     <div className="contact-item">
@@ -608,10 +962,10 @@ const ContactSection = () => (
 
 const ResumeSection = () => (
   <div className="resume-download">
-    <a className="aboutme" href={resume} target="_blank" rel="noopener noreferrer">
+    <a className="resume-button" href={resume} target="_blank" rel="noopener noreferrer">
       View Resume
     </a>
-    <a className="aboutme" href={cv} target="_blank" rel="noopener noreferrer">
+    <a className="resume-button" href={cv} target="_blank" rel="noopener noreferrer">
       View CV
     </a>
   </div>

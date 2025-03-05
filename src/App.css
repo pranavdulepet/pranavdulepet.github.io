@@ -48,3 +48,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* Add these mobile-specific styles */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  #root {
+    padding: 15px;
+  }
+}

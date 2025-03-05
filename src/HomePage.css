@@ -17,6 +17,7 @@ body {
     font-family: 'Inter', 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
+    transition: all 0.3s ease;
     background: linear-gradient(135deg,
             rgba(255, 255, 255, 0.95),
             rgba(240, 240, 240, 0.85)),
@@ -39,10 +40,9 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
     padding: 30px;
     border-radius: 24px;
+    transition: background 0.3s ease;
 }
 
 .react-tabs {
@@ -65,18 +65,31 @@ body {
 .react-tabs__tab {
     padding: 12px 24px;
     border-radius: 12px;
-    transition: all 0.2s ease;
-    color: #666;
-    font-weight: 500;
+    transition: all 0.3s ease;
+    color: var(--tab-text);
+    font-weight: 600;
     opacity: 0.8;
     border: none;
+    position: relative;
+    overflow: hidden;
 }
 
-.react-tabs__tab--selected {
-    background: white;
-    color: #1a1a1a;
+.react-tabs__tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--tab-indicator, #1a1a1a);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.react-tabs__tab--selected::after {
+    width: 70%;
     opacity: 1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .react-tabs__tab-panel {
@@ -87,8 +100,11 @@ body {
     min-height: 500px;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     position: absolute;
+    border-radius: 16px;
+    transform: translateY(10px);
+    pointer-events: none;
 }
 
 .react-tabs__tab-panel--selected {
@@ -96,6 +112,8 @@ body {
     height: 100%;
     opacity: 1;
     position: relative;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 html {
@@ -122,7 +140,7 @@ html {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 16px;
     transition: transform 0.3s ease;
 }
 
@@ -194,7 +212,8 @@ html {
     flex-direction: row;
     align-items: center;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    justify-content: space-between;
 }
 
 .name {
@@ -286,9 +305,9 @@ html {
     gap: 30px;
     margin-top: 40px;
     padding: 20px;
-    background: rgba(255, 255, 255, 0.5);
     border-radius: 16px;
     backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .contact-item {
@@ -308,16 +327,14 @@ html {
 .resume-download a {
     display: inline-block;
     padding: 12px 24px;
-    background: #1a1a1a;
-    color: white;
     border-radius: 12px;
     text-decoration: none;
     transition: all 0.2s ease;
     margin: 0 10px;
+    font-weight: 500;
 }
 
 .resume-download a:hover {
-    background: #333;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
@@ -343,4 +360,376 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+}
+
+/* Smooth transitions for theme changes */
+* {
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Unified card styling for projects and experiences */
+.project-container,
+.industry-experience,
+.academic-experience {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.project,
+.experience {
+    background-color: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.project:hover,
+.experience:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.project img,
+.experience img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.project img:hover,
+.experience img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project h3,
+.experience h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.project p,
+.experience p {
+    line-height: 1.6;
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+/* Improved tab styling */
+.react-tabs__tab {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Improved scrollbar for dark mode compatibility */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Animation for theme toggle */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.theme-toggle:hover {
+    animation: spin 1s ease;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .profile-details {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .react-tabs__tab-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 8px;
+    }
+
+    .name {
+        font-size: 2em;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .bio {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .menu {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .menu ol {
+        gap: 10px;
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-container,
+    .industry-experience,
+    .academic-experience {
+        grid-template-columns: 1fr;
+    }
+
+    .main-container {
+        padding: 15px;
+    }
+
+    .resume-download {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .resume-download a {
+        margin: 5px 0;
+    }
+
+    /* Adjust tab panels for mobile */
+    .react-tabs__tab-panel {
+        padding: 10px;
+    }
+
+    .react-tabs__tab {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2em;
+    }
+
+    .header h2 {
+        font-size: 1.5em;
+    }
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #top-btn {
+        padding: 10px;
+        font-size: 14px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .project img,
+    .experience img {
+        height: 150px;
+    }
+}
+
+/* Improve publication section formatting */
+.publications {
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.publication {
+    margin-bottom: 30px;
+}
+
+.publication h4 {
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.publication-details {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+/* Improve about section readability */
+.AboutSection p,
+.CurrentInterestsSection p {
+    line-height: 1.8;
+}
+
+/* Ensure consistent spacing */
+h3 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* Ensure nested tabs are properly styled */
+.react-tabs .react-tabs__tab-panel {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+body.dark-mode {
+    --tab-indicator: #f0f0f0;
+}
+
+body.light-mode {
+    --tab-indicator: #1a1a1a;
+}
+
+/* Improved tab transitions */
+.react-tabs__tab-panel {
+    background: transparent;
+    padding: 20px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    min-height: 500px;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: absolute;
+    border-radius: 16px;
+    transform: translateY(10px);
+    pointer-events: none;
+}
+
+.react-tabs__tab-panel--selected {
+    display: block;
+    height: 100%;
+    opacity: 1;
+    position: relative;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Ensure nested tabs have the same transition */
+.react-tabs .react-tabs__tab-panel {
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Improve tab selection animation */
+.react-tabs__tab {
+    position: relative;
+    overflow: hidden;
+}
+
+.react-tabs__tab::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: var(--tab-indicator, #1a1a1a);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.react-tabs__tab--selected::after {
+    width: 70%;
+    opacity: 1;
+}
+
+/* Add tab hover effect */
+.react-tabs__tab:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure consistent tab panel heights */
+.react-tabs__tab-list+div {
+    position: relative;
+    min-height: 600px;
+    /* Adjust based on your content */
+}
+
+/* Add variables for tab indicators in light/dark mode */
+body.dark-mode {
+    --tab-indicator: #f0f0f0;
+}
+
+body.light-mode {
+    --tab-indicator: #1a1a1a;
+}
+
+/* Ensure nested tabs maintain proper spacing */
+.react-tabs .react-tabs {
+    margin-top: 20px;
+}
+
+.react-tabs .react-tabs__tab-list {
+    margin-bottom: 30px;
+}
+
+/* Footer styling */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    width: 100%;
+    font-size: 0.9em;
+    color: #666;
+    display: flex;
+    justify-content: center;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer a:hover {
+    color: rgb(31, 223, 146);
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .footer {
+        padding: 15px 0;
+        font-size: 0.8em;
+    }
 }
