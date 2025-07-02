@@ -22,10 +22,11 @@ import evozyne from './images/evozyne-logo.png';
 import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
 import amazon from './images/amazon.png';
+import apple from './images/apple-logo.png';
 
 import { Mail, Linkedin, Github, Phone, FileText } from 'lucide-react';
 
-import pranav from './images/pranav-pfp.jpg';
+import pranav from './images/pranav-dulepet-nature-pfp.heic';
 import cv from './images/pranav_dulepet_cv_grad_apps.pdf';
 
 // Define light and dark themes
@@ -436,15 +437,11 @@ const Home = () => {
       <h3>About</h3>
       <AboutSection>
         <p>
-          As a{' '}
-          <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
-            computer science student
-          </a>{' '}
-          at{' '}
-          <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank" rel="noopener noreferrer">
-            the University of Maryland - College Park
-          </a>
-          , I am passionate about using technology to tackle everyday problems. My experience in a variety of fields within
+
+
+          As a master's student at <a className="aboutme" href="https://www.clsp.jhu.edu" target="_blank" rel="noopener noreferrer">
+            Johns Hopkins University</a> studying AI and Human Language Technologies and as a former computer science student at the <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank" rel="noopener noreferrer"> the University of Maryland - College Park
+          </a>, I am passionate about using technology to tackle everyday problems. My experience in a variety of fields within
           computer science, from app development to machine learning, has given me a unique perspective on how technology can be
           used to create innovative solutions. I am particularly interested in a wide range of applications, specifically involving{' '}
           <a className="aboutme" href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
@@ -584,6 +581,16 @@ const Home = () => {
   const IndustryContent = () => (
     <div className="industry-experience">
       <div className="experience">
+        <h3>Graduate SWE Intern (AI/ML)</h3>
+        <a href="https://www.apple.com/apple-intelligence/" target="_blank" rel="noopener noreferrer">
+          <img src={apple} alt="Apple" />
+        </a>
+        <h3>Amazon</h3>
+        <p>05/25 - 08/25</p>
+        <p>Apple Intelligence - building agentic frameworks</p>
+        <p><strong>Skills:</strong> Swift, SwiftUI, LLM inference, LLM evaluation</p>
+      </div>
+      <div className="experience">
         <h3>SDE Intern (ML)</h3>
         <a href="https://www.alexa.com" target="_blank" rel="noopener noreferrer">
           <img src={amazon} alt="Amazon" />
@@ -700,7 +707,7 @@ const Home = () => {
       <div className="experience">
         <h3>Technology Policy Fellow</h3>
         <h3>Paragon Policy Fellowship</h3>
-        <p>09/24 - present</p>
+        <p>09/24 - 05/25</p>
         <p>
           I helped design a streamlined AI model approval process for the Santa Clara County Government, reducing redundant labor by
           consolidating three separate interviews into a centralized questionnaire. To support this process,
@@ -873,7 +880,7 @@ const Home = () => {
               <ProfileImage src={pranav} alt="Profile" />
               <ProfileDetails>
                 <Title>Pranav Dulepet</Title>
-                <Subtitle>Computer Science @ UMD | AI Research</Subtitle>
+                <Subtitle>AI/ML @ Johns Hopkins | AI Research</Subtitle>
 
                 <ContactIcons>
                   <a href="mailto:ps.dulepet@gmail.com" title="Email" aria-label="Email">
@@ -929,7 +936,7 @@ const Home = () => {
 
           <ContactSection />
           <ResumeSection />
-          <Footer>Last updated 03.05.2025</Footer>
+          <Footer>Last updated 07.02.2025</Footer>
         </Container>
       </ThemeProvider>
     </ThemeContext.Provider>
@@ -990,5 +997,7 @@ const ProjectCard = ({ title, image, link, description, skills }) => (
     </p>
   </div>
 );
+
+
 
 export default Home;

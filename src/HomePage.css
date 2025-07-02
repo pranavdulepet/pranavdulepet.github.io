@@ -733,3 +733,47 @@ body.light-mode {
         font-size: 0.8em;
     }
 }
+
+/* Mouse tracker styles */
+.mouse-tracker {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(31, 223, 146, 0.3);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 15px rgba(31, 223, 146, 0.5);
+}
+
+.mouse-tracker-tail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(31, 223, 146, 0.5);
+    pointer-events: none;
+    mix-blend-mode: difference;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s;
+}
+
+/* Mouse tracker hover effect for interactive elements */
+a:hover~.mouse-tracker,
+button:hover~.mouse-tracker {
+    transform: translate(-50%, -50%) scale(1.5);
+    background-color: rgba(31, 223, 146, 0.5);
+}
+
+/* Ensure the tracker works in dark mode too */
+body.dark-mode .mouse-tracker {
+    background-color: rgba(31, 223, 146, 0.4);
+}
+
+body.dark-mode .mouse-tracker-tail {
+    background-color: rgba(31, 223, 146, 0.6);
+}
