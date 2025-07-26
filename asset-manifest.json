@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.ea1d5eb7.css",
-    "main.js": "/static/js/main.1d62cd93.js",
+    "main.js": "/static/js/main.9cb0272c.js",
     "static/js/787.3a0c473b.chunk.js": "/static/js/787.3a0c473b.chunk.js",
+    "static/media/salzburg-view.HEIC": "/static/media/salzburg-view.3a8dfd6b092807b01bbb.HEIC",
     "static/media/IMG_8858.jpg": "/static/media/IMG_8858.2e272787e78d6b9c97e2.jpg",
     "static/media/aerial-image.png": "/static/media/aerial-image.24874ee838173add6e8f.png",
     "static/media/umdnext-logo.png": "/static/media/umdnext-logo.170b52d171a7a3cc01a4.png",
@@ -27,11 +28,11 @@
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
     "main.ea1d5eb7.css.map": "/static/css/main.ea1d5eb7.css.map",
-    "main.1d62cd93.js.map": "/static/js/main.1d62cd93.js.map",
+    "main.9cb0272c.js.map": "/static/js/main.9cb0272c.js.map",
     "787.3a0c473b.chunk.js.map": "/static/js/787.3a0c473b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ea1d5eb7.css",
-    "static/js/main.1d62cd93.js"
+    "static/js/main.9cb0272c.js"
   ]
 }
