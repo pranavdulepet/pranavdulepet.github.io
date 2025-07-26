@@ -23,6 +23,7 @@ import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
 import amazon from './images/amazon.png';
 import apple from './images/apple-logo.png';
+import salzburg from './images/salzburg-view.HEIC';
 
 import { Mail, Linkedin, Github, Phone, FileText } from 'lucide-react';
 
@@ -82,15 +83,47 @@ const darkTheme = {
   publicationBorder: 'rgba(255, 255, 255, 0.1)',
 };
 
+// Animated Gradient Background Component
+const AnimatedGradientBackground = ({ isDarkMode }) => {
+  return (
+    <div style={{
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      zIndex: -10,
+      background: isDarkMode
+        ? 'linear-gradient(-45deg, #0f0f23, #1a1a2e, #16213e, #0f3460)'
+        // : 'linear-gradient(-45deg,rgb(230, 228, 220),rgb(209, 207, 202),rgb(231, 228, 218),rgb(236, 234, 230))',
+        : 'linear-gradient(-45deg, #fafaf7)',
+      backgroundSize: '400% 400%',
+      animation: 'gradientShift 15s ease infinite'
+    }}>
+      <style>{`
+        @keyframes gradientShift {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
+
 // Global styles for theme
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Inter', 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
-    background: ${props => props.theme.background},
-      url('./images/IMG_8858.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: transparent;
     color: ${props => props.theme.text};
     transition: all 0.3s ease;
   }
@@ -279,15 +312,18 @@ const ProfileImage = styled.img`
   border-radius: 50%;
   margin-bottom: 20px;
   object-fit: cover;
-  transition: transform 0.3s ease;
-  
-  &:hover {
-    transform: scale(1.05);
-  }
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px #cc785c, 0 0 40px rgba(191, 223, 207, 0.4), 0 0 60px rgba(191, 223, 207, 0.2);
+  border: 3px solid rgba(191, 223, 207, 0.3);
   
   @media (max-width: 768px) {
     width: 80px;
     height: 80px;
+    box-shadow: 0 0 15px #bfdfcf, 0 0 30px rgba(191, 223, 207, 0.4), 0 0 45px rgba(191, 223, 207, 0.2);
+    
+    &:hover {
+      box-shadow: 0 0 20px #bfdfcf, 0 0 40px rgba(191, 223, 207, 0.6), 0 0 60px rgba(191, 223, 207, 0.3);
+    }
   }
 `;
 
@@ -434,31 +470,111 @@ const Home = () => {
   /* Tab Content Components */
   const AboutContent = () => (
     <>
-      <h3>About</h3>
+      {/* <h3>About</h3> */}
       <AboutSection>
         <p>
-
-
-          As a master's student at <a className="aboutme" href="https://www.clsp.jhu.edu" target="_blank" rel="noopener noreferrer">
-            Johns Hopkins University</a> studying AI and Human Language Technologies and as a former computer science student at the <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank" rel="noopener noreferrer"> the University of Maryland - College Park
-          </a>, I am passionate about using technology to tackle everyday problems. My experience in a variety of fields within
-          computer science, from app development to machine learning, has given me a unique perspective on how technology can be
-          used to create innovative solutions. I am particularly interested in a wide range of applications, specifically involving{' '}
-          <a className="aboutme" href="https://arxiv.org/abs/2402.07901" target="_blank" rel="noopener noreferrer">
-            deep learning and AI</a> in the contexts of <a className="aboutme" href="https://www.paragonfellowship.org" target="_blank" rel="noopener noreferrer">policy</a>,
-          healthcare, and education. I am constantly seeking new opportunities to learn and grow, and I am eager to apply my skills and knowledge to make a meaningful difference.
+          I'm a recent grad from the <a
+            className="aboutme"
+            href="https://www.cs.umd.edu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              background: isDarkMode
+                ? 'rgba(226, 24, 51, 0.2)'
+                : 'rgba(226, 24, 51, 0.1)',
+              border: '3px solid #E21833',
+              paddingLeft: '8px'
+            }}
+          >🐢 University of Maryland</a> and am currently pursuing a master's at <a
+            className="aboutme"
+            href="https://www.clsp.jhu.edu"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              background: isDarkMode
+                ? 'rgba(0, 45, 114, 0.3)'
+                : 'rgba(0, 45, 114, 0.1)',
+              border: '3px solid #002D72',
+              paddingLeft: '8px'
+            }}
+          >🐦 Johns Hopkins University</a>.
         </p>
+
+        <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: 'inherit' }}>Let's Connect!</h4>
+        <p style={{ margin: '0 0 30px 0' }}>
+          I'll be splitting time between the <strong>Bay Area, CA</strong> and <strong>Baltimore, MD</strong> over the next year and a half.
+          Always excited to chat about building apps, AI research, tech policy, and a whole lot more. Let's chat or grab a coffee if you're in the area!
+        </p>
+
+        {/* Image Section */}
+        <div style={{
+          marginTop: '30px',
+          textAlign: 'center',
+          background: isDarkMode
+            ? 'linear-gradient(135deg, rgba(40, 40, 50, 0.8), rgba(30, 30, 40, 0.9))'
+            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(248, 249, 250, 0.8))',
+          borderRadius: '16px',
+          padding: '24px',
+          border: isDarkMode
+            ? '1px solid rgba(255, 255, 255, 0.1)'
+            : '1px solid rgba(0, 0, 0, 0.08)',
+          boxShadow: isDarkMode
+            ? '0 4px 20px rgba(0, 0, 0, 0.3)'
+            : '0 4px 20px rgba(0, 0, 0, 0.08)'
+        }}>
+          <div style={{
+            position: 'relative',
+            overflow: 'hidden',
+            borderRadius: '12px',
+            cursor: 'pointer',
+            transition: 'transform 0.3s ease, box-shadow 0.3s ease'
+          }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.02)';
+              e.currentTarget.style.boxShadow = isDarkMode
+                ? '0 8px 30px rgba(0, 0, 0, 0.5)'
+                : '0 8px 30px rgba(0, 0, 0, 0.15)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.boxShadow = isDarkMode
+                ? '0 4px 20px rgba(0, 0, 0, 0.3)'
+                : '0 4px 20px rgba(0, 0, 0, 0.08)';
+            }}>
+            <img
+              src={salzburg}
+              alt="salzburg view"
+              style={{
+                width: '100%',
+                height: '500px',
+                objectFit: 'cover',
+                borderRadius: '12px',
+                display: 'block'
+              }}
+            />
+
+            <div style={{
+              position: 'absolute',
+              bottom: '0',
+              left: '0',
+              right: '0',
+              background: 'linear-gradient(transparent, rgba(0,0,0,0.3))',
+              height: '60px',
+              borderRadius: '0 0 12px 12px'
+            }}></div>
+          </div>
+
+          <p style={{
+            margin: '16px 0 0 0',
+            fontSize: '0.9rem',
+            color: isDarkMode ? '#ccc' : '#666',
+            fontStyle: 'italic'
+          }}>
+            Cool pic of a mountain in Salzburg
+          </p>
+        </div>
+
       </AboutSection>
-      <h3>Current Interests</h3>
-      <CurrentInterestsSection>
-        <p>
-          • ML Systems
-          <br />
-          • Long-Context LLMs
-          <br />
-          • AI Safety & Policy
-        </p>
-      </CurrentInterestsSection>
     </>
   );
 
@@ -874,13 +990,14 @@ const Home = () => {
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyle />
+        <AnimatedGradientBackground isDarkMode={isDarkMode} />
         <Container>
           <Header className="header">
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <ProfileImage src={pranav} alt="Profile" />
               <ProfileDetails>
                 <Title>Pranav Dulepet</Title>
-                <Subtitle>AI/ML @ Johns Hopkins | AI Research</Subtitle>
+                <Subtitle>ML/NLP @ Johns Hopkins | AI Research</Subtitle>
 
                 <ContactIcons>
                   <a href="mailto:ps.dulepet@gmail.com" title="Email" aria-label="Email">
@@ -902,9 +1019,9 @@ const Home = () => {
 
               </ProfileDetails>
             </div>
-            <ThemeToggle isDark={isDarkMode} onClick={toggleTheme}>
+            {/* <ThemeToggle isDark={isDarkMode} onClick={toggleTheme}>
               {isDarkMode ? '☀️' : '🌙'}
-            </ThemeToggle>
+            </ThemeToggle> */}
           </Header>
 
           <Content>
@@ -936,7 +1053,7 @@ const Home = () => {
 
           <ContactSection />
           <ResumeSection />
-          <Footer>Last updated 07.02.2025</Footer>
+          <Footer>Last updated 07.25.2025</Footer>
         </Container>
       </ThemeProvider>
     </ThemeContext.Provider>
