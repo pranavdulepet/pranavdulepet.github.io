@@ -8,7 +8,6 @@ import { ThemeContext } from './ThemeContext';
 
 import collegero from './images/collegero-logo.jpg';
 import aura from './images/aura-logo.png';
-import github from './images/github-logo.png';
 import aerial from './images/aerial-image.png';
 import legalai from './images/legalai-image.png';
 import musicrec from './images/music-image.png';
@@ -25,66 +24,88 @@ import amazon from './images/amazon.png';
 import apple from './images/apple-logo.png';
 import salzburg from './images/salzburg-view.HEIC';
 
-import { Mail, Linkedin, Github, Phone, FileText } from 'lucide-react';
+import { Mail, Linkedin, Github, FileText, GraduationCap, Sun, Moon } from 'lucide-react';
 
 import pranav from './images/pranav-dulepet-nature-pfp.heic';
 import cv from './images/pranav_dulepet_cv_grad_apps.pdf';
 
-// Define light and dark themes
+// Premium minimalist theme design
 const lightTheme = {
-  background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(240, 240, 240, 0.85))',
-  containerBg: 'rgba(255, 255, 255, 0.7)',
-  text: '#1a1a1a',
-  subtitleText: '#555',
-  footerText: '#777',
-  cardBg: 'white',
-  cardBorder: 'rgba(0, 0, 0, 0.1)',
-  aboutSectionBg: 'rgba(255, 255, 255, 0.8)',
-  currentInterestsBg: 'rgba(255, 255, 255, 0.9)',
-  tabListBg: 'rgba(240, 240, 240, 0.8)',
-  tabBg: 'white',
-  tabText: '#555',
-  tabSelectedText: '#1a1a1a',
-  contactInfoBg: 'rgba(255, 255, 255, 0.8)',
-  resumeButtonBg: '#1a1a1a',
-  resumeButtonText: 'white',
-  boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.2)',
-  cardBoxShadow: '0 4px 20px rgba(0, 0, 0, 0.06)',
-  cardHoverBoxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
-  linkBg: 'rgba(96, 89, 77, 0.1)',
-  linkHoverBg: 'rgba(96, 89, 77, 0.2)',
-  borderColor: 'rgba(0, 0, 0, 0.1)',
-  publicationBorder: 'rgba(0, 0, 0, 0.1)',
+  // Core colors
+  background: '#ffffff',
+  containerBg: '#ffffff',
+  text: '#1d1d1f',
+  subtitleText: '#86868b',
+  footerText: '#86868b',
+
+  // Cards and surfaces
+  cardBg: '#ffffff',
+  cardBorder: '#e5e5e7',
+  aboutSectionBg: '#ffffff',
+
+  // Navigation and tabs
+  tabListBg: '#f5f5f7',
+  tabBg: 'transparent',
+  tabText: '#86868b',
+  tabSelectedText: '#1d1d1f',
+  tabSelectedBg: '#ffffff',
+
+  // Interactive elements
+  contactInfoBg: '#f5f5f7',
+  resumeButtonBg: '#1d1d1f',
+  resumeButtonText: '#ffffff',
+  linkBg: '#f5f5f7',
+  linkHoverBg: '#e5e5e7',
+
+  // Shadows and borders
+  cardBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
+  cardHoverBoxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
+  borderColor: '#e5e5e7',
+
+  // Accent
+  accent: '#007aff',
+  accentHover: '#0056cc',
 };
 
 const darkTheme = {
-  background: 'linear-gradient(135deg, rgba(25, 25, 35, 0.95), rgba(15, 15, 25, 0.85))',
-  containerBg: 'rgba(30, 30, 40, 0.7)',
-  text: '#f0f0f0',
-  subtitleText: '#ccc',
-  footerText: '#999',
-  cardBg: '#2a2a3a',
-  cardBorder: 'rgba(255, 255, 255, 0.1)',
-  aboutSectionBg: 'rgba(40, 40, 50, 0.8)',
-  currentInterestsBg: 'rgba(40, 40, 50, 0.9)',
-  tabListBg: 'rgba(40, 40, 50, 0.8)',
-  tabBg: '#2a2a3a',
-  tabText: '#ccc',
-  tabSelectedText: '#f0f0f0',
-  contactInfoBg: 'rgba(40, 40, 50, 0.8)',
-  resumeButtonBg: '#4a4a5a',
-  resumeButtonText: '#f0f0f0',
-  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.5)',
-  cardBoxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)',
-  cardHoverBoxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)',
-  linkBg: 'rgba(120, 120, 140, 0.2)',
-  linkHoverBg: 'rgba(120, 120, 140, 0.3)',
-  borderColor: 'rgba(255, 255, 255, 0.1)',
-  publicationBorder: 'rgba(255, 255, 255, 0.1)',
+  // Core colors
+  background: '#1d1d1f',
+  containerBg: '#1d1d1f',
+  text: '#f5f5f7',
+  subtitleText: '#86868b',
+  footerText: '#86868b',
+
+  // Cards and surfaces
+  cardBg: '#2d2d30',
+  cardBorder: '#424245',
+  aboutSectionBg: '#2d2d30',
+
+  // Navigation and tabs
+  tabListBg: '#2d2d30',
+  tabBg: 'transparent',
+  tabText: '#86868b',
+  tabSelectedText: '#f5f5f7',
+  tabSelectedBg: '#424245',
+
+  // Interactive elements
+  contactInfoBg: '#2d2d30',
+  resumeButtonBg: '#f5f5f7',
+  resumeButtonText: '#1d1d1f',
+  linkBg: '#2d2d30',
+  linkHoverBg: '#424245',
+
+  // Shadows and borders
+  cardBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
+  cardHoverBoxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
+  borderColor: '#424245',
+
+  // Accent
+  accent: '#0a84ff',
+  accentHover: '#409cff',
 };
 
-// Animated Gradient Background Component
-const AnimatedGradientBackground = ({ isDarkMode }) => {
+// Minimal clean background
+const CleanBackground = ({ isDarkMode }) => {
   return (
     <div style={{
       position: 'fixed',
@@ -93,152 +114,110 @@ const AnimatedGradientBackground = ({ isDarkMode }) => {
       width: '100%',
       height: '100%',
       zIndex: -10,
-      background: isDarkMode
-        ? 'linear-gradient(-45deg, #0f0f23, #1a1a2e, #16213e, #0f3460)'
-        // : 'linear-gradient(-45deg,rgb(230, 228, 220),rgb(209, 207, 202),rgb(231, 228, 218),rgb(236, 234, 230))',
-        : 'linear-gradient(-45deg, #fafaf7)',
-      backgroundSize: '400% 400%',
-      animation: 'gradientShift 15s ease infinite'
-    }}>
-      <style>{`
-        @keyframes gradientShift {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-      `}</style>
-    </div>
+      background: isDarkMode ? '#1d1d1f' : '#ffffff',
+    }} />
   );
 };
 
-// Global styles for theme
+// Premium global styles
 const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+  }
+
   body {
-    font-family: 'Inter', 'Rubik', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background: transparent;
+    background: ${props => props.theme.background};
     color: ${props => props.theme.text};
     transition: all 0.3s ease;
+    font-size: 17px;
+    line-height: 1.47;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   #root {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     background: ${props => props.theme.containerBg};
-    backdrop-filter: blur(10px);
-    padding: 30px;
-    border-radius: 24px;
+    padding: 0;
   }
 
   .aboutme {
     text-decoration: none;
-    color: ${props => props.theme.text};
-    background: ${props => props.theme.linkBg};
-    padding: 4px 8px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+    color: ${props => props.theme.accent};
     font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
   }
 
   .aboutme:hover {
-    background: ${props => props.theme.linkHoverBg};
-    transform: translateY(-1px);
+    border-bottom-color: ${props => props.theme.accentHover};
   }
 
   .react-tabs__tab-list {
-    border-bottom: none;
-    margin-bottom: 40px;
+    border-bottom: 1px solid ${props => props.theme.borderColor};
+    margin: 0 0 48px 0;
     display: flex;
-    gap: 15px;
-    padding: 12px;
-    background: ${props => props.theme.tabListBg};
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-    border: 1px solid ${props => props.theme.borderColor};
+    gap: 0;
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
   }
 
   .react-tabs__tab {
-    padding: 12px 24px;
-    border-radius: 12px;
+    padding: 16px 24px;
+    border-radius: 0;
     transition: all 0.2s ease;
     color: ${props => props.theme.tabText};
-    font-weight: 600;
-    opacity: 0.8;
+    font-weight: 400;
+    font-size: 17px;
     border: none;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .react-tabs__tab::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: ${props => props.theme.text};
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-    opacity: 0;
-  }
-
-  .react-tabs__tab--selected::after {
-    width: 70%;
-    opacity: 1;
+    background: transparent;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
   }
 
   .react-tabs__tab--selected {
-    background: ${props => props.theme.tabBg};
+    background: transparent;
     color: ${props => props.theme.tabSelectedText};
-    opacity: 1;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom-color: ${props => props.theme.accent};
   }
 
-  .react-tabs__tab:hover {
-    background: ${props => props.theme.tabBg === 'white' ? 'rgba(0, 0, 0, 0.05)' : 'rgba(255, 255, 255, 0.1)'};
+  .react-tabs__tab:hover:not(.react-tabs__tab--selected) {
+    color: ${props => props.theme.text};
   }
 
   .react-tabs__tab-panel {
     background: transparent;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    min-height: 500px;
+    min-height: 400px;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.2s ease;
     position: absolute;
-    border-radius: 16px;
-    transform: translateY(10px);
     pointer-events: none;
   }
 
   .react-tabs__tab-panel--selected {
-    display: block;
-    height: 100%;
     opacity: 1;
     position: relative;
-    transform: translateY(0);
     pointer-events: auto;
   }
 
   .project, .experience {
-    background-color: ${props => props.theme.cardBg};
-    box-shadow: ${props => props.theme.cardBoxShadow};
+    background: ${props => props.theme.cardBg};
     border: 1px solid ${props => props.theme.cardBorder};
+    box-shadow: ${props => props.theme.cardBoxShadow};
+    transition: all 0.2s ease;
   }
 
   .project:hover, .experience:hover {
     box-shadow: ${props => props.theme.cardHoverBoxShadow};
+    transform: translateY(-2px);
   }
   
   .contact-info {
@@ -250,41 +229,17 @@ const GlobalStyle = createGlobalStyle`
     background: ${props => props.theme.resumeButtonBg};
     color: ${props => props.theme.resumeButtonText};
   }
-  
-  .publication h4 {
-    border-bottom: 1px solid ${props => props.theme.publicationBorder};
-  }
-
-  /* Ensure nested tabs have the same transition */
-  .react-tabs .react-tabs__tab-panel {
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-
-  /* Ensure consistent tab panel heights */
-  .react-tabs__tab-list + div {
-    position: relative;
-    min-height: 600px;
-  }
-
-  /* Ensure nested tabs maintain proper spacing */
-  .react-tabs .react-tabs {
-    margin-top: 20px;
-  }
-
-  .react-tabs .react-tabs__tab-list {
-    margin-bottom: 30px;
-  }
 `;
 
-// Styled components with theme support
+// Premium styled components
 const Container = styled.div`
-  max-width: 1200px;
+  max-width: 980px;
   width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 48px 24px;
   
   @media (max-width: 768px) {
-    padding: 15px;
+    padding: 24px 20px;
   }
 `;
 
@@ -292,124 +247,135 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 64px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid ${props => props.theme.borderColor};
   
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 15px;
+    gap: 24px;
+    text-align: center;
   }
 `;
 
 const ProfileDetails = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 30px;
+  margin-left: 32px;
+  
+  @media (max-width: 768px) {
+    margin-left: 0;
+    align-items: center;
+  }
 `;
 
 const ProfileImage = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
-  margin-bottom: 20px;
   object-fit: cover;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 20px #cc785c, 0 0 40px rgba(191, 223, 207, 0.4), 0 0 60px rgba(191, 223, 207, 0.2);
-  border: 3px solid rgba(191, 223, 207, 0.3);
+  transition: all 0.2s ease;
+  border: 1px solid ${props => props.theme.borderColor};
   
   @media (max-width: 768px) {
-    width: 80px;
-    height: 80px;
-    box-shadow: 0 0 15px #bfdfcf, 0 0 30px rgba(191, 223, 207, 0.4), 0 0 45px rgba(191, 223, 207, 0.2);
-    
-    &:hover {
-      box-shadow: 0 0 20px #bfdfcf, 0 0 40px rgba(191, 223, 207, 0.6), 0 0 60px rgba(191, 223, 207, 0.3);
-    }
+    width: 100px;
+    height: 100px;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
-  margin: 0;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px 0;
   color: ${props => props.theme.text};
+  
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
 `;
 
 const Subtitle = styled.h2`
-  font-size: 1.5rem;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.38;
   color: ${props => props.theme.subtitleText};
-  margin: 10px 0 0 0;
+  margin: 0 0 24px 0;
+  
+  @media (max-width: 768px) {
+    font-size: 19px;
+  }
 `;
 
 const Content = styled.main`
-  background: ${props => props.theme.containerBg};
-  border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: ${props => props.theme.boxShadow};
-  
-  @media (max-width: 768px) {
-    padding: 15px;
-    border-radius: 15px;
-  }
+  background: transparent;
+  margin-bottom: 48px;
 `;
 
 const Footer = styled.footer`
-  margin-top: 40px;
-  font-size: 0.9rem;
+  margin-top: 64px;
+  padding-top: 32px;
+  border-top: 1px solid ${props => props.theme.borderColor};
+  font-size: 14px;
   color: ${props => props.theme.footerText};
+  text-align: center;
 `;
 
-/* New Styled Components for Rounded Translucent Backgrounds */
+// About section with clean design
 const AboutSection = styled.div`
   background: ${props => props.theme.aboutSectionBg};
-  backdrop-filter: blur(4px);
   border: 1px solid ${props => props.theme.borderColor};
-  border-radius: 20px;
-  padding: 30px;
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  padding: 32px;
+  margin-bottom: 48px;
   
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 16px 0;
+    color: ${props => props.theme.text};
+  }
+  
+  p {
+    font-size: 17px;
+    line-height: 1.47;
+    color: ${props => props.theme.text};
+    margin: 0 0 24px 0;
+  }
+  
+  p:last-child {
+    margin-bottom: 0;
   }
 `;
 
-const CurrentInterestsSection = styled.div`
-  background: ${props => props.theme.currentInterestsBg};
-  border-radius: 15px;
-  padding: 20px;
-  margin-top: 10px;
-  border: 1px solid ${props => props.theme.borderColor};
-`;
-
-// Theme toggle button
+// Clean theme toggle button
 const ThemeToggle = styled.button`
-  background: ${props => props.isDark ? '#f0f0f0' : '#2a2a3a'};
-  color: ${props => props.isDark ? '#2a2a3a' : '#f0f0f0'};
-  border: none;
+  background: transparent;
+  border: 1px solid ${props => props.theme.borderColor};
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+  color: ${props => props.theme.text};
   
   &:hover {
-    transform: scale(1.1);
+    background: ${props => props.theme.linkHoverBg};
   }
   
   &:focus {
-    outline: none;
+    outline: 2px solid ${props => props.theme.accent};
+    outline-offset: 2px;
   }
 `;
 
 const ContactIcons = styled.div`
   display: flex;
-  gap: 16px;
-  margin-top: 12px;
+  gap: 12px;
   
   a {
     display: flex;
@@ -417,20 +383,30 @@ const ContactIcons = styled.div`
     justify-content: center;
     color: ${props => props.theme.text};
     background: ${props => props.theme.linkBg};
-    padding: 8px;
+    padding: 10px;
     border-radius: 50%;
     transition: all 0.2s ease;
+    border: 1px solid ${props => props.theme.borderColor};
     
     &:hover {
       background: ${props => props.theme.linkHoverBg};
-      transform: translateY(-3px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      color: ${props => props.theme.accent};
     }
   }
-  
-  @media (max-width: 768px) {
-    gap: 12px;
-  }
+`;
+
+const ProjectGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+`;
+
+const ExperienceGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
 `;
 
 const Home = () => {
@@ -478,26 +454,12 @@ const Home = () => {
             href="https://www.cs.umd.edu/"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              background: isDarkMode
-                ? 'rgba(226, 24, 51, 0.2)'
-                : 'rgba(226, 24, 51, 0.1)',
-              border: '3px solid #E21833',
-              paddingLeft: '8px'
-            }}
-          >🐢 University of Maryland</a> and am currently pursuing a master's at <a
+          ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />University of Maryland</a> and am currently pursuing a master's at <a
             className="aboutme"
             href="https://www.clsp.jhu.edu"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              background: isDarkMode
-                ? 'rgba(0, 45, 114, 0.3)'
-                : 'rgba(0, 45, 114, 0.1)',
-              border: '3px solid #002D72',
-              paddingLeft: '8px'
-            }}
-          >🐦 Johns Hopkins University</a>.
+          ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />Johns Hopkins University</a>.
         </p>
 
         <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: 'inherit' }}>Let's Connect!</h4>
@@ -508,69 +470,33 @@ const Home = () => {
 
         {/* Image Section */}
         <div style={{
-          marginTop: '30px',
+          marginTop: '32px',
           textAlign: 'center',
-          background: isDarkMode
-            ? 'linear-gradient(135deg, rgba(40, 40, 50, 0.8), rgba(30, 30, 40, 0.9))'
-            : 'linear-gradient(135deg, rgba(255, 255, 255, 0.6), rgba(248, 249, 250, 0.8))',
-          borderRadius: '16px',
-          padding: '24px',
-          border: isDarkMode
-            ? '1px solid rgba(255, 255, 255, 0.1)'
-            : '1px solid rgba(0, 0, 0, 0.08)',
-          boxShadow: isDarkMode
-            ? '0 4px 20px rgba(0, 0, 0, 0.3)'
-            : '0 4px 20px rgba(0, 0, 0, 0.08)'
+          padding: '24px 0'
         }}>
           <div style={{
-            position: 'relative',
-            overflow: 'hidden',
             borderRadius: '12px',
-            cursor: 'pointer',
-            transition: 'transform 0.3s ease, box-shadow 0.3s ease'
-          }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.02)';
-              e.currentTarget.style.boxShadow = isDarkMode
-                ? '0 8px 30px rgba(0, 0, 0, 0.5)'
-                : '0 8px 30px rgba(0, 0, 0, 0.15)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
-              e.currentTarget.style.boxShadow = isDarkMode
-                ? '0 4px 20px rgba(0, 0, 0, 0.3)'
-                : '0 4px 20px rgba(0, 0, 0, 0.08)';
-            }}>
+            overflow: 'hidden',
+            border: `1px solid ${isDarkMode ? '#424245' : '#e5e5e7'}`,
+          }}>
             <img
               src={salzburg}
-              alt="salzburg view"
+              alt="Mountain view in Salzburg"
               style={{
                 width: '100%',
-                height: '500px',
+                height: '400px',
                 objectFit: 'cover',
-                borderRadius: '12px',
                 display: 'block'
               }}
             />
-
-            <div style={{
-              position: 'absolute',
-              bottom: '0',
-              left: '0',
-              right: '0',
-              background: 'linear-gradient(transparent, rgba(0,0,0,0.3))',
-              height: '60px',
-              borderRadius: '0 0 12px 12px'
-            }}></div>
           </div>
-
           <p style={{
             margin: '16px 0 0 0',
-            fontSize: '0.9rem',
-            color: isDarkMode ? '#ccc' : '#666',
-            fontStyle: 'italic'
+            fontSize: '14px',
+            color: isDarkMode ? '#86868b' : '#86868b',
+            fontWeight: 400
           }}>
-            Cool pic of a mountain in Salzburg
+            Mountain view in Salzburg
           </p>
         </div>
 
@@ -579,9 +505,8 @@ const Home = () => {
   );
 
   const ProjectsContent = () => (
-    <>
-      <h3>Projects</h3>
-      <div className="project-container">
+    <div>
+      <ProjectGrid>
         <div className="project">
           <a href="http://www.agoraai.app/" target="_blank" rel="noopener noreferrer">
             <img src={agora} alt="Project 1" />
@@ -690,12 +615,12 @@ const Home = () => {
             <strong>Skills: </strong>Full-Stack iOS Development, NLP Libraries, Google Cloud, GitHub
           </p>
         </div>
-      </div>
-    </>
+      </ProjectGrid>
+    </div>
   );
 
   const IndustryContent = () => (
-    <div className="industry-experience">
+    <ExperienceGrid>
       <div className="experience">
         <h3>Graduate SWE Intern (AI/ML)</h3>
         <a href="https://www.apple.com/apple-intelligence/" target="_blank" rel="noopener noreferrer">
@@ -815,11 +740,22 @@ const Home = () => {
           <strong>Skills: </strong>React.js, React Native, Node.js, Firebase
         </p>
       </div>
-    </div>
+    </ExperienceGrid>
   );
 
   const ResearchContent = () => (
-    <div className="academic-experience">
+    <ExperienceGrid>
+      <div className="experience">
+        <h3>Research Assistant</h3>
+        <h3>Johns Hopkins (CLSP)</h3>
+        <p>08/25 - present</p>
+        <p>
+          LLM cost and confidence calibration for high-stakes domains
+        </p>
+        <p>
+          <strong>Skills: </strong>Python, PyTorch, NLP, Large Language Models, Reinforcement Learning
+        </p>
+      </div>
       <div className="experience">
         <h3>Technology Policy Fellow</h3>
         <h3>Paragon Policy Fellowship</h3>
@@ -944,7 +880,7 @@ const Home = () => {
           <strong>Skills: </strong>Python, TensorFlow, Keras
         </p>
       </div>
-    </div>
+    </ExperienceGrid>
   );
 
   const PublicationsContent = () => (
@@ -990,7 +926,7 @@ const Home = () => {
     <ThemeContext.Provider value={{ isDarkMode, toggleTheme }}>
       <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
         <GlobalStyle />
-        <AnimatedGradientBackground isDarkMode={isDarkMode} />
+        <CleanBackground isDarkMode={isDarkMode} />
         <Container>
           <Header className="header">
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -1019,9 +955,9 @@ const Home = () => {
 
               </ProfileDetails>
             </div>
-            {/* <ThemeToggle isDark={isDarkMode} onClick={toggleTheme}>
-              {isDarkMode ? '☀️' : '🌙'}
-            </ThemeToggle> */}
+            <ThemeToggle isDark={isDarkMode} onClick={toggleTheme}>
+              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+            </ThemeToggle>
           </Header>
 
           <Content>
@@ -1030,7 +966,7 @@ const Home = () => {
                 <Tab>About</Tab>
                 <Tab>Projects</Tab>
                 <Tab>Experience</Tab>
-                <Tab>Publications</Tab>
+                <Tab>Writing</Tab>
                 <Tab>Education</Tab>
               </TabList>
 
@@ -1053,7 +989,7 @@ const Home = () => {
 
           <ContactSection />
           <ResumeSection />
-          <Footer>Last updated 07.25.2025</Footer>
+          <Footer>Last updated 09.16.2025</Footer>
         </Container>
       </ThemeProvider>
     </ThemeContext.Provider>
@@ -1094,27 +1030,5 @@ const ResumeSection = () => (
     </a>
   </div>
 );
-
-const ProjectCard = ({ title, image, link, description, skills }) => (
-  <div className="project">
-    <a href={link} target="_blank" rel="noopener noreferrer">
-      <img src={image} alt={title} />
-    </a>
-    <h3>{title}</h3>
-    <a
-      className="aboutme"
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      (Source)
-    </a>
-    <p className="project">
-      <strong>Skills: </strong>{skills}
-    </p>
-  </div>
-);
-
-
 
 export default Home;

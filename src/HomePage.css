@@ -14,16 +14,16 @@
 }
 
 body {
-    font-family: 'Inter', 'Rubik', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
     margin: 0;
     padding: 0;
     transition: all 0.3s ease;
-    background: linear-gradient(135deg,
-            rgba(255, 255, 255, 0.95),
-            rgba(240, 240, 240, 0.85)),
-        url('./images/IMG_8858.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #1a1a1a;
+    background: #ffffff;
+    color: #1d1d1f;
+    font-size: 17px;
+    line-height: 1.47;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* .header {
@@ -74,45 +74,32 @@ body {
     overflow: hidden;
 }
 
-.react-tabs__tab::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: var(--tab-indicator, #1a1a1a);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-    opacity: 0;
+.react-tabs__tab--selected {
+    background: transparent;
+    color: #1d1d1f;
+    border-bottom-color: #007aff;
 }
 
-.react-tabs__tab--selected::after {
-    width: 70%;
-    opacity: 1;
+.react-tabs__tab:hover:not(.react-tabs__tab--selected) {
+    color: #1d1d1f;
 }
 
 .react-tabs__tab-panel {
     background: transparent;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    min-height: 500px;
+    min-height: 400px;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.2s ease;
     position: absolute;
-    border-radius: 16px;
-    transform: translateY(10px);
     pointer-events: none;
 }
 
 .react-tabs__tab-panel--selected {
-    display: block;
-    height: 100%;
     opacity: 1;
     position: relative;
-    transform: translateY(0);
     pointer-events: auto;
 }
 
@@ -138,73 +125,73 @@ html {
 
 .project img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 16px;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    margin-bottom: 16px;
 }
 
 .project img:hover {
-    transform: scale(1.1);
-    box-shadow: 2px 2px 10px #ccc;
+    transform: scale(1.02);
 }
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 48px;
 }
 
 .project {
-    background-color: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    background: #ffffff;
+    border: 1px solid #e5e5e7;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
 }
 
 .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .industry-experience,
 .academic-experience {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 24px;
-    margin-bottom: 30px;
+    margin-bottom: 48px;
 }
 
 .experience {
-    background-color: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    background: #ffffff;
+    border: 1px solid #e5e5e7;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.04);
+    transition: all 0.2s ease;
 }
 
 .experience:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .experience img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    margin-bottom: 16px;
 }
 
 .experience img:hover {
-    transform: scale(1.1);
-    box-shadow: 2px 2px 10px #ccc;
+    transform: scale(1.02);
 }
 
 .header {
@@ -255,17 +242,14 @@ html {
 
 .aboutme {
     text-decoration: none;
-    color: #1a1a1a;
-    background: rgba(96, 89, 77, 0.1);
-    padding: 4px 8px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
+    color: #007aff;
     font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
 }
 
 .aboutme:hover {
-    background: rgba(96, 89, 77, 0.2);
-    transform: translateY(-1px);
+    border-bottom-color: #0056cc;
 }
 
 .course-grid {
@@ -302,12 +286,12 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 40px;
-    padding: 20px;
-    border-radius: 16px;
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 32px;
+    margin-top: 48px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #f5f5f7;
+    border: 1px solid #e5e5e7;
 }
 
 .contact-item {
@@ -327,16 +311,19 @@ html {
 .resume-download a {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 12px;
+    border-radius: 8px;
     text-decoration: none;
     transition: all 0.2s ease;
-    margin: 0 10px;
+    margin: 0 8px;
     font-weight: 500;
+    background: #1d1d1f;
+    color: #ffffff;
+    border: 1px solid #1d1d1f;
 }
 
 .resume-download a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background: #424245;
+    border-color: #424245;
 }
 
 .social-links a:hover {
@@ -453,120 +440,75 @@ html {
     animation: spin 1s ease;
 }
 
-/* Responsive improvements */
+/* Responsive design */
 @media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    
     .header {
         flex-direction: column;
         text-align: center;
-        padding: 15px;
-        margin-bottom: 20px;
-    }
-
-    .profile-details {
-        margin-left: 0;
-        margin-top: 20px;
+        padding: 20px 0;
+        margin-bottom: 32px;
     }
 
     .contact-info {
         flex-direction: column;
-        gap: 15px;
-        padding: 15px;
+        gap: 20px;
+        padding: 20px;
+        margin-top: 32px;
     }
 
     .react-tabs__tab-list {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 8px;
-        padding: 8px;
-    }
-
-    .name {
-        font-size: 2em;
-        margin-left: 0;
-        text-align: center;
-    }
-
-    .bio {
-        padding-left: 0;
-        text-align: center;
-    }
-
-    .menu {
-        margin-top: 15px;
-        width: 100%;
-    }
-
-    .menu ol {
-        gap: 10px;
+        gap: 0;
         padding: 0;
-        flex-wrap: wrap;
-        justify-content: center;
+    }
+
+    .react-tabs__tab {
+        padding: 12px 16px;
+        font-size: 16px;
+        min-width: auto;
     }
 
     .project-container,
     .industry-experience,
     .academic-experience {
         grid-template-columns: 1fr;
-    }
-
-    .main-container {
-        padding: 15px;
+        gap: 20px;
     }
 
     .resume-download {
-        flex-direction: column;
-        gap: 10px;
+        margin-top: 24px;
     }
 
     .resume-download a {
-        margin: 5px 0;
-    }
-
-    /* Adjust tab panels for mobile */
-    .react-tabs__tab-panel {
-        padding: 10px;
-    }
-
-    .react-tabs__tab {
-        padding: 8px 16px;
-        font-size: 0.9em;
+        margin: 5px;
     }
 }
 
-/* Additional media query for very small screens */
+/* Very small screens */
 @media (max-width: 480px) {
-    .header h1 {
-        font-size: 2em;
-    }
-
-    .header h2 {
-        font-size: 1.5em;
-    }
-
-    .course-grid {
-        grid-template-columns: 1fr;
-    }
-
     .contact-info {
-        flex-direction: column;
-        align-items: center;
+        padding: 16px;
+        gap: 16px;
     }
 
-    .social-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #top-btn {
-        padding: 10px;
-        font-size: 14px;
-        right: 10px;
-        bottom: 10px;
+    .react-tabs__tab {
+        padding: 10px 12px;
+        font-size: 15px;
     }
 
     .project img,
     .experience img {
-        height: 150px;
+        height: 180px;
+    }
+
+    .project,
+    .experience {
+        padding: 20px;
     }
 }
 
@@ -619,25 +561,20 @@ body.light-mode {
 /* Improved tab transitions */
 .react-tabs__tab-panel {
     background: transparent;
-    padding: 20px;
-    margin-top: 10px;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    min-height: 500px;
+    min-height: 400px;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    transition: opacity 0.2s ease;
     position: absolute;
-    border-radius: 16px;
-    transform: translateY(10px);
     pointer-events: none;
 }
 
 .react-tabs__tab-panel--selected {
-    display: block;
-    height: 100%;
     opacity: 1;
     position: relative;
-    transform: translateY(0);
     pointer-events: auto;
 }
 
@@ -652,22 +589,14 @@ body.light-mode {
     overflow: hidden;
 }
 
-.react-tabs__tab::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: var(--tab-indicator, #1a1a1a);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-    opacity: 0;
+.react-tabs__tab--selected {
+    background: transparent;
+    color: #1d1d1f;
+    border-bottom-color: #007aff;
 }
 
-.react-tabs__tab--selected::after {
-    width: 70%;
-    opacity: 1;
+.react-tabs__tab:hover:not(.react-tabs__tab--selected) {
+    color: #1d1d1f;
 }
 
 /* Add tab hover effect */

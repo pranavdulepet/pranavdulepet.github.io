@@ -1,5 +1,6 @@
 import React from 'react';
 import './EducationComponent.css';
+import jhu from './images/jhu-logo.png';
 import umdcs from './images/umd-cs-logo.png';
 import quest from './images/quest-logo.png';
 import berk from './images/ucb-logo.png';
@@ -29,39 +30,77 @@ class Education extends React.Component {
                 name="school1"
                 className={`school-button ${this.state.selectedButton === 'school1' ? 'selected' : ''}`}
                 onClick={this.handleButtonClick}
-                src={umdcs}
-                alt="school1 logo"
+                src={jhu}
+                alt="Johns Hopkins University logo"
               />
 
               <img
                 name="school2"
                 className={`school-button ${this.state.selectedButton === 'school2' ? 'selected' : ''}`}
                 onClick={this.handleButtonClick}
-                src={quest}
-                alt="school2 logo"
+                src={umdcs}
+                alt="University of Maryland logo"
               />
 
               <img
                 name="school3"
                 className={`school-button ${this.state.selectedButton === 'school3' ? 'selected' : ''}`}
                 onClick={this.handleButtonClick}
-                src={berk}
-                alt="school3 logo"
+                src={quest}
+                alt="Quest Program logo"
               />
 
               <img
                 name="school4"
                 className={`school-button ${this.state.selectedButton === 'school4' ? 'selected' : ''}`}
                 onClick={this.handleButtonClick}
+                src={berk}
+                alt="UC Berkeley logo"
+              />
+
+              <img
+                name="school5"
+                className={`school-button ${this.state.selectedButton === 'school5' ? 'selected' : ''}`}
+                onClick={this.handleButtonClick}
                 src={foothill}
-                alt="school4 logo"
+                alt="Foothill College logo"
               />
             </div>
             <div className="class-list">
               {this.state.selectedButton === 'school1' && (
                 <ul>
+                  <a className="aboutme" href="https://www.clsp.jhu.edu/" target="_blank" rel="noopener noreferrer">
+                    M.S.E. in Computer Science - Human Language Technology, August 2025 - present
+                  </a>
+                  <div className="course-grid">
+                    <div className="course">
+                      <a className="aboutme" href="https://www.cs.jhu.edu/~jason/465/" target="_blank" rel="noopener noreferrer">
+                        CS 600.465
+                      </a>
+                      <br />
+                      Natural Language Processing
+                    </div>
+                    <div className="course">
+                      <a className="aboutme" href="https://jhu-intro-hlt.github.io" target="_blank" rel="noopener noreferrer">
+                        CS 601.467
+                      </a>
+                      <br />
+                      Introduction to Human Language Technology
+                    </div>
+                    <div className="course">
+                      <a className="aboutme" href="https://gillianhadfield.org" target="_blank" rel="noopener noreferrer">
+                        EN 601.669
+                      </a>
+                      <br />
+                      AI Safety, Alignment, & Governance
+                    </div>
+                  </div>
+                </ul>
+              )}
+              {this.state.selectedButton === 'school2' && (
+                <ul>
                   <a className="aboutme" href="https://www.cs.umd.edu/" target="_blank" rel="noopener noreferrer">
-                    B.S. (Honors) in Computer Science - Machine Learning, August 2021 - present
+                    B.S. (Honors) in Computer Science - Machine Learning, August 2021 - May 2025
                   </a>
                   <div className="course-grid">
                     <div className="course">
@@ -221,10 +260,10 @@ class Education extends React.Component {
                   </div>
                 </ul>
               )}
-              {this.state.selectedButton === 'school2' && (
+              {this.state.selectedButton === 'school3' && (
                 <ul>
                   <a className="aboutme" href="https://www.rhsmith.umd.edu/quest" target="_blank" rel="noopener noreferrer">
-                    Honors Program at UMD, August 2022 - present
+                    Honors Program at UMD, August 2022 - May 2024
                   </a>
                   <div className="course-grid">
                     <div className="course">
@@ -258,7 +297,7 @@ class Education extends React.Component {
                   </div>
                 </ul>
               )}
-              {this.state.selectedButton === 'school3' && (
+              {this.state.selectedButton === 'school4' && (
                 <ul>
                   <a className="aboutme" href="https://www.berkeley.edu/" target="_blank" rel="noopener noreferrer">
                     High School Dual-Enrollment, 2020
@@ -281,7 +320,7 @@ class Education extends React.Component {
                   </div>
                 </ul>
               )}
-              {this.state.selectedButton === 'school4' && (
+              {this.state.selectedButton === 'school5' && (
                 <ul>
                   <a className="aboutme" href="https://www.foothill.edu/" target="_blank" rel="noopener noreferrer">
                     High School Dual-Enrollment, 2020 - 2021
