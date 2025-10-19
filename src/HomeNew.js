@@ -481,7 +481,7 @@ const Home = () => {
           }}>
             <img
               src={salzburg}
-              alt="Mountain view in Salzburg"
+              alt="Cool mountain in Salzburg"
               style={{
                 width: '100%',
                 height: '400px',
@@ -626,7 +626,7 @@ const Home = () => {
         <a href="https://www.apple.com/apple-intelligence/" target="_blank" rel="noopener noreferrer">
           <img src={apple} alt="Apple" />
         </a>
-        <h3>Amazon</h3>
+        <h3>Apple</h3>
         <p>05/25 - 08/25</p>
         <p>Apple Intelligence - building agentic frameworks</p>
         <p><strong>Skills:</strong> Swift, SwiftUI, LLM inference, LLM evaluation</p>
