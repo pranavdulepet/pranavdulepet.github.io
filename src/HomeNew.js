@@ -29,82 +29,84 @@ import { Mail, Linkedin, Github, FileText, GraduationCap, Sun, Moon } from 'luci
 import pranav from './images/pranav-dulepet-nature-pfp.heic';
 import cv from './images/pranav_dulepet_cv_grad_apps.pdf';
 
-// Premium minimalist theme design
+// Premium minimalist theme design - Anthropic-inspired
 const lightTheme = {
-  // Core colors
+  // Core colors - clean, refined neutrals
   background: '#ffffff',
-  containerBg: '#ffffff',
-  text: '#1d1d1f',
-  subtitleText: '#86868b',
-  footerText: '#86868b',
+  containerBg: '#fafbfc',
+  text: '#1a1a1a',
+  subtitleText: '#6b7280',
+  footerText: '#9ca3af',
 
-  // Cards and surfaces
+  // Cards and surfaces - subtle, clean
   cardBg: '#ffffff',
-  cardBorder: '#e5e5e7',
+  cardBorder: '#e5e7eb',
   aboutSectionBg: '#ffffff',
 
   // Navigation and tabs
-  tabListBg: '#f5f5f7',
+  tabListBg: '#f9fafb',
   tabBg: 'transparent',
-  tabText: '#86868b',
-  tabSelectedText: '#1d1d1f',
+  tabText: '#9ca3af',
+  tabSelectedText: '#1a1a1a',
   tabSelectedBg: '#ffffff',
 
   // Interactive elements
-  contactInfoBg: '#f5f5f7',
-  resumeButtonBg: '#1d1d1f',
+  contactInfoBg: '#f9fafb',
+  resumeButtonBg: '#1a1a1a',
   resumeButtonText: '#ffffff',
-  linkBg: '#f5f5f7',
-  linkHoverBg: '#e5e5e7',
+  linkBg: '#f3f4f6',
+  linkHoverBg: '#e5e7eb',
 
-  // Shadows and borders
-  cardBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.04)',
-  cardHoverBoxShadow: '0 4px 16px rgba(0, 0, 0, 0.08)',
-  borderColor: '#e5e5e7',
+  // Shadows and borders - subtle, refined
+  cardBoxShadow: '0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
+  cardHoverBoxShadow: '0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04)',
+  borderColor: '#e5e7eb',
 
-  // Accent
-  accent: '#007aff',
-  accentHover: '#0056cc',
+  // Accent - subtle, professional
+  accent: '#6366f1',
+  accentHover: '#4f46e5',
+  goldAccent: '#6366f1',
 };
 
 const darkTheme = {
-  // Core colors
-  background: '#1d1d1f',
-  containerBg: '#1d1d1f',
-  text: '#f5f5f7',
-  subtitleText: '#86868b',
-  footerText: '#86868b',
+  // Core colors - refined dark tones
+  background: '#0f172a',
+  containerBg: '#1e293b',
+  text: '#f1f5f9',
+  subtitleText: '#94a3b8',
+  footerText: '#64748b',
 
-  // Cards and surfaces
-  cardBg: '#2d2d30',
-  cardBorder: '#424245',
-  aboutSectionBg: '#2d2d30',
+  // Cards and surfaces - subtle dark
+  cardBg: '#1e293b',
+  cardBorder: '#334155',
+  aboutSectionBg: '#1e293b',
 
   // Navigation and tabs
-  tabListBg: '#2d2d30',
+  tabListBg: '#1e293b',
   tabBg: 'transparent',
-  tabText: '#86868b',
-  tabSelectedText: '#f5f5f7',
-  tabSelectedBg: '#424245',
+  tabText: '#94a3b8',
+  tabSelectedText: '#f1f5f9',
+  tabSelectedBg: '#334155',
 
   // Interactive elements
-  contactInfoBg: '#2d2d30',
-  resumeButtonBg: '#f5f5f7',
-  resumeButtonText: '#1d1d1f',
-  linkBg: '#2d2d30',
-  linkHoverBg: '#424245',
+  contactInfoBg: '#1e293b',
+  resumeButtonBg: '#f1f5f9',
+  resumeButtonText: '#0f172a',
+  linkBg: '#1e293b',
+  linkHoverBg: '#334155',
 
-  // Shadows and borders
-  cardBoxShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-  cardHoverBoxShadow: '0 4px 16px rgba(0, 0, 0, 0.3)',
-  borderColor: '#424245',
+  // Shadows and borders - subtle, refined
+  cardBoxShadow: '0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2)',
+  cardHoverBoxShadow: '0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3)',
+  borderColor: '#334155',
 
-  // Accent
-  accent: '#0a84ff',
-  accentHover: '#409cff',
+  // Accent - subtle, professional
+  accent: '#818cf8',
+  accentHover: '#a5b4fc',
+  goldAccent: '#818cf8',
 };
 
-// Minimal clean background
+// Minimal clean background - Anthropic-inspired
 const CleanBackground = ({ isDarkMode }) => {
   return (
     <div style={{
@@ -114,7 +116,7 @@ const CleanBackground = ({ isDarkMode }) => {
       width: '100%',
       height: '100%',
       zIndex: -10,
-      background: isDarkMode ? '#1d1d1f' : '#ffffff',
+      background: isDarkMode ? '#0f172a' : '#ffffff',
     }} />
   );
 };
@@ -156,20 +158,26 @@ const GlobalStyle = createGlobalStyle`
     border-bottom-color: ${props => props.theme.accentHover};
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', 'Crimson Text', serif;
+  }
+
   .react-tabs__tab-list {
     border-bottom: 1px solid ${props => props.theme.borderColor};
-    margin: 0 0 48px 0;
+    margin: 0 0 32px 0;
     display: flex;
     gap: 0;
     padding: 0;
     background: transparent;
     border-radius: 0;
+    position: relative;
   }
+
 
   .react-tabs__tab {
     padding: 16px 24px;
     border-radius: 0;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     color: ${props => props.theme.tabText};
     font-weight: 400;
     font-size: 17px;
@@ -177,16 +185,24 @@ const GlobalStyle = createGlobalStyle`
     background: transparent;
     cursor: pointer;
     border-bottom: 2px solid transparent;
+    letter-spacing: 0.01em;
+    position: relative;
   }
 
   .react-tabs__tab--selected {
     background: transparent;
     color: ${props => props.theme.tabSelectedText};
     border-bottom-color: ${props => props.theme.accent};
+    font-weight: 500;
   }
 
   .react-tabs__tab:hover:not(.react-tabs__tab--selected) {
     color: ${props => props.theme.text};
+    background: ${props => props.theme.linkBg};
+  }
+
+  .react-tabs {
+    position: relative;
   }
 
   .react-tabs__tab-panel {
@@ -197,13 +213,18 @@ const GlobalStyle = createGlobalStyle`
     min-height: 400px;
     width: 100%;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    transform: translateY(8px);
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: absolute;
+    top: 0;
+    left: 0;
     pointer-events: none;
+    will-change: opacity, transform;
   }
 
   .react-tabs__tab-panel--selected {
     opacity: 1;
+    transform: translateY(0);
     position: relative;
     pointer-events: auto;
   }
@@ -212,34 +233,42 @@ const GlobalStyle = createGlobalStyle`
     background: ${props => props.theme.cardBg};
     border: 1px solid ${props => props.theme.cardBorder};
     box-shadow: ${props => props.theme.cardBoxShadow};
-    transition: all 0.2s ease;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
   }
+
 
   .project:hover, .experience:hover {
     box-shadow: ${props => props.theme.cardHoverBoxShadow};
     transform: translateY(-2px);
+    border-color: ${props => props.theme.borderColor};
   }
-  
-  .contact-info {
-    background: ${props => props.theme.contactInfoBg};
-    border: 1px solid ${props => props.theme.borderColor};
+
+  .project h3, .experience h3 {
+    font-family: 'Playfair Display', 'Crimson Text', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
   }
-  
-  .resume-download a {
-    background: ${props => props.theme.resumeButtonBg};
-    color: ${props => props.theme.resumeButtonText};
+
+  .publications h4 {
+    font-family: 'Playfair Display', 'Crimson Text', serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    font-size: 20px;
+    margin-bottom: 16px;
   }
 `;
 
-// Premium styled components
+// Premium styled components with refined spacing
 const Container = styled.div`
   max-width: 980px;
   width: 100%;
   margin: 0 auto;
-  padding: 48px 24px;
+  padding: 48px 32px;
   
   @media (max-width: 768px) {
-    padding: 24px 20px;
+    padding: 32px 24px;
   }
 `;
 
@@ -247,14 +276,17 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   padding-bottom: 32px;
   border-bottom: 1px solid ${props => props.theme.borderColor};
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   @media (max-width: 768px) {
     flex-direction: column;
     gap: 24px;
     text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
   }
 `;
 
@@ -274,8 +306,14 @@ const ProfileImage = styled.img`
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  transition: all 0.2s ease;
-  border: 1px solid ${props => props.theme.borderColor};
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid ${props => props.theme.borderColor};
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  
+  &:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1), 0 2px 6px rgba(0, 0, 0, 0.06);
+    transform: scale(1.01);
+  }
   
   @media (max-width: 768px) {
     width: 100px;
@@ -284,11 +322,12 @@ const ProfileImage = styled.img`
 `;
 
 const Title = styled.h1`
+  font-family: 'Playfair Display', 'Crimson Text', serif;
   font-size: 48px;
   font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  margin: 0 0 8px 0;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 0 0 12px 0;
   color: ${props => props.theme.text};
   
   @media (max-width: 768px) {
@@ -299,9 +338,10 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   font-size: 21px;
   font-weight: 400;
-  line-height: 1.38;
+  line-height: 1.5;
   color: ${props => props.theme.subtitleText};
-  margin: 0 0 24px 0;
+  margin: 0 0 20px 0;
+  letter-spacing: 0.01em;
   
   @media (max-width: 768px) {
     font-size: 19px;
@@ -322,26 +362,29 @@ const Footer = styled.footer`
   text-align: center;
 `;
 
-// About section with clean design
+// About section with clean design - Anthropic-inspired minimalist
 const AboutSection = styled.div`
   background: ${props => props.theme.aboutSectionBg};
   border: 1px solid ${props => props.theme.borderColor};
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 32px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   
   h4 {
-    font-size: 17px;
+    font-family: 'Playfair Display', 'Crimson Text', serif;
+    font-size: 20px;
     font-weight: 600;
     margin: 0 0 16px 0;
     color: ${props => props.theme.text};
+    letter-spacing: 0.01em;
   }
   
   p {
     font-size: 17px;
-    line-height: 1.47;
+    line-height: 1.6;
     color: ${props => props.theme.text};
-    margin: 0 0 24px 0;
+    margin: 0 0 20px 0;
   }
   
   p:last-child {
@@ -349,7 +392,7 @@ const AboutSection = styled.div`
   }
 `;
 
-// Clean theme toggle button
+// Clean theme toggle button with refined styling
 const ThemeToggle = styled.button`
   background: transparent;
   border: 1px solid ${props => props.theme.borderColor};
@@ -360,11 +403,14 @@ const ThemeToggle = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: ${props => props.theme.text};
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
   
   &:hover {
     background: ${props => props.theme.linkHoverBg};
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   }
   
   &:focus {
@@ -383,14 +429,17 @@ const ContactIcons = styled.div`
     justify-content: center;
     color: ${props => props.theme.text};
     background: ${props => props.theme.linkBg};
-    padding: 10px;
+    padding: 12px;
     border-radius: 50%;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid ${props => props.theme.borderColor};
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     
     &:hover {
       background: ${props => props.theme.linkHoverBg};
       color: ${props => props.theme.accent};
+      transform: translateY(-1px);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
     }
   }
 `;
@@ -399,14 +448,85 @@ const ProjectGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
-  margin-top: 32px;
+  margin-top: 24px;
 `;
 
 const ExperienceGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 24px;
+  margin-top: 24px;
+`;
+
+/* Helper Components with theme support and refined styling - Anthropic minimalist */
+const ContactSection = styled.div`
+  background: ${props => props.theme.contactInfoBg};
+  border: 1px solid ${props => props.theme.borderColor};
+  border-radius: 8px;
+  padding: 24px 32px;
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  box-shadow: ${props => props.theme.cardBoxShadow};
+  transition: all 0.3s ease;
+
+  .contact-item {
+    margin: 0;
+  }
+
+  .contact-item p {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 16px;
+  }
+
+  .social-links a {
+    font-size: 17px;
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
+  }
+`;
+
+const ResumeSection = styled.div`
   margin-top: 32px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+
+  a {
+    background: ${props => props.theme.resumeButtonBg};
+    color: ${props => props.theme.resumeButtonText};
+    padding: 14px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid ${props => props.theme.resumeButtonBg};
+    font-size: 17px;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0.9;
+    }
+  }
 `;
 
 const Home = () => {
@@ -462,17 +582,17 @@ const Home = () => {
           ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />Johns Hopkins University</a>.
         </p>
 
-        <h4 style={{ fontSize: '1.1rem', marginBottom: '10px', color: 'inherit' }}>Let's Connect!</h4>
-        <p style={{ margin: '0 0 30px 0' }}>
+        <h4 style={{ fontSize: '1.1rem', marginBottom: '12px', color: 'inherit' }}>Let's Connect!</h4>
+        <p style={{ margin: '0 0 20px 0' }}>
           I'll be splitting time between the <strong>Bay Area, CA</strong> and <strong>Baltimore, MD</strong> over the next year and a half.
           Always excited to chat about building apps, AI research, tech policy, and a whole lot more. Let's chat or grab a coffee if you're in the area!
         </p>
 
         {/* Image Section */}
         <div style={{
-          marginTop: '32px',
+          marginTop: '24px',
           textAlign: 'center',
-          padding: '24px 0'
+          padding: '16px 0'
         }}>
           <div style={{
             borderRadius: '12px',
@@ -496,7 +616,7 @@ const Home = () => {
             color: isDarkMode ? '#86868b' : '#86868b',
             fontWeight: 400
           }}>
-            Mountain view in Salzburg
+            Cool mountain in Salzburg
           </p>
         </div>
 
@@ -987,48 +1107,39 @@ const Home = () => {
             </Tabs>
           </Content>
 
-          <ContactSection />
-          <ResumeSection />
+          <ContactSection>
+            <div className="contact-item">
+              <p>
+                <a className="aboutme" href="mailto:ps.dulepet@gmail.com" target="_blank" rel="noopener noreferrer">
+                  ps.dulepet@gmail.com
+                </a>
+              </p>
+            </div>
+            <div className="contact-item">
+              <p>925-997-0461</p>
+            </div>
+            <div className="social-links">
+              <a className="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
+                GitHub
+              </a>
+            </div>
+          </ContactSection>
+          <ResumeSection>
+            <a href={resume} target="_blank" rel="noopener noreferrer">
+              View Resume
+            </a>
+            <a href={cv} target="_blank" rel="noopener noreferrer">
+              View CV
+            </a>
+          </ResumeSection>
           <Footer>Last updated 09.16.2025</Footer>
         </Container>
       </ThemeProvider>
     </ThemeContext.Provider>
   );
 };
-
-/* Helper Components with theme support */
-const ContactSection = () => (
-  <div className="contact-info">
-    <div className="contact-item">
-      <p>
-        <a className="aboutme" href="mailto:ps.dulepet@gmail.com" target="_blank" rel="noopener noreferrer">
-          ps.dulepet@gmail.com
-        </a>
-      </p>
-    </div>
-    <div className="contact-item">
-      <p>925-997-0461</p>
-    </div>
-    <div className="social-links">
-      <a className="aboutme" href="https://www.linkedin.com/in/pranavdulepet" target="_blank" rel="noopener noreferrer">
-        LinkedIn
-      </a>
-      <a className="aboutme" href="https://github.com/pranavdulepet" target="_blank" rel="noopener noreferrer">
-        GitHub
-      </a>
-    </div>
-  </div>
-);
-
-const ResumeSection = () => (
-  <div className="resume-download">
-    <a className="resume-button" href={resume} target="_blank" rel="noopener noreferrer">
-      View Resume
-    </a>
-    <a className="resume-button" href={cv} target="_blank" rel="noopener noreferrer">
-      View CV
-    </a>
-  </div>
-);
 
 export default Home;
