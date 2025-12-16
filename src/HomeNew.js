@@ -752,6 +752,13 @@ const Home = () => {
 
   const highlights = [
     {
+      kicker: 'Project',
+      title: 'Synopsis AI - Cursor for Literature Review',
+      body: "AI-powered literature review tool for academic research.",
+      href: 'https://github.com/pranavdulepet/research-assistant',
+      linkLabel: 'Project',
+    },
+    {
       kicker: 'Writing',
       title: 'New Medium articles on AI safety + alignment',
       body: 'Two new posts about emergent misalignment + the limits of evaluation, and interpretability-driven alignment.',
@@ -773,13 +780,7 @@ const Home = () => {
       href: 'https://www.clsp.jhu.edu',
       linkLabel: 'Program',
     },
-    {
-      kicker: 'Internship',
-      title: 'Graduate SWE Intern (AI/ML)',
-      body: "Interned at Apple as a Graduate SWE Intern (AI/ML) in the Apple Intelligence team, built cool features.",
-      href: 'https://www.apple.com/apple-intelligence/',
-      linkLabel: 'Company',
-    },
+
 
   ];
 
