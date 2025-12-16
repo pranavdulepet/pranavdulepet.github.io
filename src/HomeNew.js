@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import './HomePage.css';
 import Education from './EducationComponent';
 import { ThemeContext } from './ThemeContext';
 
@@ -24,7 +23,7 @@ import amazon from './images/amazon.png';
 import apple from './images/apple-logo.png';
 import salzburg from './images/salzburg-view.HEIC';
 
-import { Mail, Linkedin, Github, FileText, GraduationCap, Sun, Moon } from 'lucide-react';
+import { Mail, Linkedin, Github, FileText, GraduationCap, Sun, Moon, ArrowUpRight, Sparkles } from 'lucide-react';
 
 import pranav from './images/pranav-dulepet-nature-pfp.heic';
 import cv from './images/pranav_dulepet_cv_grad_apps.pdf';
@@ -70,35 +69,35 @@ const lightTheme = {
 
 const darkTheme = {
   // Core colors - refined dark tones
-  background: '#0f172a',
-  containerBg: '#1e293b',
+  background: '#0b1220',
+  containerBg: '#0f172a',
   text: '#f1f5f9',
   subtitleText: '#94a3b8',
   footerText: '#64748b',
 
   // Cards and surfaces - subtle dark
-  cardBg: '#1e293b',
-  cardBorder: '#334155',
-  aboutSectionBg: '#1e293b',
+  cardBg: '#111c33',
+  cardBorder: '#23314d',
+  aboutSectionBg: '#111c33',
 
   // Navigation and tabs
-  tabListBg: '#1e293b',
+  tabListBg: 'transparent',
   tabBg: 'transparent',
   tabText: '#94a3b8',
   tabSelectedText: '#f1f5f9',
-  tabSelectedBg: '#334155',
+  tabSelectedBg: '#111c33',
 
   // Interactive elements
-  contactInfoBg: '#1e293b',
-  resumeButtonBg: '#f1f5f9',
-  resumeButtonText: '#0f172a',
-  linkBg: '#1e293b',
-  linkHoverBg: '#334155',
+  contactInfoBg: '#111c33',
+  resumeButtonBg: '#111c33',
+  resumeButtonText: '#f1f5f9',
+  linkBg: '#0f172a',
+  linkHoverBg: '#16233d',
 
   // Shadows and borders - subtle, refined
   cardBoxShadow: '0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2)',
   cardHoverBoxShadow: '0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3)',
-  borderColor: '#334155',
+  borderColor: '#23314d',
 
   // Accent - subtle, professional
   accent: '#818cf8',
@@ -140,10 +139,37 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  ::selection {
+    background: ${props => props.theme.accent};
+    color: ${props => props.theme.background};
+  }
+
   #root {
     min-height: 100vh;
     background: ${props => props.theme.containerBg};
     padding: 0;
+  }
+
+  /* Theme-friendly scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.borderColor};
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${props => props.theme.footerText};
+    border: 3px solid transparent;
+    background-clip: content-box;
   }
 
   .aboutme {
@@ -251,6 +277,33 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.01em;
   }
 
+  .project, .experience {
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .project img, .experience img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid ${props => props.theme.borderColor};
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .project p, .experience p {
+    margin: 6px 0 0 0;
+    line-height: 1.6;
+  }
+
+  .project a, .experience a {
+    align-self: center;
+  }
+
   .publications h4 {
     font-family: 'Playfair Display', 'Crimson Text', serif;
     font-weight: 600;
@@ -262,13 +315,13 @@ const GlobalStyle = createGlobalStyle`
 
 // Premium styled components with refined spacing
 const Container = styled.div`
-  max-width: 980px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 48px 32px;
+  padding: 48px 48px;
   
   @media (max-width: 768px) {
-    padding: 32px 24px;
+    padding: 32px 20px;
   }
 `;
 
@@ -353,6 +406,18 @@ const Content = styled.main`
   margin-bottom: 48px;
 `;
 
+const AboutLayout = styled.div`
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 28px;
+  align-items: start;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+`;
+
 const Footer = styled.footer`
   margin-top: 64px;
   padding-top: 32px;
@@ -390,6 +455,128 @@ const AboutSection = styled.div`
   p:last-child {
     margin-bottom: 0;
   }
+`;
+
+const PhotoFrame = styled.div`
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid ${props => props.theme.borderColor};
+`;
+
+const PhotoCaption = styled.p`
+  margin: 16px 0 0 0;
+  font-size: 14px;
+  color: ${props => props.theme.footerText};
+  font-weight: 400;
+`;
+
+// Highlights section - quick, scannable summary cards (visible on the main page)
+const HighlightsSection = styled.section`
+  margin: 0;
+  position: sticky;
+  top: 24px;
+
+  @media (max-width: 900px) {
+    position: static;
+  }
+`;
+
+const HighlightsHeader = styled.div`
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin: 0 0 16px 0;
+`;
+
+const HighlightsTitle = styled.h3`
+  margin: 0;
+  font-family: 'Playfair Display', 'Crimson Text', serif;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: ${props => props.theme.text};
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const HighlightsSubtitle = styled.p`
+  margin: 4px 0 0 0;
+  color: ${props => props.theme.subtitleText};
+  font-size: 15px;
+  line-height: 1.5;
+`;
+
+const HighlightsList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+`;
+
+const HighlightCard = styled.div`
+  background: ${props => props.theme.cardBg};
+  border: 1px solid ${props => props.theme.borderColor};
+  border-radius: 12px;
+  padding: 18px 18px 16px 18px;
+  box-shadow: ${props => props.theme.cardBoxShadow};
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: ${props => props.theme.cardHoverBoxShadow};
+    border-color: ${props => props.theme.cardBorder};
+  }
+`;
+
+const HighlightKicker = styled.div`
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${props => props.theme.footerText};
+  margin-bottom: 10px;
+`;
+
+const HighlightTitle = styled.h4`
+  margin: 0 0 10px 0;
+  font-family: 'Playfair Display', 'Crimson Text', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: ${props => props.theme.text};
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+`;
+
+const HighlightBody = styled.p`
+  margin: 0 0 12px 0;
+  color: ${props => props.theme.text};
+  font-size: 15px;
+  line-height: 1.55;
+  opacity: 0.95;
+`;
+
+const HighlightLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: ${props => props.theme.accent};
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+
+  &:hover {
+    color: ${props => props.theme.accentHover};
+    border-bottom-color: ${props => props.theme.accentHover};
+  }
+`;
+
+const HighlightLinks = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
 `;
 
 // Clean theme toggle button with refined styling
@@ -563,64 +750,124 @@ const Home = () => {
     }
   }, [isDarkMode]);
 
+  const highlights = [
+    {
+      kicker: 'Writing',
+      title: 'New Medium articles on AI safety + alignment',
+      body: 'Two new posts about emergent misalignment + the limits of evaluation, and interpretability-driven alignment.',
+      links: [
+        {
+          label: 'Hidden Failures: Emergent Misalignment...',
+          href: 'https://medium.com/@pdulepet/hidden-failures-emergent-misalignment-and-the-limits-of-ai-evaluation-6e1715d7cced',
+        },
+        {
+          label: 'Building Safer AI: Interpretability Drives...',
+          href: 'https://medium.com/@pdulepet/building-safer-ai-interpretability-drives-and-alignment-8996fa36f71c',
+        },
+      ],
+    },
+    {
+      kicker: 'Research',
+      title: 'MS CS at Johns Hopkins — Aug 2025',
+      body: "Started my MS at Johns Hopkins (CLSP) in August 2025, focusing on ML/NLP and working on LLM uncertainty/confidence research.",
+      href: 'https://www.clsp.jhu.edu',
+      linkLabel: 'Program',
+    },
+    {
+      kicker: 'Internship',
+      title: 'Graduate SWE Intern (AI/ML)',
+      body: "Interned at Apple as a Graduate SWE Intern (AI/ML) in the Apple Intelligence team, built cool features.",
+      href: 'https://www.apple.com/apple-intelligence/',
+      linkLabel: 'Company',
+    },
+
+  ];
+
   /* Tab Content Components */
   const AboutContent = () => (
     <>
       {/* <h3>About</h3> */}
-      <AboutSection>
-        <p>
-          I'm a recent grad from the <a
-            className="aboutme"
-            href="https://www.cs.umd.edu/"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />University of Maryland</a> and am currently pursuing a master's at <a
-            className="aboutme"
-            href="https://www.clsp.jhu.edu"
-            target="_blank"
-            rel="noopener noreferrer"
-          ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />Johns Hopkins University</a>.
-        </p>
+      <AboutLayout>
+        <HighlightsSection aria-label="Highlights">
+          <HighlightsHeader>
+            <div>
+              <HighlightsTitle>
+                <Sparkles size={18} />
+                Highlights
+              </HighlightsTitle>
 
-        <h4 style={{ fontSize: '1.1rem', marginBottom: '12px', color: 'inherit' }}>Let's Connect!</h4>
-        <p style={{ margin: '0 0 20px 0' }}>
-          I'll be splitting time between the <strong>Bay Area, CA</strong> and <strong>Baltimore, MD</strong> over the next year and a half.
-          Always excited to chat about building apps, AI research, tech policy, and a whole lot more. Let's chat or grab a coffee if you're in the area!
-        </p>
+            </div>
+          </HighlightsHeader>
+          <HighlightsList>
+            {highlights.map((h) => (
+              <HighlightCard key={`${h.kicker}-${h.title}`}>
+                <HighlightKicker>{h.kicker}</HighlightKicker>
+                <HighlightTitle>{h.title}</HighlightTitle>
+                <HighlightBody>{h.body}</HighlightBody>
+                {Array.isArray(h.links) && h.links.length > 0 ? (
+                  <HighlightLinks>
+                    {h.links.map((link) => (
+                      <HighlightLink key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
+                        {link.label} <ArrowUpRight size={16} />
+                      </HighlightLink>
+                    ))}
+                  </HighlightLinks>
+                ) : (
+                  h.href && (
+                    <HighlightLink href={h.href} target="_blank" rel="noopener noreferrer">
+                      {h.linkLabel || 'Learn more'} <ArrowUpRight size={16} />
+                    </HighlightLink>
+                  )
+                )}
+              </HighlightCard>
+            ))}
+          </HighlightsList>
+        </HighlightsSection>
 
-        {/* Image Section */}
-        <div style={{
-          marginTop: '24px',
-          textAlign: 'center',
-          padding: '16px 0'
-        }}>
-          <div style={{
-            borderRadius: '12px',
-            overflow: 'hidden',
-            border: `1px solid ${isDarkMode ? '#424245' : '#e5e5e7'}`,
-          }}>
-            <img
-              src={salzburg}
-              alt="Cool mountain in Salzburg"
-              style={{
-                width: '100%',
-                height: '400px',
-                objectFit: 'cover',
-                display: 'block'
-              }}
-            />
-          </div>
-          <p style={{
-            margin: '16px 0 0 0',
-            fontSize: '14px',
-            color: isDarkMode ? '#86868b' : '#86868b',
-            fontWeight: 400
-          }}>
-            Cool mountain in Salzburg
+        <AboutSection>
+          <p>
+            I'm a recent grad from the <a
+              className="aboutme"
+              href="https://www.cs.umd.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />University of Maryland</a> and am currently pursuing a master's at <a
+              className="aboutme"
+              href="https://www.clsp.jhu.edu"
+              target="_blank"
+              rel="noopener noreferrer"
+            ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />Johns Hopkins University</a>.
           </p>
-        </div>
 
-      </AboutSection>
+          <h4 style={{ fontSize: '1.1rem', marginBottom: '12px', color: 'inherit' }}>Let's Connect!</h4>
+          <p style={{ margin: '0 0 20px 0' }}>
+            I'll be splitting time between the <strong>Bay Area, CA</strong> and <strong>Baltimore, MD</strong> over the next year and a half.
+            Always excited to chat about building apps, AI research, tech policy, and a whole lot more. Let's chat or grab a coffee if you're in the area!
+          </p>
+
+          {/* Image Section */}
+          <div style={{
+            marginTop: '24px',
+            textAlign: 'center',
+            padding: '16px 0'
+          }}>
+            <PhotoFrame>
+              <img
+                src={salzburg}
+                alt="Cool mountain in Salzburg"
+                style={{
+                  width: '100%',
+                  height: '400px',
+                  objectFit: 'cover',
+                  display: 'block'
+                }}
+              />
+            </PhotoFrame>
+            <PhotoCaption>Cool mountain in Salzburg</PhotoCaption>
+          </div>
+
+        </AboutSection>
+      </AboutLayout>
     </>
   );
 
@@ -640,7 +887,7 @@ const Home = () => {
           >
             (Ft. by University of Maryland)
           </a>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>Python, Large Language Models, React, Express, Swift, MongoDB
           </p>
         </div>
@@ -657,7 +904,7 @@ const Home = () => {
           >
             (Ft. in The Diamondback, UMD's newspaper)
           </a>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics
           </p>
         </div>
@@ -669,7 +916,7 @@ const Home = () => {
           <a className="aboutme" href="https://www.marksz.org/hackweek/" target="_blank" rel="noopener noreferrer">
             (1st Place in the Northrop Grumman Innovation Challenge)
           </a>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>Python, YOLOv5, PyTorch, Google Colab, Matplotlib
           </p>
         </div>
@@ -678,7 +925,7 @@ const Home = () => {
             <img src={legalai} alt="Project 4" />
           </a>
           <h3>LegalAI</h3>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank
           </p>
         </div>
@@ -695,7 +942,7 @@ const Home = () => {
           >
             (2nd Place in the Amazon-UMD Product Design Challenge)
           </a>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX
           </p>
         </div>
@@ -704,7 +951,7 @@ const Home = () => {
             <img src={musicrec} alt="Project 2" />
           </a>
           <h3>Music Recommender</h3>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>TensorFlow, Keras, K-Nearest Neighbors, Triplet Loss, Python, Google Colab, GitHub
           </p>
         </div>
@@ -713,7 +960,7 @@ const Home = () => {
             <img src={thingsnearme} alt="Project 5" />
           </a>
           <h3>Things Near Me</h3>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase
           </p>
         </div>
@@ -722,7 +969,7 @@ const Home = () => {
             <img src={signstoleads} alt="Project 6" />
           </a>
           <h3>Signs To Leads</h3>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase
           </p>
         </div>
@@ -731,7 +978,7 @@ const Home = () => {
             <img src={aura} alt="Project 7" />
           </a>
           <h3>Aura</h3>
-          <p className="project">
+          <p>
             <strong>Skills: </strong>Full-Stack iOS Development, NLP Libraries, Google Cloud, GitHub
           </p>
         </div>
