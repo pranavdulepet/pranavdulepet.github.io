@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.07a34287.css",
-    "main.js": "/static/js/main.dd664f91.js",
+    "main.js": "/static/js/main.6fa20c1d.js",
     "static/js/787.3a0c473b.chunk.js": "/static/js/787.3a0c473b.chunk.js",
     "static/media/salzburg-view.HEIC": "/static/media/salzburg-view.3a8dfd6b092807b01bbb.HEIC",
     "static/media/aerial-image.png": "/static/media/aerial-image.24874ee838173add6e8f.png",
@@ -28,11 +28,11 @@
     "static/media/thingsnearme-logo.jpg": "/static/media/thingsnearme-logo.b5219e1889c408c57f02.jpg",
     "index.html": "/index.html",
     "main.07a34287.css.map": "/static/css/main.07a34287.css.map",
-    "main.dd664f91.js.map": "/static/js/main.dd664f91.js.map",
+    "main.6fa20c1d.js.map": "/static/js/main.6fa20c1d.js.map",
     "787.3a0c473b.chunk.js.map": "/static/js/787.3a0c473b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.07a34287.css",
-    "static/js/main.dd664f91.js"
+    "static/js/main.6fa20c1d.js"
   ]
 }
