@@ -21,12 +21,13 @@ import agora from './images/agora-logo.png';
 import h4i from './images/h4i-logo.png';
 import amazon from './images/amazon.png';
 import apple from './images/apple-logo.png';
+import datatecnica from './images/datatecnica-logo.png';
 import salzburg from './images/salzburg-view.HEIC';
 
 import { Mail, Linkedin, Github, FileText, GraduationCap, Sun, Moon, ArrowUpRight, Sparkles } from 'lucide-react';
 
 import pranav from './images/pranav-dulepet-nature-pfp.heic';
-import cv from './images/pranav_dulepet_cv_grad_apps.pdf';
+import cv from './images/pranav_dulepet_cv.pdf';
 
 // Premium minimalist theme design - Anthropic-inspired
 const lightTheme = {
@@ -752,6 +753,13 @@ const Home = () => {
 
   const highlights = [
     {
+      kicker: 'Industry',
+      title: 'AI Research Intern at DataTecnica',
+      body: 'Building AI agents for biomedical research and creating a novel multi-turn benchmark for the biomedical domain.',
+      href: 'https://www.datatecnica.com',
+      linkLabel: 'Company',
+    },
+    {
       kicker: 'Project',
       title: 'Synopsis AI - Cursor for Literature Review',
       body: "AI-powered literature review tool for academic research.",
@@ -773,13 +781,13 @@ const Home = () => {
         },
       ],
     },
-    {
-      kicker: 'Research',
-      title: 'MS CS at Johns Hopkins — Aug 2025',
-      body: "Started my MS at Johns Hopkins (CLSP) in August 2025, focusing on ML/NLP and working on LLM uncertainty/confidence research.",
-      href: 'https://www.clsp.jhu.edu',
-      linkLabel: 'Program',
-    },
+    // {
+    //   kicker: 'Research',
+    //   title: 'MS CS at Johns Hopkins — Aug 2025',
+    //   body: "Started my MS at Johns Hopkins (CLSP) in August 2025, focusing on ML/NLP and working on LLM uncertainty/confidence research.",
+    //   href: 'https://www.clsp.jhu.edu',
+    //   linkLabel: 'Program',
+    // },
 
 
   ];
@@ -989,6 +997,19 @@ const Home = () => {
 
   const IndustryContent = () => (
     <ExperienceGrid>
+      <div className="experience">
+        <h3>AI Research Intern</h3>
+        <a href="https://www.datatecnica.com/" target="_blank" rel="noopener noreferrer">
+          <img src={datatecnica} alt="DataTecnica" />
+        </a>
+        <h3>DataTecnica</h3>
+        <p>02/26 - Present</p>
+        <p>
+          Building AI agents for biomedical research and creating a novel multi-turn benchmark for the biomedical domain.
+          Distilling "aggregation with thinking" into an open model that generalizes to new tools.
+        </p>
+        <p><strong>Skills:</strong> Python, AI Agents, LLMs, Biomedical NLP, Benchmarking</p>
+      </div>
       <div className="experience">
         <h3>Graduate SWE Intern (AI/ML)</h3>
         <a href="https://www.apple.com/apple-intelligence/" target="_blank" rel="noopener noreferrer">
