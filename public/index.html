@@ -1,48 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
   <meta charset="utf-8" />
   <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f6f2ea" />
+  <meta name="author" content="Pranav Dulepet" />
+  <meta
+    name="description"
+    content="Pranav Dulepet is a Johns Hopkins MSE Computer Science student and AI researcher building reliable human-AI collaborative systems across LLM research, evaluation, and products."
+  />
+  <meta
+    name="robots"
+    content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+  />
+  <link rel="canonical" href="https://pranavdulepet.github.io/" />
+  <link rel="alternate" type="text/plain" href="https://pranavdulepet.github.io/llms.txt" title="LLMs.txt" />
+  <link rel="sitemap" type="application/xml" href="https://pranavdulepet.github.io/sitemap.xml" />
+
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:site_name" content="Pranav Dulepet" />
+  <meta property="og:title" content="Pranav Dulepet | Human-AI Collaborative Systems" />
+  <meta
+    property="og:description"
+    content="Johns Hopkins MSE student and AI researcher building reliable human-AI collaborative systems across research, evaluation, and products."
+  />
+  <meta property="og:url" content="https://pranavdulepet.github.io/" />
+  <meta property="og:image" content="https://pranavdulepet.github.io/pranav-pfp.jpg" />
+  <meta property="og:image:alt" content="Portrait of Pranav Dulepet" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Pranav Dulepet | Human-AI Collaborative Systems" />
+  <meta
+    name="twitter:description"
+    content="AI researcher and builder focused on reliable human-AI collaborative systems, LLM evaluation, and applied NLP."
+  />
+  <meta name="twitter:image" content="https://pranavdulepet.github.io/pranav-pfp.jpg" />
   <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-  <title>Pranav Dulepet</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://pranavdulepet.github.io/#website",
+          "url": "https://pranavdulepet.github.io/",
+          "name": "Pranav Dulepet",
+          "description": "Pranav Dulepet is a Johns Hopkins MSE Computer Science student and AI researcher building reliable human-AI collaborative systems across LLM research, evaluation, and products."
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://pranavdulepet.github.io/#profile",
+          "url": "https://pranavdulepet.github.io/",
+          "name": "Pranav Dulepet",
+          "description": "Personal website of Pranav Dulepet, focused on AI research, human-AI collaborative systems, projects, writing, and experience.",
+          "isPartOf": {
+            "@id": "https://pranavdulepet.github.io/#website"
+          },
+          "mainEntity": {
+            "@id": "https://pranavdulepet.github.io/#person"
+          },
+          "about": {
+            "@id": "https://pranavdulepet.github.io/#person"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://pranavdulepet.github.io/#person",
+          "name": "Pranav Dulepet",
+          "url": "https://pranavdulepet.github.io/",
+          "image": "https://pranavdulepet.github.io/pranav-pfp.jpg",
+          "description": "Researcher and builder focused on reliable human-AI collaborative systems across research, evaluation, and user-facing tooling.",
+          "email": "mailto:ps.dulepet@gmail.com",
+          "sameAs": [
+            "https://www.linkedin.com/in/pranavdulepet",
+            "https://github.com/pranavdulepet",
+            "https://medium.com/@pdulepet"
+          ],
+          "worksFor": {
+            "@type": "Organization",
+            "name": "DataTecnica",
+            "url": "https://www.datatecnica.com/"
+          },
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Johns Hopkins University",
+            "url": "https://www.clsp.jhu.edu/"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Maryland",
+            "url": "https://www.cs.umd.edu/"
+          },
+          "knowsAbout": [
+            "Human-AI collaborative systems",
+            "Large language models",
+            "Natural language processing",
+            "LLM evaluation",
+            "AI agents",
+            "Biomedical NLP",
+            "Benchmarking",
+            "AI governance"
+          ]
+        }
+      ]
+    }
+  </script>
+  <title>Pranav Dulepet | Human-AI Collaborative Systems</title>
 </head>
-
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <noscript>
+    <main
+      style="max-width:780px;margin:48px auto;padding:0 24px;font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.65;color:#24211d;"
+    >
+      <h1 style="margin:0 0 12px 0;font-size:40px;line-height:1.1;">Pranav Dulepet</h1>
+      <p style="margin:0 0 20px 0;font-size:20px;color:#6f675d;">
+        Building reliable human-AI collaborative systems.
+      </p>
+      <p>
+        Pranav Dulepet is a Johns Hopkins MSE Computer Science student and AI researcher focused on human-AI collaborative systems,
+        LLM evaluation, NLP, and user-facing AI products. He is currently an AI Research Intern at DataTecnica and previously
+        interned at Apple, Amazon, Fidelity Investments, Capital One, and Evozyne.
+      </p>
+
+      <h2 style="margin:32px 0 12px 0;font-size:24px;">Key Links</h2>
+      <ul>
+        <li><a href="https://pranavdulepet.github.io/">Homepage</a></li>
+        <li><a href="https://www.linkedin.com/in/pranavdulepet">LinkedIn</a></li>
+        <li><a href="https://github.com/pranavdulepet">GitHub</a></li>
+        <li><a href="https://medium.com/@pdulepet">Medium</a></li>
+        <li><a href="mailto:ps.dulepet@gmail.com">ps.dulepet@gmail.com</a></li>
+      </ul>
+
+      <h2 style="margin:32px 0 12px 0;font-size:24px;">Selected Work</h2>
+      <ul>
+        <li><a href="https://arxiv.org/abs/2402.07901">FAST: Factorizable Attention for Speeding up Transformers</a></li>
+        <li><a href="https://arxiv.org/abs/2406.06608/">The Prompt Report: A Systematic Survey of Prompting Techniques</a></li>
+        <li><a href="https://github.com/pranavdulepet/research-assistant">Synopsis AI</a></li>
+        <li><a href="https://www.datatecnica.com/">DataTecnica</a></li>
+      </ul>
+
+      <p style="margin-top:32px;color:#6f675d;">
+        Enable JavaScript for the full interactive version of the site.
+      </p>
+    </main>
+  </noscript>
   <div id="root"></div>
-  <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
 </body>
-
 </html>

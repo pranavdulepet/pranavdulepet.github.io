@@ -1,0 +1,47 @@
+# Pranav Dulepet
+
+Website: https://pranavdulepet.github.io/
+Updated: 2026-03-12
+
+Summary:
+Pranav Dulepet is a Johns Hopkins MSE Computer Science student and AI researcher building reliable human-AI collaborative systems across research, evaluation, and user-facing products.
+
+Current roles:
+- AI Research Intern at DataTecnica, building AI agents for biomedical research and a multi-turn benchmark for the biomedical domain.
+- M.S.E. in Computer Science (Human Language Technology) at Johns Hopkins University.
+
+Background:
+- B.S. (Honors) in Computer Science from the University of Maryland.
+- Previous internships at Apple, Amazon, Fidelity Investments, Capital One, and Evozyne.
+
+Research interests:
+- Human-AI collaborative systems
+- Large language models
+- LLM reliability and evaluation
+- NLP and biomedical NLP
+- AI agents
+- Benchmarking
+- AI governance and policy
+
+Primary links:
+- Homepage: https://pranavdulepet.github.io/
+- LinkedIn: https://www.linkedin.com/in/pranavdulepet
+- GitHub: https://github.com/pranavdulepet
+- Medium: https://medium.com/@pdulepet
+- Email: mailto:ps.dulepet@gmail.com
+
+Selected research and writing:
+- FAST: Factorizable Attention for Speeding up Transformers: https://arxiv.org/abs/2402.07901
+- The Prompt Report: A Systematic Survey of Prompting Techniques: https://arxiv.org/abs/2406.06608/
+- Hidden Failures: Emergent Misalignment and the Limits of AI Evaluation: https://medium.com/@pdulepet/hidden-failures-emergent-misalignment-and-the-limits-of-ai-evaluation-6e1715d7cced
+- Building Safer AI: Interpretability, Drives, and Alignment: https://medium.com/@pdulepet/building-safer-ai-interpretability-drives-and-alignment-8996fa36f71c
+- Governing Advanced AI: Institutions, Accountability, and Policy Frameworks: https://medium.com/@pdulepet/governing-advanced-ai-institutions-accountability-and-policy-frameworks-f3334256677a
+
+Selected projects:
+- Synopsis AI: https://github.com/pranavdulepet/research-assistant
+- agora.: http://www.agoraai.app/
+- Aerial Object Detection: https://github.com/pranavdulepet/aerial-object-detection
+
+Site notes:
+- This site is a single-page portfolio covering about, experience, projects, writing, and education.
+- If JavaScript is unavailable, use the metadata, structured data, and this file as the primary machine-readable summary.
