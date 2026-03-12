@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import styled, { ThemeProvider, createGlobalStyle, keyframes, css } from 'styled-components';
 import Education from './EducationComponent';
 import { ThemeContext } from './ThemeContext';
 
@@ -22,92 +20,160 @@ import h4i from './images/h4i-logo.png';
 import amazon from './images/amazon.png';
 import apple from './images/apple-logo.png';
 import datatecnica from './images/datatecnica-logo.png';
-import salzburg from './images/salzburg-view.HEIC';
+import salzburg from './images/salzburg-view-optimized.jpg';
 
-import { Mail, Linkedin, Github, FileText, GraduationCap, Sun, Moon, ArrowUpRight, Sparkles } from 'lucide-react';
+import { Mail, Linkedin, Github, FileText, GraduationCap, Sun, Moon, ArrowUpRight, Sparkles, Search, X } from 'lucide-react';
 
-import pranav from './images/pranav-dulepet-nature-pfp.heic';
+import pranav from './images/pranav-dulepet-nature-pfp-optimized.jpg';
 import cv from './images/pranav_dulepet_cv.pdf';
 
 // Premium minimalist theme design - Anthropic-inspired
 const lightTheme = {
-  // Core colors - clean, refined neutrals
-  background: '#ffffff',
-  containerBg: '#fafbfc',
-  text: '#1a1a1a',
-  subtitleText: '#6b7280',
-  footerText: '#9ca3af',
+  mode: 'light',
+  // Core colors - warm paper tones
+  background: '#f6f2ea',
+  containerBg: '#fbf8f2',
+  text: '#24211d',
+  subtitleText: '#6f675d',
+  footerText: '#9a9187',
 
-  // Cards and surfaces - subtle, clean
-  cardBg: '#ffffff',
-  cardBorder: '#e5e7eb',
-  aboutSectionBg: '#ffffff',
+  // Cards and surfaces - quiet layered paper
+  cardBg: 'rgba(251, 247, 240, 0.92)',
+  cardBorder: '#e5ddd0',
+  aboutSectionBg: 'rgba(252, 248, 241, 0.94)',
 
-  // Navigation and tabs
-  tabListBg: '#f9fafb',
+  // Navigation
+  tabListBg: '#f4efe7',
   tabBg: 'transparent',
-  tabText: '#9ca3af',
-  tabSelectedText: '#1a1a1a',
+  tabText: '#847a70',
+  tabSelectedText: '#24211d',
   tabSelectedBg: '#ffffff',
 
   // Interactive elements
-  contactInfoBg: '#f9fafb',
-  resumeButtonBg: '#1a1a1a',
+  contactInfoBg: 'rgba(248, 243, 235, 0.92)',
+  resumeButtonBg: '#24211d',
   resumeButtonText: '#ffffff',
-  linkBg: '#f3f4f6',
-  linkHoverBg: '#e5e7eb',
+  linkBg: 'rgba(241, 235, 226, 0.94)',
+  linkHoverBg: '#ebe2d6',
 
-  // Shadows and borders - subtle, refined
-  cardBoxShadow: '0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
-  cardHoverBoxShadow: '0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04)',
-  borderColor: '#e5e7eb',
+  // Shadows and borders - quiet, low contrast
+  cardBoxShadow: '0 4px 14px rgba(36, 33, 29, 0.035), 0 1px 3px rgba(36, 33, 29, 0.025)',
+  cardHoverBoxShadow: '0 10px 26px rgba(36, 33, 29, 0.06), 0 3px 8px rgba(36, 33, 29, 0.04)',
+  borderColor: '#e4dbcf',
 
-  // Accent - subtle, professional
-  accent: '#6366f1',
-  accentHover: '#4f46e5',
-  goldAccent: '#6366f1',
+  // Accent - muted clay
+  accent: '#8f6d4f',
+  accentHover: '#775a40',
+  goldAccent: '#8f6d4f',
 };
 
 const darkTheme = {
-  // Core colors - refined dark tones
-  background: '#0b1220',
-  containerBg: '#0f172a',
-  text: '#f1f5f9',
-  subtitleText: '#94a3b8',
-  footerText: '#64748b',
+  mode: 'dark',
+  // Core colors - warm charcoal tones
+  background: '#161311',
+  containerBg: '#1b1715',
+  text: '#efe8de',
+  subtitleText: '#a79c90',
+  footerText: '#7d7369',
 
-  // Cards and surfaces - subtle dark
-  cardBg: '#111c33',
-  cardBorder: '#23314d',
-  aboutSectionBg: '#111c33',
+  // Cards and surfaces - softened dark paper
+  cardBg: 'rgba(30, 26, 23, 0.92)',
+  cardBorder: '#37302a',
+  aboutSectionBg: 'rgba(31, 27, 24, 0.94)',
 
-  // Navigation and tabs
+  // Navigation
   tabListBg: 'transparent',
   tabBg: 'transparent',
-  tabText: '#94a3b8',
-  tabSelectedText: '#f1f5f9',
-  tabSelectedBg: '#111c33',
+  tabText: '#968b80',
+  tabSelectedText: '#efe8de',
+  tabSelectedBg: '#1b1715',
 
   // Interactive elements
-  contactInfoBg: '#111c33',
-  resumeButtonBg: '#111c33',
-  resumeButtonText: '#f1f5f9',
-  linkBg: '#0f172a',
-  linkHoverBg: '#16233d',
+  contactInfoBg: 'rgba(29, 25, 22, 0.94)',
+  resumeButtonBg: '#ede4d8',
+  resumeButtonText: '#1a1613',
+  linkBg: 'rgba(39, 34, 30, 0.94)',
+  linkHoverBg: '#463d36',
 
   // Shadows and borders - subtle, refined
-  cardBoxShadow: '0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2)',
-  cardHoverBoxShadow: '0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3)',
-  borderColor: '#23314d',
+  cardBoxShadow: '0 8px 22px rgba(0, 0, 0, 0.22), 0 2px 6px rgba(0, 0, 0, 0.16)',
+  cardHoverBoxShadow: '0 14px 30px rgba(0, 0, 0, 0.28), 0 4px 10px rgba(0, 0, 0, 0.18)',
+  borderColor: '#3a322b',
 
-  // Accent - subtle, professional
-  accent: '#818cf8',
-  accentHover: '#a5b4fc',
-  goldAccent: '#818cf8',
+  // Accent - muted sand
+  accent: '#c09a71',
+  accentHover: '#d1af8d',
+  goldAccent: '#c09a71',
+};
+
+const fadeUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+const highlightToneMap = {
+  industry: {
+    light: {
+      tint: 'rgba(196, 179, 154, 0.10)',
+      border: 'rgba(177, 155, 126, 0.18)',
+      hover: 'rgba(159, 132, 96, 0.26)',
+      glow: 'rgba(196, 179, 154, 0.10)',
+    },
+    dark: {
+      tint: 'rgba(113, 91, 69, 0.18)',
+      border: 'rgba(157, 129, 97, 0.24)',
+      hover: 'rgba(192, 154, 113, 0.32)',
+      glow: 'rgba(113, 91, 69, 0.14)',
+    },
+  },
+  project: {
+    light: {
+      tint: 'rgba(214, 203, 188, 0.12)',
+      border: 'rgba(183, 169, 149, 0.18)',
+      hover: 'rgba(154, 135, 111, 0.26)',
+      glow: 'rgba(214, 203, 188, 0.10)',
+    },
+    dark: {
+      tint: 'rgba(90, 77, 64, 0.18)',
+      border: 'rgba(127, 108, 88, 0.22)',
+      hover: 'rgba(169, 145, 118, 0.3)',
+      glow: 'rgba(90, 77, 64, 0.12)',
+    },
+  },
+  writing: {
+    light: {
+      tint: 'rgba(227, 213, 181, 0.14)',
+      border: 'rgba(189, 168, 127, 0.18)',
+      hover: 'rgba(171, 142, 92, 0.26)',
+      glow: 'rgba(227, 213, 181, 0.10)',
+    },
+    dark: {
+      tint: 'rgba(104, 84, 55, 0.18)',
+      border: 'rgba(149, 121, 82, 0.24)',
+      hover: 'rgba(191, 157, 108, 0.32)',
+      glow: 'rgba(104, 84, 55, 0.12)',
+    },
+  },
+};
+
+const getHighlightTone = (theme, variant = 'project') => {
+  const palette = highlightToneMap[variant] || highlightToneMap.project;
+  return theme.mode === 'dark' ? palette.dark : palette.light;
 };
 
 // Minimal clean background - Anthropic-inspired
 const CleanBackground = ({ isDarkMode }) => {
+  const baseBackground = isDarkMode
+    ? 'radial-gradient(circle at 16% 12%, rgba(85, 65, 46, 0.22), transparent 24%), radial-gradient(circle at 84% 10%, rgba(60, 52, 46, 0.18), transparent 26%), linear-gradient(180deg, #151210 0%, #1b1715 58%, #1e1916 100%)'
+    : 'radial-gradient(circle at 16% 12%, rgba(226, 214, 194, 0.75), transparent 24%), radial-gradient(circle at 84% 10%, rgba(242, 233, 219, 0.92), transparent 22%), linear-gradient(180deg, #fbf8f2 0%, #f5f0e7 58%, #f4eee5 100%)';
+
   return (
     <div style={{
       position: 'fixed',
@@ -116,8 +182,22 @@ const CleanBackground = ({ isDarkMode }) => {
       width: '100%',
       height: '100%',
       zIndex: -10,
-      background: isDarkMode ? '#0f172a' : '#ffffff',
-    }} />
+      overflow: 'hidden',
+      pointerEvents: 'none',
+    }}>
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: baseBackground,
+      }} />
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: isDarkMode
+          ? 'linear-gradient(180deg, rgba(255,255,255,0.015) 0%, transparent 22%, transparent 78%, rgba(0,0,0,0.08) 100%)'
+          : 'linear-gradient(180deg, rgba(255,255,255,0.32) 0%, transparent 20%, transparent 78%, rgba(214,203,188,0.10) 100%)',
+      }} />
+    </div>
   );
 };
 
@@ -140,6 +220,10 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   ::selection {
     background: ${props => props.theme.accent};
     color: ${props => props.theme.background};
@@ -147,7 +231,7 @@ const GlobalStyle = createGlobalStyle`
 
   #root {
     min-height: 100vh;
-    background: ${props => props.theme.containerBg};
+    background: transparent;
     padding: 0;
   }
 
@@ -189,73 +273,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Playfair Display', 'Crimson Text', serif;
   }
 
-  .react-tabs__tab-list {
-    border-bottom: 1px solid ${props => props.theme.borderColor};
-    margin: 0 0 32px 0;
-    display: flex;
-    gap: 0;
-    padding: 0;
-    background: transparent;
-    border-radius: 0;
-    position: relative;
-  }
-
-
-  .react-tabs__tab {
-    padding: 16px 24px;
-    border-radius: 0;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    color: ${props => props.theme.tabText};
-    font-weight: 400;
-    font-size: 17px;
-    border: none;
-    background: transparent;
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    letter-spacing: 0.01em;
-    position: relative;
-  }
-
-  .react-tabs__tab--selected {
-    background: transparent;
-    color: ${props => props.theme.tabSelectedText};
-    border-bottom-color: ${props => props.theme.accent};
-    font-weight: 500;
-  }
-
-  .react-tabs__tab:hover:not(.react-tabs__tab--selected) {
-    color: ${props => props.theme.text};
-    background: ${props => props.theme.linkBg};
-  }
-
-  .react-tabs {
-    position: relative;
-  }
-
-  .react-tabs__tab-panel {
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    min-height: 400px;
-    width: 100%;
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    position: absolute;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    will-change: opacity, transform;
-  }
-
-  .react-tabs__tab-panel--selected {
-    opacity: 1;
-    transform: translateY(0);
-    position: relative;
-    pointer-events: auto;
-  }
-
   .project, .experience {
     background: ${props => props.theme.cardBg};
     border: 1px solid ${props => props.theme.cardBorder};
@@ -268,8 +285,8 @@ const GlobalStyle = createGlobalStyle`
 
   .project:hover, .experience:hover {
     box-shadow: ${props => props.theme.cardHoverBoxShadow};
-    transform: translateY(-2px);
-    border-color: ${props => props.theme.borderColor};
+    transform: translateY(-4px) scale(1.01);
+    border-color: ${props => props.theme.accent};
   }
 
   .project h3, .experience h3 {
@@ -280,10 +297,10 @@ const GlobalStyle = createGlobalStyle`
 
   .project, .experience {
     border-radius: 12px;
-    padding: 24px;
+    padding: 28px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .project img, .experience img {
@@ -294,6 +311,12 @@ const GlobalStyle = createGlobalStyle`
     border: 1px solid ${props => props.theme.borderColor};
     margin-bottom: 6px;
     display: block;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .project:hover img, .experience:hover img {
+    transform: scale(1.03);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
   }
 
   .project p, .experience p {
@@ -319,10 +342,10 @@ const Container = styled.div`
   max-width: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 48px 48px;
-  
+  padding: 64px 64px;
+
   @media (max-width: 768px) {
-    padding: 32px 20px;
+    padding: 40px 24px;
   }
 `;
 
@@ -330,17 +353,18 @@ const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 48px;
-  padding-bottom: 32px;
+  margin-bottom: 64px;
+  padding-bottom: 40px;
   border-bottom: 1px solid ${props => props.theme.borderColor};
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
-  @media (max-width: 768px) {
+  animation: ${fadeUp} 0.68s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @media (max-width: 1100px) {
     flex-direction: column;
-    gap: 24px;
+    gap: 28px;
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 24px;
+    margin-bottom: 48px;
+    padding-bottom: 28px;
   }
 `;
 
@@ -358,7 +382,7 @@ const ProfileDetails = styled.div`
 const ProfileImage = styled.img`
   width: 120px;
   height: 120px;
-  border-radius: 50%;
+  border-radius: 24px;
   object-fit: cover;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1.5px solid ${props => props.theme.borderColor};
@@ -377,40 +401,198 @@ const ProfileImage = styled.img`
 
 const Title = styled.h1`
   font-family: 'Playfair Display', 'Crimson Text', serif;
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  margin: 0 0 12px 0;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px 0;
   color: ${props => props.theme.text};
-  
+
   @media (max-width: 768px) {
-    font-size: 40px;
+    font-size: 44px;
   }
 `;
 
 const Subtitle = styled.h2`
-  font-size: 21px;
+  font-size: 22px;
   font-weight: 400;
   line-height: 1.5;
   color: ${props => props.theme.subtitleText};
-  margin: 0 0 20px 0;
-  letter-spacing: 0.01em;
-  
+  margin: 0 0 16px 0;
+  letter-spacing: 0.005em;
+
   @media (max-width: 768px) {
-    font-size: 19px;
+    font-size: 20px;
+  }
+`;
+
+const CredentialBadges = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+`;
+
+const CredentialBadge = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid ${props => props.theme.borderColor};
+  background: ${props => props.theme.linkBg};
+  color: ${props => props.theme.subtitleText};
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  box-shadow: none;
+  transition: all 0.25s ease;
+
+  &::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+    background: ${props => props.theme.accent};
+    opacity: 0.9;
+  }
+
+  &:hover {
+    color: ${props => props.theme.text};
+    border-color: ${props => props.theme.accent};
+    transform: translateY(-1px);
   }
 `;
 
 const Content = styled.main`
   background: transparent;
   margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 88px;
+`;
+
+const SectionNav = styled.nav`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  animation: ${fadeUp} 0.72s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 120ms;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+`;
+
+const SectionNavLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 1px solid ${props => props.theme.borderColor};
+  background: ${props => props.theme.linkBg};
+  color: ${props => props.theme.subtitleText};
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: ${props => props.theme.text};
+    border-color: ${props => props.theme.accent};
+    transform: translateY(-1px);
+  }
+`;
+
+const Section = styled.section`
+  scroll-margin-top: 28px;
+  opacity: 0;
+  animation: ${fadeUp} 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: ${props => props.$delay || 0}ms;
+
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    animation: none;
+  }
+`;
+
+const SectionHeaderBlock = styled.div`
+  max-width: 760px;
+  margin-bottom: 28px;
+  padding-left: 22px;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, ${props => props.theme.accent} 0%, transparent 100%);
+  }
+`;
+
+const SectionEyebrow = styled.p`
+  margin: 0 0 10px 0;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: ${props => props.theme.footerText};
+`;
+
+const SectionHeading = styled.h2`
+  margin: 0 0 12px 0;
+  font-size: 36px;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: ${props => props.theme.text};
+
+  @media (max-width: 768px) {
+    font-size: 30px;
+  }
+`;
+
+const SectionIntro = styled.p`
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.65;
+  color: ${props => props.theme.subtitleText};
+`;
+
+const SectionGroup = styled.div`
+  & + & {
+    margin-top: 56px;
+  }
+`;
+
+const SectionGroupTitle = styled.h3`
+  margin: 0 0 10px 0;
+  font-size: 24px;
+  line-height: 1.2;
+  color: ${props => props.theme.text};
+`;
+
+const SectionGroupIntro = styled.p`
+  margin: 0 0 20px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: ${props => props.theme.subtitleText};
 `;
 
 const AboutLayout = styled.div`
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 28px;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
   align-items: start;
 
   @media (max-width: 900px) {
@@ -432,7 +614,7 @@ const Footer = styled.footer`
 const AboutSection = styled.div`
   background: ${props => props.theme.aboutSectionBg};
   border: 1px solid ${props => props.theme.borderColor};
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 32px;
   margin-bottom: 32px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -458,17 +640,43 @@ const AboutSection = styled.div`
   }
 `;
 
+const AboutCardLayout = styled.div`
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) 208px;
+  gap: 24px;
+  align-items: start;
+
+  @media (max-width: 1100px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const AboutPhotoCard = styled.aside`
+  @media (min-width: 1101px) {
+    margin-left: auto;
+  }
+`;
+
 const PhotoFrame = styled.div`
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
   border: 1px solid ${props => props.theme.borderColor};
+  box-shadow: ${props => props.theme.cardBoxShadow};
+`;
+
+const AboutPhoto = styled.img`
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
 `;
 
 const PhotoCaption = styled.p`
-  margin: 16px 0 0 0;
-  font-size: 14px;
+  margin: 12px 0 0 0;
+  font-size: 13px;
   color: ${props => props.theme.footerText};
   font-weight: 400;
+  text-align: center;
 `;
 
 // Highlights section - quick, scannable summary cards (visible on the main page)
@@ -476,6 +684,11 @@ const HighlightsSection = styled.section`
   margin: 0;
   position: sticky;
   top: 24px;
+  padding: 16px;
+  border-radius: 20px;
+  background: ${props => props.theme.cardBg};
+  border: 1px solid ${props => props.theme.borderColor};
+  box-shadow: ${props => props.theme.cardBoxShadow};
 
   @media (max-width: 900px) {
     position: static;
@@ -484,15 +697,16 @@ const HighlightsSection = styled.section`
 
 const HighlightsHeader = styled.div`
   display: flex;
-  align-items: baseline;
-  gap: 16px;
-  margin: 0 0 16px 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 12px 0;
 `;
 
 const HighlightsTitle = styled.h3`
   margin: 0;
   font-family: 'Playfair Display', 'Crimson Text', serif;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: 0.01em;
   color: ${props => props.theme.text};
@@ -501,60 +715,96 @@ const HighlightsTitle = styled.h3`
   gap: 10px;
 `;
 
-const HighlightsSubtitle = styled.p`
-  margin: 4px 0 0 0;
-  color: ${props => props.theme.subtitleText};
-  font-size: 15px;
+const HighlightsMeta = styled.p`
+  margin: 0 0 14px 0;
+  font-size: 13px;
   line-height: 1.5;
+  color: ${props => props.theme.footerText};
 `;
 
 const HighlightsList = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 10px;
 `;
 
 const HighlightCard = styled.div`
-  background: ${props => props.theme.cardBg};
-  border: 1px solid ${props => props.theme.borderColor};
-  border-radius: 12px;
-  padding: 18px 18px 16px 18px;
-  box-shadow: ${props => props.theme.cardBoxShadow};
+  ${props => {
+    const tone = getHighlightTone(props.theme, props.$variant);
+
+    return css`
+      --highlight-border: ${tone.border};
+      --highlight-hover: ${tone.hover};
+      --highlight-tint: ${tone.tint};
+      --highlight-glow: ${tone.glow};
+    `;
+  }}
+  background: linear-gradient(180deg, var(--highlight-tint) 0%, ${props => props.theme.cardBg} 86%);
+  border: 1px solid var(--highlight-border);
+  border-radius: 14px;
+  padding: 14px 14px 13px 14px;
+  box-shadow: none;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--highlight-hover) 0%, transparent 100%);
+  }
+
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: ${props => props.theme.cardHoverBoxShadow};
-    border-color: ${props => props.theme.cardBorder};
+    transform: translateY(-1px);
+    border-color: var(--highlight-hover);
   }
 `;
 
 const HighlightKicker = styled.div`
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: ${props => props.theme.footerText};
-  margin-bottom: 10px;
+  margin-bottom: 8px;
+`;
+
+const HighlightHeaderRow = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
 `;
 
 const HighlightTitle = styled.h4`
-  margin: 0 0 10px 0;
+  margin: 0;
   font-family: 'Playfair Display', 'Crimson Text', serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: ${props => props.theme.text};
   letter-spacing: 0.01em;
   line-height: 1.25;
+  max-width: 180px;
 `;
 
 const HighlightBody = styled.p`
-  margin: 0 0 12px 0;
+  margin: 10px 0 0 0;
   color: ${props => props.theme.text};
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.55;
   opacity: 0.95;
+  ${props => props.$expanded ? css`
+    display: block;
+    overflow: visible;
+  ` : css`
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  `}
 `;
 
 const HighlightLink = styled.a`
@@ -577,7 +827,45 @@ const HighlightLink = styled.a`
 const HighlightLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 14px;
+  gap: 10px 12px;
+  margin-top: 12px;
+`;
+
+const HighlightToggle = styled.button`
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  color: ${props => props.theme.accent};
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 2px 0;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${props => props.theme.accentHover};
+  }
+`;
+
+const HighlightPrimaryLink = styled(HighlightLink)`
+  margin-top: 12px;
+`;
+
+const HighlightsPanelToggle = styled.button`
+  background: transparent;
+  border: none;
+  color: ${props => props.theme.accent};
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 2px 0;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${props => props.theme.accentHover};
+  }
 `;
 
 // Clean theme toggle button with refined styling
@@ -635,15 +923,15 @@ const ContactIcons = styled.div`
 const ProjectGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  margin-top: 24px;
+  gap: 32px;
+  margin-top: 32px;
 `;
 
 const ExperienceGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
-  margin-top: 24px;
+  gap: 32px;
+  margin-top: 32px;
 `;
 
 /* Helper Components with theme support and refined styling - Anthropic minimalist */
@@ -717,9 +1005,74 @@ const ResumeSection = styled.div`
   }
 `;
 
+// Search Component Styles
+const SearchContainer = styled.div`
+  position: relative;
+  margin-bottom: 32px;
+  max-width: 600px;
+`;
+
+const SearchInput = styled.input`
+  width: 100%;
+  padding: 14px 48px 14px 48px;
+  font-size: 16px;
+  border: 1.5px solid ${props => props.theme.borderColor};
+  border-radius: 12px;
+  background: ${props => props.theme.cardBg};
+  color: ${props => props.theme.text};
+  transition: all 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Inter', sans-serif;
+
+  &:focus {
+    outline: none;
+    border-color: ${props => props.theme.accent};
+    box-shadow: 0 0 0 3px ${props => props.theme.accent}22;
+  }
+
+  &::placeholder {
+    color: ${props => props.theme.subtitleText};
+  }
+`;
+
+const SearchIconWrapper = styled.div`
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: ${props => props.theme.subtitleText};
+  pointer-events: none;
+`;
+
+const ClearButton = styled.button`
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: ${props => props.theme.subtitleText};
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: ${props => props.theme.linkHoverBg};
+    color: ${props => props.theme.text};
+  }
+`;
+
 const Home = () => {
   // State for theme
   const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // State for search
+  const [searchQuery, setSearchQuery] = useState('');
+  const [showAllHighlights, setShowAllHighlights] = useState(false);
+  const [expandedHighlights, setExpandedHighlights] = useState({});
 
   // Check for user's preferred color scheme on initial load
   useEffect(() => {
@@ -751,6 +1104,20 @@ const Home = () => {
     }
   }, [isDarkMode]);
 
+  const toggleHighlight = (title) => {
+    setExpandedHighlights((previous) => ({
+      ...previous,
+      [title]: !previous[title],
+    }));
+  };
+
+  const credentials = [
+    { label: 'JHU CLSP', href: 'https://www.clsp.jhu.edu/' },
+    { label: 'Apple AI/ML', href: 'https://www.apple.com/apple-intelligence/' },
+    { label: 'Amazon Alexa', href: 'https://www.amazon.com/alexa-routines/b?ie=UTF8&node=21442922011' },
+    { label: 'DataTecnica', href: 'https://www.datatecnica.com/' },
+  ];
+
   const highlights = [
     {
       kicker: 'Industry',
@@ -769,7 +1136,7 @@ const Home = () => {
     {
       kicker: 'Writing',
       title: 'New Medium articles on AI safety + alignment',
-      body: 'Two new posts about emergent misalignment + the limits of evaluation, and interpretability-driven alignment.',
+      body: 'Three recent posts on emergent misalignment, interpretability-driven alignment, and AI governance.',
       links: [
         {
           label: 'Hidden Failures: Emergent Misalignment...',
@@ -779,41 +1146,48 @@ const Home = () => {
           label: 'Building Safer AI: Interpretability Drives...',
           href: 'https://medium.com/@pdulepet/building-safer-ai-interpretability-drives-and-alignment-8996fa36f71c',
         },
+        {
+          label: 'Governing Advanced AI: Institutions...',
+          href: 'https://medium.com/@pdulepet/governing-advanced-ai-institutions-accountability-and-policy-frameworks-f3334256677a',
+        },
       ],
     },
-    // {
-    //   kicker: 'Research',
-    //   title: 'MS CS at Johns Hopkins — Aug 2025',
-    //   body: "Started my MS at Johns Hopkins (CLSP) in August 2025, focusing on ML/NLP and working on LLM uncertainty/confidence research.",
-    //   href: 'https://www.clsp.jhu.edu',
-    //   linkLabel: 'Program',
-    // },
-
-
   ];
 
-  /* Tab Content Components */
   const AboutContent = () => (
-    <>
-      {/* <h3>About</h3> */}
-      <AboutLayout>
-        <HighlightsSection aria-label="Highlights">
-          <HighlightsHeader>
-            <div>
-              <HighlightsTitle>
-                <Sparkles size={18} />
-                Highlights
-              </HighlightsTitle>
+    <AboutLayout>
+      <HighlightsSection aria-label="Highlights">
+        <HighlightsHeader>
+          <div>
+            <HighlightsTitle>
+              <Sparkles size={18} />
+              Highlights
+            </HighlightsTitle>
+          </div>
+          {highlights.length > 2 && (
+            <HighlightsPanelToggle type="button" onClick={() => setShowAllHighlights((value) => !value)}>
+              {showAllHighlights ? 'Show less' : 'See all'}
+            </HighlightsPanelToggle>
+          )}
+        </HighlightsHeader>
+        <HighlightsMeta>
+          Selected updates. Expand a card for more context.
+        </HighlightsMeta>
+        <HighlightsList>
+          {highlights.slice(0, showAllHighlights ? highlights.length : 2).map((h) => {
+            const isExpanded = Boolean(expandedHighlights[h.title]);
 
-            </div>
-          </HighlightsHeader>
-          <HighlightsList>
-            {highlights.map((h) => (
-              <HighlightCard key={`${h.kicker}-${h.title}`}>
+            return (
+              <HighlightCard key={`${h.kicker}-${h.title}`} $variant={h.kicker.toLowerCase()}>
                 <HighlightKicker>{h.kicker}</HighlightKicker>
-                <HighlightTitle>{h.title}</HighlightTitle>
-                <HighlightBody>{h.body}</HighlightBody>
-                {Array.isArray(h.links) && h.links.length > 0 ? (
+                <HighlightHeaderRow>
+                  <HighlightTitle>{h.title}</HighlightTitle>
+                  <HighlightToggle type="button" onClick={() => toggleHighlight(h.title)}>
+                    {isExpanded ? 'Collapse' : 'Expand'}
+                  </HighlightToggle>
+                </HighlightHeaderRow>
+                <HighlightBody $expanded={isExpanded}>{h.body}</HighlightBody>
+                {isExpanded && Array.isArray(h.links) && h.links.length > 0 ? (
                   <HighlightLinks>
                     {h.links.map((link) => (
                       <HighlightLink key={link.href} href={link.href} target="_blank" rel="noopener noreferrer">
@@ -821,179 +1195,152 @@ const Home = () => {
                       </HighlightLink>
                     ))}
                   </HighlightLinks>
-                ) : (
-                  h.href && (
-                    <HighlightLink href={h.href} target="_blank" rel="noopener noreferrer">
-                      {h.linkLabel || 'Learn more'} <ArrowUpRight size={16} />
-                    </HighlightLink>
-                  )
-                )}
+                ) : null}
+                {isExpanded && !Array.isArray(h.links) && h.href ? (
+                  <HighlightPrimaryLink href={h.href} target="_blank" rel="noopener noreferrer">
+                    {h.linkLabel || 'Learn more'} <ArrowUpRight size={16} />
+                  </HighlightPrimaryLink>
+                ) : null}
               </HighlightCard>
-            ))}
-          </HighlightsList>
-        </HighlightsSection>
+            );
+          })}
+        </HighlightsList>
+      </HighlightsSection>
 
-        <AboutSection>
-          <p>
-            I'm a recent grad from the <a
-              className="aboutme"
-              href="https://www.cs.umd.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />University of Maryland</a> and am currently pursuing a master's at <a
-              className="aboutme"
-              href="https://www.clsp.jhu.edu"
-              target="_blank"
-              rel="noopener noreferrer"
-            ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />Johns Hopkins University</a>.
-          </p>
+      <AboutSection>
+        <AboutCardLayout>
+          <div>
+            <p>
+              I'm a recent grad from the <a
+                className="aboutme"
+                href="https://www.cs.umd.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />University of Maryland</a> and am currently pursuing a master's at <a
+                className="aboutme"
+                href="https://www.clsp.jhu.edu"
+                target="_blank"
+                rel="noopener noreferrer"
+              ><GraduationCap size={14} style={{ display: 'inline', marginRight: '6px', verticalAlign: 'middle' }} />Johns Hopkins University</a>.
+            </p>
 
-          <h4 style={{ fontSize: '1.1rem', marginBottom: '12px', color: 'inherit' }}>Let's Connect!</h4>
-          <p style={{ margin: '0 0 20px 0' }}>
-            I'll be splitting time between the <strong>Bay Area, CA</strong> and <strong>Baltimore, MD</strong> over the next year and a half.
-            Always excited to chat about building apps, AI research, tech policy, and a whole lot more. Let's chat or grab a coffee if you're in the area!
-          </p>
+            <p>
+              My current focus is building reliable human-AI collaborative systems across research, evaluation, and user-facing tooling.
+              I'm especially interested in how models, interfaces, and workflows can be designed to work well together in high-stakes settings.
+            </p>
 
-          {/* Image Section */}
-          <div style={{
-            marginTop: '24px',
-            textAlign: 'center',
-            padding: '16px 0'
-          }}>
-            <PhotoFrame>
-              <img
-                src={salzburg}
-                alt="Cool mountain in Salzburg"
-                style={{
-                  width: '100%',
-                  height: '400px',
-                  objectFit: 'cover',
-                  display: 'block'
-                }}
-              />
-            </PhotoFrame>
-            <PhotoCaption>Cool mountain in Salzburg</PhotoCaption>
+            <h4 style={{ fontSize: '1.1rem', marginBottom: '12px', color: 'inherit' }}>Let's Connect!</h4>
+            <p style={{ margin: 0 }}>
+              I'll be splitting time between the <strong>Bay Area, CA</strong> and <strong>Baltimore, MD</strong> over the next year and a half.
+              Always excited to chat about AI research, human-computer interaction, startup ideas, and tech policy.
+            </p>
           </div>
 
-        </AboutSection>
-      </AboutLayout>
-    </>
+          {/* <AboutPhotoCard>
+            <PhotoFrame>
+              <AboutPhoto
+                src={salzburg}
+                alt="Mountain view in Salzburg"
+              />
+            </PhotoFrame>
+            <PhotoCaption>Salzburg</PhotoCaption>
+          </AboutPhotoCard> */}
+        </AboutCardLayout>
+      </AboutSection>
+    </AboutLayout>
   );
 
-  const ProjectsContent = () => (
-    <div>
-      <ProjectGrid>
-        <div className="project">
-          <a href="http://www.agoraai.app/" target="_blank" rel="noopener noreferrer">
-            <img src={agora} alt="Project 1" />
-          </a>
-          <h3>agora.</h3>
-          <a
-            className="aboutme"
-            href="https://www.agoraai.app/media"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            (Ft. by University of Maryland)
-          </a>
-          <p>
-            <strong>Skills: </strong>Python, Large Language Models, React, Express, Swift, MongoDB
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://apps.apple.com/us/app/college-ro/id1577113429" target="_blank" rel="noopener noreferrer">
-            <img src={collegero} alt="Project 1" />
-          </a>
-          <h3>CollegeRO</h3>
-          <a
-            className="aboutme"
-            href="https://dbknews.com/2022/03/06/umd-student-creates-app-to-help-students-find-research-opportunities/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            (Ft. in The Diamondback, UMD's newspaper)
-          </a>
-          <p>
-            <strong>Skills: </strong>Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://github.com/pranavdulepet/aerial-object-detection" target="_blank" rel="noopener noreferrer">
-            <img src={aerial} alt="Project 1" />
-          </a>
-          <h3>Aerial Object Detection</h3>
-          <a className="aboutme" href="https://www.marksz.org/hackweek/" target="_blank" rel="noopener noreferrer">
-            (1st Place in the Northrop Grumman Innovation Challenge)
-          </a>
-          <p>
-            <strong>Skills: </strong>Python, YOLOv5, PyTorch, Google Colab, Matplotlib
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://github.com/pranavdulepet/legalai" target="_blank" rel="noopener noreferrer">
-            <img src={legalai} alt="Project 4" />
-          </a>
-          <h3>LegalAI</h3>
-          <p>
-            <strong>Skills: </strong>scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://github.com/pranavdulepet/umd-next/blob/main/umd-amzn-design-challenge.pdf" target="_blank" rel="noopener noreferrer">
-            <img src={umdnext} alt="Project 3" />
-          </a>
-          <h3>UMDNext</h3>
-          <a
-            className="aboutme"
-            href="https://sites.google.com/umd.edu/amazondesignchallenge/home"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            (2nd Place in the Amazon-UMD Product Design Challenge)
-          </a>
-          <p>
-            <strong>Skills: </strong>Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://github.com/umd-fire-coml/2022-t1-convolutional" target="_blank" rel="noopener noreferrer">
-            <img src={musicrec} alt="Project 2" />
-          </a>
-          <h3>Music Recommender</h3>
-          <p>
-            <strong>Skills: </strong>TensorFlow, Keras, K-Nearest Neighbors, Triplet Loss, Python, Google Colab, GitHub
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://apps.apple.com/us/app/things-near-me/id1506053357?ls=1" target="_blank" rel="noopener noreferrer">
-            <img src={thingsnearme} alt="Project 5" />
-          </a>
-          <h3>Things Near Me</h3>
-          <p>
-            <strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://github.com/pranavdulepet/open_house_sign.git" target="_blank" rel="noopener noreferrer">
-            <img src={signstoleads} alt="Project 6" />
-          </a>
-          <h3>Signs To Leads</h3>
-          <p>
-            <strong>Skills: </strong>Full-Stack iOS Development, Swift, UIKit, Firebase
-          </p>
-        </div>
-        <div className="project">
-          <a href="https://devpost.com/software/aura-obgpw7" target="_blank" rel="noopener noreferrer">
-            <img src={aura} alt="Project 7" />
-          </a>
-          <h3>Aura</h3>
-          <p>
-            <strong>Skills: </strong>Full-Stack iOS Development, NLP Libraries, Google Cloud, GitHub
-          </p>
-        </div>
-      </ProjectGrid>
-    </div>
-  );
+  // Projects data
+  const projects = [
+    { name: 'agora.', track: 'ai', skills: 'Python, Large Language Models, React, Express, Swift, MongoDB', img: agora, link: 'http://www.agoraai.app/', featured: 'Ft. by University of Maryland', featuredLink: 'https://www.agoraai.app/media' },
+    { name: 'Aerial Object Detection', track: 'ai', skills: 'Python, YOLOv5, PyTorch, Google Colab, Matplotlib', img: aerial, link: 'https://github.com/pranavdulepet/aerial-object-detection', featured: '1st Place in the Northrop Grumman Innovation Challenge', featuredLink: 'https://www.marksz.org/hackweek/' },
+    { name: 'LegalAI', track: 'ai', skills: 'scikit-learn, spaCy, Elasticsearch, Textacy, Blackstone, pytextrank', img: legalai, link: 'https://github.com/pranavdulepet/legalai' },
+    { name: 'Music Recommender', track: 'ai', skills: 'TensorFlow, Keras, K-Nearest Neighbors, Triplet Loss, Python, Google Colab, GitHub', img: musicrec, link: 'https://github.com/umd-fire-coml/2022-t1-convolutional' },
+    { name: 'Aura', track: 'ai', skills: 'Full-Stack iOS Development, NLP Libraries, Google Cloud, GitHub', img: aura, link: 'https://devpost.com/software/aura-obgpw7' },
+    { name: 'CollegeRO', track: 'product', skills: 'Full-Stack iOS Development, Rest APIs, MongoDB, AWS, GitHub, Google/Firebase Analytics', img: collegero, link: 'https://apps.apple.com/us/app/college-ro/id1577113429', featured: 'Ft. in The Diamondback, UMD\'s newspaper', featuredLink: 'https://dbknews.com/2022/03/06/umd-student-creates-app-to-help-students-find-research-opportunities/' },
+    { name: 'UMDNext', track: 'product', skills: 'Product Design, Customer and Market Research, Figma, Microsoft PowerPoint, UI/UX', img: umdnext, link: 'https://github.com/pranavdulepet/umd-next/blob/main/umd-amzn-design-challenge.pdf', featured: '2nd Place in the Amazon-UMD Product Design Challenge', featuredLink: 'https://sites.google.com/umd.edu/amazondesignchallenge/home' },
+    { name: 'Things Near Me', track: 'product', skills: 'Full-Stack iOS Development, Swift, UIKit, Firebase', img: thingsnearme, link: 'https://apps.apple.com/us/app/things-near-me/id1506053357?ls=1' },
+    { name: 'Signs To Leads', track: 'product', skills: 'Full-Stack iOS Development, Swift, UIKit, Firebase', img: signstoleads, link: 'https://github.com/pranavdulepet/open_house_sign.git' },
+  ];
+
+  const projectGroups = [
+    {
+      key: 'ai',
+      title: 'AI / ML',
+      intro: 'Projects most aligned with research engineering, evaluation, retrieval, NLP, and applied ML.',
+    },
+    {
+      key: 'product',
+      title: 'Product / Design',
+      intro: 'User-facing products, mobile apps, and product design work.',
+    },
+  ];
+
+  const ProjectsContent = () => {
+    const filteredProjects = projects.filter(project =>
+      searchQuery === '' ||
+      project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      project.skills.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
+    return (
+      <div>
+        <SearchContainer>
+          <SearchIconWrapper>
+            <Search size={20} />
+          </SearchIconWrapper>
+          <SearchInput
+            type="text"
+            placeholder="Search projects by name or skill..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          {searchQuery && (
+            <ClearButton onClick={() => setSearchQuery('')}>
+              <X size={18} />
+            </ClearButton>
+          )}
+        </SearchContainer>
+        {projectGroups.map((group) => {
+          const groupProjects = filteredProjects.filter(project => project.track === group.key);
+
+          if (groupProjects.length === 0) {
+            return null;
+          }
+
+          return (
+            <SectionGroup key={group.key}>
+              <SectionGroupTitle>{group.title}</SectionGroupTitle>
+              <SectionGroupIntro>{group.intro}</SectionGroupIntro>
+              <ProjectGrid>
+                {groupProjects.map((project) => (
+                  <div key={project.name} className="project">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <img src={project.img} alt={project.name} />
+                    </a>
+                    <h3>{project.name}</h3>
+                    {project.featured && (
+                      <a
+                        className="aboutme"
+                        href={project.featuredLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        ({project.featured})
+                      </a>
+                    )}
+                    <p>
+                      <strong>Skills: </strong>{project.skills}
+                    </p>
+                  </div>
+                ))}
+              </ProjectGrid>
+            </SectionGroup>
+          );
+        })}
+      </div>
+    );
+  };
 
   const IndustryContent = () => (
     <ExperienceGrid>
@@ -1190,7 +1537,8 @@ const Home = () => {
         <p>
           Contributing to a new method called FAST (Factorizable Attention for Speeding up Transformers) that improves
           transformer efficiency by reducing computational and memory complexity from quadratic to linear.
-          <p> </p>
+        </p>
+        <p>
           Developed iOS app using LiDAR scanner to create 3D representations of rooms and extract features. Used to capture
           Room Impulse Responses to then use differentiable acoustics to learn acoustic coefficients. Working on building
           upon NeRF with the scanner and modifying deep learning models.{' '}
@@ -1322,7 +1670,19 @@ const Home = () => {
               <ProfileImage src={pranav} alt="Profile" />
               <ProfileDetails>
                 <Title>Pranav Dulepet</Title>
-                <Subtitle>ML/NLP @ Johns Hopkins | AI Research</Subtitle>
+                <Subtitle>Building reliable human-AI collaborative systems.</Subtitle>
+                <CredentialBadges aria-label="Credibility badges">
+                  {credentials.map((credential) => (
+                    <CredentialBadge
+                      key={credential.label}
+                      href={credential.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {credential.label}
+                    </CredentialBadge>
+                  ))}
+                </CredentialBadges>
 
                 <ContactIcons>
                   <a href="mailto:ps.dulepet@gmail.com" title="Email" aria-label="Email">
@@ -1350,30 +1710,80 @@ const Home = () => {
           </Header>
 
           <Content>
-            <Tabs>
-              <TabList>
-                <Tab>About</Tab>
-                <Tab>Projects</Tab>
-                <Tab>Experience</Tab>
-                <Tab>Writing</Tab>
-                <Tab>Education</Tab>
-              </TabList>
+            <SectionNav aria-label="Section navigation">
+              <SectionNavLink href="#about">About</SectionNavLink>
+              <SectionNavLink href="#industry">Industry</SectionNavLink>
+              <SectionNavLink href="#research">Research</SectionNavLink>
+              <SectionNavLink href="#projects">Projects</SectionNavLink>
+              <SectionNavLink href="#writing">Writing</SectionNavLink>
+              <SectionNavLink href="#education">Education</SectionNavLink>
+            </SectionNav>
 
-              <TabPanel><AboutContent /></TabPanel>
-              <TabPanel><ProjectsContent /></TabPanel>
-              <TabPanel>
-                <Tabs>
-                  <TabList>
-                    <Tab>Industry</Tab>
-                    <Tab>Research</Tab>
-                  </TabList>
-                  <TabPanel><IndustryContent /></TabPanel>
-                  <TabPanel><ResearchContent /></TabPanel>
-                </Tabs>
-              </TabPanel>
-              <TabPanel><PublicationsContent /></TabPanel>
-              <TabPanel><Education /></TabPanel>
-            </Tabs>
+            <Section id="about" $delay={180}>
+              <SectionHeaderBlock>
+                <SectionEyebrow>Overview</SectionEyebrow>
+                {/* <SectionHeading>About</SectionHeading>
+                <SectionIntro>
+                  A quick overview of the work, research, and writing that best capture how I think and build.
+                </SectionIntro> */}
+              </SectionHeaderBlock>
+              <AboutContent />
+            </Section>
+
+            <Section id="industry" $delay={240}>
+              <SectionHeaderBlock>
+                <SectionEyebrow>Industry</SectionEyebrow>
+                <SectionHeading>Industry Experience</SectionHeading>
+                <SectionIntro>
+                  Applied work building, evaluating, and shipping AI systems.
+                </SectionIntro>
+              </SectionHeaderBlock>
+              <IndustryContent />
+            </Section>
+
+            <Section id="research" $delay={300}>
+              <SectionHeaderBlock>
+                <SectionEyebrow>Research</SectionEyebrow>
+                <SectionHeading>Research Experience</SectionHeading>
+                <SectionIntro>
+                  LLM reliability, attention efficiency, multimodal generation, prompting, privacy, and AI policy.
+                </SectionIntro>
+              </SectionHeaderBlock>
+              <ResearchContent />
+            </Section>
+
+            <Section id="projects" $delay={360}>
+              <SectionHeaderBlock>
+                <SectionEyebrow>Projects</SectionEyebrow>
+                <SectionHeading>Selected Projects</SectionHeading>
+                <SectionIntro>
+                  Some of my favorite projects.
+                </SectionIntro>
+              </SectionHeaderBlock>
+              <ProjectsContent />
+            </Section>
+
+            <Section id="writing" $delay={420}>
+              <SectionHeaderBlock>
+                <SectionEyebrow>Writing</SectionEyebrow>
+                <SectionHeading>Papers and Technical Writing</SectionHeading>
+                <SectionIntro>
+                  Writing on LLM systems, alignment, governance, and the technical questions I keep coming back to.
+                </SectionIntro>
+              </SectionHeaderBlock>
+              <PublicationsContent />
+            </Section>
+
+            <Section id="education" $delay={480}>
+              <SectionHeaderBlock>
+                <SectionEyebrow>Education</SectionEyebrow>
+                <SectionHeading>Education and Coursework</SectionHeading>
+                <SectionIntro>
+                  Coursework across HLT, machine learning, systems, HCI, security, and product design.
+                </SectionIntro>
+              </SectionHeaderBlock>
+              <Education />
+            </Section>
           </Content>
 
           <ContactSection>
@@ -1404,7 +1814,7 @@ const Home = () => {
               View CV
             </a>
           </ResumeSection>
-          <Footer>Last updated 09.16.2025</Footer>
+          <Footer>Updated March 2026</Footer>
         </Container>
       </ThemeProvider>
     </ThemeContext.Provider>
