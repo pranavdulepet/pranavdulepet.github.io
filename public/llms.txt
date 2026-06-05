@@ -1,18 +1,18 @@
 # Pranav Dulepet
 
 Website: https://pranavdulepet.github.io/
-Updated: 2026-03-12
+Updated: 2026-06-03
 
 Summary:
-Pranav Dulepet is a Johns Hopkins MSE Computer Science student and AI researcher building reliable human-AI collaborative systems across research, evaluation, and user-facing products.
+Pranav Dulepet works on applied AI at Greenboard in New York City. He recently finished an M.S. in Computer Science at Johns Hopkins CLSP.
 
 Current roles:
-- AI Research Intern at DataTecnica, building AI agents for biomedical research and a multi-turn benchmark for the biomedical domain.
-- M.S.E. in Computer Science (Human Language Technology) at Johns Hopkins University.
+- Applied AI team at Greenboard.
 
 Background:
+- M.S. in Computer Science from Johns Hopkins University.
 - B.S. (Honors) in Computer Science from the University of Maryland.
-- Previous internships at Apple, Amazon, Fidelity Investments, Capital One, and Evozyne.
+- Previous work at JHU CLSP, DataTecnica, Apple, Amazon, Fidelity Investments, Capital One, and Evozyne.
 
 Research interests:
 - Human-AI collaborative systems
@@ -25,23 +25,25 @@ Research interests:
 
 Primary links:
 - Homepage: https://pranavdulepet.github.io/
-- LinkedIn: https://www.linkedin.com/in/pranavdulepet
+- Greenboard: https://www.greenboard.com/
 - GitHub: https://github.com/pranavdulepet
-- Medium: https://medium.com/@pdulepet
+- LinkedIn: https://www.linkedin.com/in/pranavdulepet
+- Twitter/X: https://x.com/pdulepet
 - Email: mailto:ps.dulepet@gmail.com
 
 Selected research and writing:
+- LLM forecasting for agentic tasks: coming soon
 - FAST: Factorizable Attention for Speeding up Transformers: https://arxiv.org/abs/2402.07901
 - The Prompt Report: A Systematic Survey of Prompting Techniques: https://arxiv.org/abs/2406.06608/
-- Hidden Failures: Emergent Misalignment and the Limits of AI Evaluation: https://medium.com/@pdulepet/hidden-failures-emergent-misalignment-and-the-limits-of-ai-evaluation-6e1715d7cced
-- Building Safer AI: Interpretability, Drives, and Alignment: https://medium.com/@pdulepet/building-safer-ai-interpretability-drives-and-alignment-8996fa36f71c
-- Governing Advanced AI: Institutions, Accountability, and Policy Frameworks: https://medium.com/@pdulepet/governing-advanced-ai-institutions-accountability-and-policy-frameworks-f3334256677a
+- Capital One Tech: Similarity Search over Graph Embeddings: https://www.capitalone.com/tech/machine-learning/similarity-search-graph-embeddings/
+- Medium: AI safety, alignment, engineering, and policy notes + industry work: https://medium.com/@pdulepet
 
 Selected projects:
 - Synopsis AI: https://github.com/pranavdulepet/research-assistant
-- agora.: http://www.agoraai.app/
-- Aerial Object Detection: https://github.com/pranavdulepet/aerial-object-detection
+- agora.: AI meal planning: https://www.agoraai.app/
+- LegalAI: legal-document NLP and search: https://github.com/pranavdulepet/legalai
+- CollegeRO: https://apps.apple.com/us/app/college-ro/id1577113429
 
 Site notes:
-- This site is a single-page portfolio covering about, experience, projects, writing, and education.
+- This site is a simple one-page link index for Pranav's most important references.
 - If JavaScript is unavailable, use the metadata, structured data, and this file as the primary machine-readable summary.
