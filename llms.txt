@@ -1,0 +1,49 @@
+# Pranav Dulepet
+
+Website: https://pranavdulepet.github.io/
+Updated: 2026-06-03
+
+Summary:
+Pranav Dulepet works on applied AI at Greenboard in New York City. He recently finished an M.S. in Computer Science at Johns Hopkins CLSP.
+
+Current roles:
+- Applied AI team at Greenboard.
+
+Background:
+- M.S. in Computer Science from Johns Hopkins University.
+- B.S. (Honors) in Computer Science from the University of Maryland.
+- Previous work at JHU CLSP, DataTecnica, Apple, Amazon, Fidelity Investments, Capital One, and Evozyne.
+
+Research interests:
+- Human-AI collaborative systems
+- Large language models
+- LLM reliability and evaluation
+- NLP and biomedical NLP
+- AI agents
+- Benchmarking
+- AI governance and policy
+
+Primary links:
+- Homepage: https://pranavdulepet.github.io/
+- Greenboard: https://www.greenboard.com/
+- GitHub: https://github.com/pranavdulepet
+- LinkedIn: https://www.linkedin.com/in/pranavdulepet
+- Twitter/X: https://x.com/pdulepet
+- Email: mailto:ps.dulepet@gmail.com
+
+Selected research and writing:
+- LLM forecasting for agentic tasks: coming soon
+- FAST: Factorizable Attention for Speeding up Transformers: https://arxiv.org/abs/2402.07901
+- The Prompt Report: A Systematic Survey of Prompting Techniques: https://arxiv.org/abs/2406.06608/
+- Capital One Tech: Similarity Search over Graph Embeddings: https://www.capitalone.com/tech/machine-learning/similarity-search-graph-embeddings/
+- Medium: AI safety, alignment, engineering, and policy notes + industry work: https://medium.com/@pdulepet
+
+Selected projects:
+- Synopsis AI: https://github.com/pranavdulepet/research-assistant
+- agora.: AI meal planning: https://www.agoraai.app/
+- LegalAI: legal-document NLP and search: https://github.com/pranavdulepet/legalai
+- CollegeRO: https://apps.apple.com/us/app/college-ro/id1577113429
+
+Site notes:
+- This site is a simple one-page link index for Pranav's most important references.
+- If JavaScript is unavailable, use the metadata, structured data, and this file as the primary machine-readable summary.
