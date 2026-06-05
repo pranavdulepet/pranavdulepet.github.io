@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#f8f8f4" />
   <meta name="author" content="Pranav Dulepet" />
   <meta name="description" content="Pranav Dulepet works on applied AI at Greenboard in New York City. He recently finished an M.S. in Computer Science at Johns Hopkins CLSP." />
-  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="robots" content="index,follow,max-image-preview:none,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://pranavdulepet.github.io/" />
   <link rel="alternate" type="text/plain" href="https://pranavdulepet.github.io/llms.txt" title="LLMs.txt" />
   <link rel="sitemap" type="application/xml" href="https://pranavdulepet.github.io/sitemap.xml" />
@@ -19,12 +19,9 @@
   <meta property="og:title" content="Pranav Dulepet" />
   <meta property="og:description" content="Applied AI at Greenboard in New York City. M.S. in Computer Science from Johns Hopkins CLSP." />
   <meta property="og:url" content="https://pranavdulepet.github.io/" />
-  <meta property="og:image" content="https://pranavdulepet.github.io/pranav-pfp.jpg" />
-  <meta property="og:image:alt" content="Portrait of Pranav Dulepet" />
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Pranav Dulepet" />
   <meta name="twitter:description" content="Applied AI at Greenboard in New York City. M.S. in Computer Science from Johns Hopkins CLSP." />
-  <meta name="twitter:image" content="https://pranavdulepet.github.io/pranav-pfp.jpg" />
   <title>Pranav Dulepet</title>
   <script type="application/ld+json">
     {
@@ -53,7 +50,6 @@
           "@id": "https://pranavdulepet.github.io/#person",
           "name": "Pranav Dulepet",
           "url": "https://pranavdulepet.github.io/",
-          "image": "https://pranavdulepet.github.io/pranav-pfp.jpg",
           "description": "Applied AI engineer in New York City. M.S. in Computer Science from Johns Hopkins CLSP.",
           "email": "mailto:ps.dulepet@gmail.com",
           "sameAs": [
@@ -91,12 +87,12 @@
       padding: 72px 22px 44px;
     }
     header { margin-bottom: 28px; }
-    img.profile {
+    .profile {
       width: 112px;
       height: 112px;
       margin: 0 0 22px;
       border-radius: 3px;
-      object-fit: cover;
+      background: url("https://raw.githubusercontent.com/pranavdulepet/pranavdulepet.github.io/master/src/images/pranav-dulepet-nature-pfp-optimized.jpg") center / cover no-repeat;
       display: block;
       filter: saturate(0.9);
     }
@@ -197,7 +193,7 @@
 <body>
   <main>
     <header>
-      <img class="profile" src="https://raw.githubusercontent.com/pranavdulepet/pranavdulepet.github.io/master/src/images/pranav-dulepet-nature-pfp-optimized.jpg" alt="Pranav Dulepet" />
+      <div class="profile" role="img" aria-label="Pranav Dulepet"></div>
       <h1>Pranav Dulepet</h1>
       <p>I work on applied AI at <a class="inline-link" href="https://www.greenboard.com/">Greenboard</a> in New York City.</p>
       <p>Before that, I finished an M.S. in Computer Science at <a class="inline-link" href="https://www.clsp.jhu.edu/">Johns Hopkins CLSP</a>, studied CS at <a class="inline-link" href="https://www.cs.umd.edu/">Maryland</a>, and worked on AI and research engineering projects at <a class="inline-link" href="https://www.datatecnica.com/">DataTecnica</a>, Apple, and Amazon Alexa.</p>
