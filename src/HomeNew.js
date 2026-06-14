@@ -8,19 +8,38 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --page-bg: #fbfaf4;
+    --ink: #181611;
+    --muted: #696257;
+    --soft: #81786a;
+    --line: rgba(72, 58, 39, 0.18);
+    --accent: #7d392f;
+    --accent-soft: rgba(125, 57, 47, 0.07);
+    --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  }
+
   html {
-    background: #f8f8f4;
+    background:
+      radial-gradient(circle at 26% 8%, rgba(150, 112, 63, 0.08), rgba(251, 250, 244, 0) 32%),
+      radial-gradient(circle at 84% 14%, rgba(125, 57, 47, 0.06), rgba(251, 250, 244, 0) 30%),
+      var(--page-bg);
   }
 
   body {
     margin: 0;
-    background: #f8f8f4;
-    color: #171714;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 17px;
-    line-height: 1.65;
+    background:
+      radial-gradient(circle at 26% 8%, rgba(150, 112, 63, 0.08), rgba(251, 250, 244, 0) 32%),
+      radial-gradient(circle at 84% 14%, rgba(125, 57, 47, 0.06), rgba(251, 250, 244, 0) 30%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(251, 250, 244, 0) 42%),
+      var(--page-bg);
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.62;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   a {
@@ -28,18 +47,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ::selection {
-    background: #d7eadb;
+    background: #ead9ce;
   }
 `;
 
 const Page = styled.main`
-  width: min(100%, 560px);
+  width: min(calc(100% - 44px), 780px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: 72px 22px 44px;
+  padding: 76px 0 52px;
 
   @media (max-width: 560px) {
-    padding-top: 44px;
+    width: min(calc(100% - 34px), 780px);
+    padding-top: 46px;
   }
 `;
 
@@ -93,63 +113,83 @@ const Photo = styled.img`
   width: 112px;
   height: 112px;
   margin: 0 0 22px;
-  border-radius: 3px;
+  border-radius: 2px;
   object-fit: cover;
   display: block;
-  filter: saturate(0.9);
+  filter: saturate(0.72) contrast(1.03);
 `;
 
 const Name = styled.h1`
   margin: 0 0 18px;
-  font-size: clamp(28px, 7vw, 34px);
+  font-size: clamp(34px, 6vw, 50px);
   line-height: 1.1;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0;
 `;
 
 const Paragraph = styled.p`
   margin: 0 0 18px;
+  max-width: 680px;
 `;
 
 const InlineLink = styled.a`
   text-decoration-thickness: 1px;
-  text-decoration-color: #9ca99d;
+  text-decoration-color: rgba(125, 57, 47, 0.34);
   text-underline-offset: 3px;
 
   &:hover {
-    color: #0b6544;
+    color: var(--accent);
     text-decoration-color: currentColor;
   }
 `;
 
 const Section = styled.section`
-  margin-top: 34px;
+  margin-top: 38px;
+`;
+
+const SectionHeader = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(72, 58, 39, 0.28);
 `;
 
 const SectionTitle = styled.h2`
-  margin: 0 0 11px;
-  color: #5d625a;
+  margin: 0;
+  color: var(--muted);
   font-family: inherit;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 650;
   letter-spacing: 0;
   text-transform: lowercase;
+`;
+
+const SectionCount = styled.span`
+  color: var(--soft);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
 `;
 
 const LinkList = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  border-top: 1px solid #dcded6;
 `;
 
 const LinkItem = styled.li`
-  border-bottom: 1px solid #dcded6;
+  border-bottom: 1px solid var(--line);
 `;
 
-const LinkRow = styled.a`
-  display: block;
-  padding: 10px 0 11px;
+const EntryBase = styled.a`
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+  min-height: 62px;
+  padding: 14px 0 15px;
   position: relative;
   overflow: hidden;
   background: transparent;
@@ -163,7 +203,7 @@ const LinkRow = styled.a`
     bottom: -1px;
     left: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, #0b6544 20%, #0b6544 80%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--accent) 20%, var(--accent) 80%, transparent 100%);
     opacity: 0;
     transform: translateX(-112%);
   }
@@ -176,21 +216,22 @@ const LinkRow = styled.a`
     width: 5px;
     height: 5px;
     border-radius: 999px;
-    background: #0b6544;
-    box-shadow: 0 0 0 2px rgba(11, 101, 68, 0.12);
+    background: var(--accent);
+    box-shadow: 0 0 0 2px rgba(125, 57, 47, 0.12);
     opacity: 0;
   }
 
   &:hover .row-title {
-    color: #0b6544;
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
+    color: var(--accent);
+  }
+
+  &:hover .entry-action {
+    color: var(--accent);
   }
 
   &:hover,
   &:focus-visible {
-    background: linear-gradient(90deg, rgba(11, 101, 68, 0.055), transparent 72%);
+    background: linear-gradient(90deg, var(--accent-soft), transparent 72%);
   }
 
   &:hover::before,
@@ -211,78 +252,66 @@ const LinkRow = styled.a`
       animation: none;
     }
   }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+    min-height: 0;
+  }
 `;
 
-const StaticRow = styled.div`
+const LinkRow = styled(EntryBase)``;
+
+const StaticRow = styled(EntryBase).attrs({ as: 'div' })`
+  cursor: default;
+`;
+
+const EntryNumber = styled.span`
+  color: var(--soft);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.55;
+`;
+
+const EntryText = styled.span`
   display: block;
-  padding: 10px 0 11px;
-  position: relative;
-  overflow: hidden;
-  background: transparent;
-  transition: background 180ms ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: -1px;
-    left: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent 0%, #0b6544 20%, #0b6544 80%, transparent 100%);
-    opacity: 0;
-    transform: translateX(-112%);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: -3px;
-    left: -10px;
-    width: 5px;
-    height: 5px;
-    border-radius: 999px;
-    background: #0b6544;
-    box-shadow: 0 0 0 2px rgba(11, 101, 68, 0.12);
-    opacity: 0;
-  }
-
-  &:hover::before {
-    animation: ${signalTrace} 880ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  &:hover::after {
-    animation: ${signalDot} 880ms cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  &:hover {
-    background: linear-gradient(90deg, rgba(11, 101, 68, 0.055), transparent 72%);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    &:hover::before,
-    &:hover::after {
-      animation: none;
-    }
-  }
 `;
 
 const RowTitle = styled.span`
-  display: inline;
-  color: #171714;
+  display: block;
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.25;
 `;
 
 const RowNote = styled.span`
-  color: #696e65;
+  display: block;
+  margin-top: 3px;
+  color: var(--soft);
+  line-height: 1.4;
 
-  &::before {
-    content: ' - ';
-    color: #9b9f96;
+  @media (max-width: 640px) {
+    margin-top: 2px;
+  }
+`;
+
+const EntryAction = styled.span`
+  color: var(--soft);
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: nowrap;
+  transition: color 180ms ease;
+
+  @media (max-width: 640px) {
+    grid-column: 2;
+    margin-top: 5px;
   }
 `;
 
 const Footer = styled.footer`
   margin-top: 34px;
-  color: #777b72;
+  color: var(--soft);
   font-size: 14px;
 `;
 
@@ -359,11 +388,14 @@ const connectLinks = [
   },
 ];
 
-const LinkSection = ({ title, links }) => (
+const LinkSection = ({ title, links, actionLabel = 'view' }) => (
   <Section>
-    <SectionTitle>{title}</SectionTitle>
+    <SectionHeader>
+      <SectionTitle>{title}</SectionTitle>
+      <SectionCount>{links.length} entries</SectionCount>
+    </SectionHeader>
     <LinkList>
-      {links.map((link) => (
+      {links.map((link, index) => (
         <LinkItem key={`${link.label}-${link.note}`}>
           {link.href ? (
             <LinkRow
@@ -371,13 +403,23 @@ const LinkSection = ({ title, links }) => (
               target={link.href.startsWith('mailto:') ? undefined : '_blank'}
               rel={link.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
             >
-              <RowTitle className="row-title">{link.label}</RowTitle>
-              <RowNote>{link.note}</RowNote>
+              <EntryNumber>{String(index + 1).padStart(2, '0')}</EntryNumber>
+              <EntryText>
+                <RowTitle className="row-title">{link.label}</RowTitle>
+                <RowNote>{link.note}</RowNote>
+              </EntryText>
+              <EntryAction className="entry-action">
+                {link.href.startsWith('mailto:') ? 'write' : actionLabel}
+              </EntryAction>
             </LinkRow>
           ) : (
             <StaticRow>
-              <RowTitle>{link.label}</RowTitle>
-              <RowNote>{link.note}</RowNote>
+              <EntryNumber>{String(index + 1).padStart(2, '0')}</EntryNumber>
+              <EntryText>
+                <RowTitle>{link.label}</RowTitle>
+                <RowNote>{link.note}</RowNote>
+              </EntryText>
+              <EntryAction>coming soon</EntryAction>
             </StaticRow>
           )}
         </LinkItem>
@@ -430,9 +472,9 @@ const Home = () => (
         </Paragraph>
       </Header>
 
-      <LinkSection title="research and writing" links={writingLinks} />
-      <LinkSection title="selected builds" links={buildLinks} />
-      <LinkSection title="connect" links={connectLinks} />
+      <LinkSection title="research and writing" links={writingLinks} actionLabel="read" />
+      <LinkSection title="selected builds" links={buildLinks} actionLabel="view" />
+      <LinkSection title="connect" links={connectLinks} actionLabel="visit" />
 
       <Footer>Updated June 2026.</Footer>
     </Page>
