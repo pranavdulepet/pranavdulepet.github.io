@@ -1,7 +1,7 @@
 # Pranav Dulepet
 
 Website: https://pranavdulepet.github.io/
-Updated: 2026-06-03
+Updated: 2026-10-22
 
 Summary:
 Pranav Dulepet works on applied AI at Greenboard in New York City. He recently finished an M.S. in Computer Science at Johns Hopkins CLSP.
@@ -32,7 +32,7 @@ Primary links:
 - Email: mailto:ps.dulepet@gmail.com
 
 Selected research and writing:
-- LLM forecasting for agentic tasks: coming soon
+- LLM forecasting for agentic tasks: Opportunity Forecasting for LLM Search Agents (preprint): https://pranavdulepet.github.io/papers/opportunity-forecasting-for-llm-search-agents-preprint.pdf
 - FAST: Factorizable Attention for Speeding up Transformers: https://arxiv.org/abs/2402.07901
 - The Prompt Report: A Systematic Survey of Prompting Techniques: https://arxiv.org/abs/2406.06608/
 - Capital One Tech: Similarity Search over Graph Embeddings: https://www.capitalone.com/tech/machine-learning/similarity-search-graph-embeddings/
