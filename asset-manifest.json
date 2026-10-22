@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c22b84fb.css",
-    "main.js": "/static/js/main.9a129ada.js",
+    "main.css": "/static/css/main.430406e2.css",
+    "main.js": "/static/js/main.886c202f.js",
     "static/js/787.3a0c473b.chunk.js": "/static/js/787.3a0c473b.chunk.js",
     "static/media/pranav-dulepet-nature-pfp-optimized.jpg": "/static/media/pranav-dulepet-nature-pfp-optimized.04d371b2321dbc2b9d67.jpg",
     "index.html": "/index.html",
-    "main.c22b84fb.css.map": "/static/css/main.c22b84fb.css.map",
-    "main.9a129ada.js.map": "/static/js/main.9a129ada.js.map",
+    "main.430406e2.css.map": "/static/css/main.430406e2.css.map",
+    "main.886c202f.js.map": "/static/js/main.886c202f.js.map",
     "787.3a0c473b.chunk.js.map": "/static/js/787.3a0c473b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c22b84fb.css",
-    "static/js/main.9a129ada.js"
+    "static/css/main.430406e2.css",
+    "static/js/main.886c202f.js"
   ]
 }
